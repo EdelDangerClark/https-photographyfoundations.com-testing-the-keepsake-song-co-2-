@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Keepsake Song Co. | Personalised Songs by Creative Mama Media</title>
+<meta name="description" content="A completely custom song made from your story, with written lyrics and a full MP3. Preview before it's finalised. Ready in 3–7 days. From £34.99.">
+<meta property="og:title" content="The Keepsake Song Co. | Personalised Songs">
+<meta property="og:description" content="Turn their story into a song they'll keep. Custom song, written lyrics and MP3 from £34.99.">
+<meta property="og:image" content="assets/share-image.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="assets/creative-mama-logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--white:#FFFFFF;--off:#FFF8F0;--warm:#FFF0E0;--blush:#FFF8F0;--dark:#1A1A1A;--body:#3A3A3A;--muted:#888888;--faint:#BBBBBB;--rose:#FF5F00;--rose-dark:#E04D00;--line:rgba(0,0,0,.08)}
+body{font-family:'Anton',sans-serif;color:var(--dark);background:var(--white);-webkit-font-smoothing:antialiased}
+.narrow{max-width:700px;margin:0 auto;padding:0 40px}.wide{max-width:960px;margin:0 auto;padding:0 40px}
+.divider{height:4px;background:#FF5F00}
+.top-bar{background:#0A0A0A;padding:14px 20px;text-align:center;border-bottom:none}
+.top-bar-text{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:400;color:rgba(255,255,255,.7)}
+.top-bar-text span{color:#FF5F00;font-weight:700}
+.ticker-bar{background:#FF5F00;overflow:hidden;padding:10px 0;border-bottom:none;position:relative}
+.ticker-track{display:flex;width:max-content;animation:tickerScroll 30s linear infinite}
+.ticker-item{display:flex;align-items:center;gap:10px;padding:0 28px;white-space:nowrap;flex-shrink:0}
+.ticker-dot{width:8px;height:8px;border-radius:50%;background:#0A0A0A;opacity:0.3;flex-shrink:0}
+.ticker-text{font-family:'Anton',sans-serif;font-size:13px;font-weight:400;letter-spacing:1px;text-transform:uppercase;color:#fff}
+@keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ticker-bar::before,.ticker-bar::after{content:'';position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none}
+.ticker-bar::before{left:0;background:linear-gradient(to right,#FF5F00,transparent)}
+.ticker-bar::after{right:0;background:linear-gradient(to left,#FF5F00,transparent)}
+.hero{background:#FFF8F0;text-align:center;padding:80px 40px 100px;max-width:1060px;margin:0 auto}
+.hero-script{font-family:'Permanent Marker',cursive;font-size:clamp(36px,6vw,56px);font-weight:400;color:#FF5F00;line-height:1.1;margin-bottom:4px;transform:rotate(-2deg)}
+.hero-script span{color:var(--dark)}
+.hero-label{font-family:'DM Sans',sans-serif;font-size:8px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--muted);margin-bottom:28px;display:block}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#FF5F00;border:2px solid #FF5F00;padding:8px 20px;border-radius:50px;margin-bottom:36px;background:#fff}
+.hero-badge::before{content:'';width:8px;height:8px;background:#FF5F00;border-radius:50%;flex-shrink:0}
+.hero h1{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(30px,5vw,52px);line-height:1.1;text-transform:uppercase;letter-spacing:-0.5px;color:var(--dark);margin-bottom:28px;max-width:860px;margin-left:auto;margin-right:auto}
+.hero h1 em{color:#FF5F00;font-style:normal;font-family:'Permanent Marker',cursive;font-size:0.85em;transform:rotate(-1deg);display:inline-block}
+.hero-summary{font-family:'Anton',sans-serif;font-size:17px;font-weight:400;color:var(--body);line-height:1.8;max-width:600px;margin:0 auto 44px}
+.btn-dark{display:inline-block;font-family:'Anton',sans-serif;font-size:14px;font-weight:400;letter-spacing:1.5px;text-transform:uppercase;color:#fff;background:#FF5F00;padding:20px 48px;border-radius:50px;border:none;text-decoration:none;transition:all 0.3s ease;cursor:pointer;box-shadow:0 6px 24px rgba(255,95,0,.3)}
+.btn-dark:hover{background:#E04D00;color:#fff;transform:translateY(-3px) scale(1.02);box-shadow:0 10px 36px rgba(255,95,0,.4)}
+.btn-white{display:inline-block;font-family:'Anton',sans-serif;font-size:14px;font-weight:400;letter-spacing:1.5px;text-transform:uppercase;color:#fff;background:#0A0A0A;padding:20px 48px;border-radius:50px;border:none;text-decoration:none;transition:all 0.3s ease;cursor:pointer;box-shadow:0 6px 24px rgba(0,0,0,.2)}
+.btn-white:hover{background:#0A0A0A;color:#fff;transform:translateY(-3px);box-shadow:0 10px 36px rgba(0,0,0,.3)}
+.cta-sub{font-family:'DM Sans',sans-serif;font-size:11px;color:var(--muted);margin-top:16px;font-weight:400}
+.cta-wrapper{text-align:center}
+.section-label{font-family:'DM Sans',sans-serif;font-size:8px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--muted);margin-bottom:16px;display:block}
+.section-title{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(28px,4vw,42px);color:var(--dark);line-height:1.1;text-transform:uppercase;margin-bottom:48px}
+.pain-section{background:#0A0A0A;padding:100px 40px;position:relative;overflow:hidden}
+.pain-list{border-top:1px solid var(--line)}
+.pain-item{padding:24px 0;border-bottom:1px solid var(--line);display:flex;gap:18px;align-items:baseline;transition:padding-left 0.3s ease;cursor:default}
+.pain-item:hover{padding-left:8px}
+.pain-num{font-family:'Permanent Marker',cursive;font-size:26px;color:var(--rose);flex-shrink:0;line-height:1;min-width:28px}
+.pain-text{font-family:'Anton',sans-serif;font-size:17px;color:var(--body);line-height:1.75}
+.benefits-section{background:#FFF8F0;padding:0px 40px 100px;position:relative;overflow:hidden}
+.benefits-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.benefit-card{padding:30px;background:#fff;border:2px solid rgba(0,0,0,.08);border-radius:16px;transition:all 0.3s ease;position:relative;overflow:hidden}
+.benefit-card:hover{transform:translateY(-4px);border-color:#FF5F00;box-shadow:0 12px 40px rgba(255,95,0,.08)}
+.benefit-before{font-family:'DM Sans',sans-serif;font-size:12px;color:var(--faint);margin-bottom:14px;display:flex;align-items:center;gap:6px}
+.benefit-before .x-icon{color:var(--rose);opacity:0.4;font-size:10px}
+.benefit-after{font-family:'Anton',sans-serif;font-size:17px;color:var(--dark);line-height:1.7}
+.intro-section{background:#FFFFFF;padding:100px 40px 80px;text-align:center}
+.intro-script{font-family:'Permanent Marker',cursive;font-size:clamp(28px,4vw,44px);color:#FF5F00;margin-bottom:8px;font-weight:400;transform:rotate(-1deg)}
+.intro-section h3{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(28px,4vw,44px);text-transform:uppercase;color:var(--dark);margin-bottom:28px;line-height:1.2}
+.intro-section p{font-family:'Anton',sans-serif;font-size:17px;color:var(--body);line-height:1.85;max-width:580px;margin:0 auto}
+.story-section{background:var(--white);padding:100px 40px}
+.story-header{display:flex;gap:40px;align-items:flex-start;margin-bottom:48px}
+.story-photo{width:200px;height:240px;flex-shrink:0;background:#FF5F00;border:none;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;position:relative;overflow:hidden}
+.story-photo-icon{width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center}
+.story-photo-icon svg{width:28px;height:28px;color:#fff}
+.story-photo-label{font-family:'DM Sans',sans-serif;font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.story-intro{flex:1}.story-intro .section-label{margin-bottom:12px}.story-intro .section-title{margin-bottom:16px}
+.story-intro-text{font-family:'Anton',sans-serif;font-size:17px;color:var(--body);line-height:1.85}
+.story-proof{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:rgba(0,0,0,.08);border:2px solid #1A1A1A;border-radius:16px;overflow:hidden;margin-bottom:48px}
+.proof-item{background:var(--white);padding:28px 20px;text-align:center}
+.proof-number{font-family:'Permanent Marker',cursive;font-size:36px;color:var(--rose);line-height:1;margin-bottom:4px}
+.proof-label{font-family:'DM Sans',sans-serif;font-size:8px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.typewriter-container{position:relative;min-height:200px}
+.typewriter-text,.typewriter-text p{font-family:'Anton',sans-serif;font-size:16.5px;color:var(--body);line-height:1.85}
+.typewriter-text p{margin-bottom:28px}.typewriter-text p:last-of-type{margin-bottom:0}
+.typewriter-cursor{display:inline-block;width:2px;height:1.1em;background:var(--rose);margin-left:2px;vertical-align:text-bottom;animation:cursorBlink 0.6s ease infinite}
+@keyframes cursorBlink{0%,100%{opacity:1}50%{opacity:0}}
+.stack-section{background:#FF5F00;padding:100px 40px;position:relative;overflow:hidden}
+.stack-list{border-top:1px solid var(--line)}
+.stack-item{padding:32px 0;border-bottom:1px solid var(--line);display:flex;gap:20px;align-items:baseline;transition:padding-left 0.3s ease;cursor:default}
+.stack-item:hover{padding-left:8px}
+.stack-num{font-family:'Permanent Marker',cursive;font-size:28px;color:var(--rose);flex-shrink:0;line-height:1;min-width:48px}
+.stack-content h4{font-family:'Anton',sans-serif;font-size:18px;font-weight:400;text-transform:uppercase;letter-spacing:0.5px;color:#fff;margin-bottom:8px;line-height:1.3}
+.stack-content p{font-family:'Anton',sans-serif;font-size:15.5px;color:var(--body);line-height:1.75}
+.stack-tag{font-family:'DM Sans',sans-serif;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--rose);margin-top:10px;display:inline-block}
+.offer-table-section{background:#0A0A0A;padding:80px 40px}
+.offer-table-wrap{max-width:600px;margin:0 auto}
+.offer-table-header{text-align:center;margin-bottom:40px}
+.offer-table-label{font-family:'DM Sans',sans-serif;font-size:8px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:rgba(255,95,0,.6);margin-bottom:16px;display:block}
+.offer-table-title{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(26px,3.5vw,38px);text-transform:uppercase;color:var(--white);line-height:1.25;margin-bottom:8px}
+.offer-table-sub{font-family:'Anton',sans-serif;font-size:16px;color:rgba(255,255,255,.35);line-height:1.7}
+.offer-table{border-top:1px solid rgba(255,255,255,.08);margin-bottom:40px}
+.offer-row{display:flex;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.offer-check{width:24px;height:24px;border-radius:50%;background:rgba(255,95,0,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.offer-check svg{width:12px;height:12px}
+.offer-item-text{font-family:'Anton',sans-serif;font-size:17px;color:rgba(255,255,255,.8);line-height:1.4;flex:1}
+.offer-item-tag{font-family:'DM Sans',sans-serif;font-size:8px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--rose);flex-shrink:0}
+.offer-price-box{text-align:center;margin-bottom:32px}
+.offer-price{font-family:'Permanent Marker',cursive;font-size:72px;color:var(--white);line-height:1;margin-bottom:4px}
+.offer-price-note{font-family:'DM Sans',sans-serif;font-size:10px;color:rgba(255,255,255,.3);letter-spacing:1px}
+.faq-section{background:#FFF8F0;padding:100px 40px}
+.faq-list{border-top:1px solid var(--line)}.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{font-family:'Anton',sans-serif;font-size:17px;font-weight:400;text-transform:uppercase;letter-spacing:0.5px;color:var(--dark);padding:22px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color 0.3s ease;user-select:none}
+.faq-q:hover{color:var(--rose)}.faq-q span{flex:1}
+.faq-icon{font-family:'DM Sans',sans-serif;font-size:18px;color:var(--faint);flex-shrink:0;transition:all 0.3s ease;line-height:1}
+.faq-item.open .faq-icon{transform:rotate(45deg);color:var(--rose)}
+.faq-a{font-family:'Anton',sans-serif;font-size:16px;color:var(--body);line-height:1.8;max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.4s ease;padding-bottom:0}
+.faq-item.open .faq-a{max-height:500px;padding-bottom:24px}
+.final-cta{background:#FF5F00;padding:100px 40px;text-align:center;position:relative;overflow:hidden}
+.final-cta .section-label{color:rgba(255,95,0,.6)}
+.final-cta h3{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(28px,4vw,48px);text-transform:uppercase;color:var(--white);line-height:1.25;margin-bottom:16px}
+.final-cta p{font-family:'Anton',sans-serif;font-size:17px;color:rgba(255,255,255,.4);margin-bottom:32px;line-height:1.7}
+.final-cta .cta-sub{color:rgba(255,255,255,.4)}
+.footer{background:#0A0A0A;border-top:none;padding:28px 40px;text-align:center}
+.footer p{font-family:'DM Sans',sans-serif;font-size:10px;font-weight:400;letter-spacing:1.5px;color:rgba(255,255,255,.25);text-transform:uppercase}
+.price-badge{position:absolute;width:120px;height:120px;border-radius:50%;background:#FF5F00;border:3px solid #fff;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(0,0,0,.15);z-index:30}
+.price-badge-only{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.price-badge-amount{font-family:'Anton',sans-serif;font-size:48px;font-weight:300;color:#fff;line-height:1}
+.mockup-container .price-badge{right:5%;top:30%;transform:translateY(-50%)}
+.mockup-container-sm .price-badge{right:5%;top:30%;transform:translateY(-50%)}
+.editorial-container .price-badge{left:50%;top:50%;transform:translate(-50%,-50%)}
+@media(max-width:700px){.price-badge{width:90px;height:90px}.price-badge-only{font-size:9px;letter-spacing:2px}.price-badge-amount{font-size:36px}.mockup-container .price-badge,.mockup-container-sm .price-badge{right:2%}.editorial-container .price-badge{left:50%}}
+
+/* ═══ WIZZY MOCKUP #1: MEGA MOCKUP (1400×780) ═══ */
+.mockup-container{width:100%;max-width:1060px;margin:40px auto -110px;position:relative;aspect-ratio:1400/780;overflow:visible}
+.mockup-container .mega-center{width:100%;height:100%;position:relative;overflow:hidden}
+.mockup-container .mega-mockup{width:1400px;height:780px;position:absolute;top:50%;left:50%;transform-origin:0 0}
+.mockup-container .fan-item{position:absolute;transform-origin:center center}
+.mockup-container .pos-paper-s1{width:260px;height:340px;left:155px;top:40px;transform:rotate(-26deg);z-index:1}
+.mockup-container .pos-paper-s2{width:260px;height:340px;left:155px;top:40px;transform:rotate(-23deg);z-index:1}
+.mockup-container .pos-paper-s3{width:260px;height:340px;left:155px;top:40px;transform:rotate(-20deg);z-index:1}
+.mockup-container .pos-paper-s4{width:260px;height:340px;left:155px;top:40px;transform:rotate(-17deg);z-index:2}
+.mockup-container .pos-paper{width:260px;height:340px;left:155px;top:40px;transform:rotate(-15deg);z-index:3;box-shadow:0 3px 16px rgba(0,0,0,.1)}
+.mockup-container .pos-tablet{left:985px;top:40px;width:260px;transform:rotate(15deg);z-index:3}
+.mockup-container .pos-laptop{left:370px;top:5px;width:660px;z-index:10}
+.mockup-container .pos-phone-l{left:155px;top:320px;width:100px;transform:rotate(-15deg);z-index:20}
+.mockup-container .pos-phone-r{left:1145px;top:320px;width:100px;transform:rotate(15deg);z-index:20}
+.mockup-container .laptop{position:relative;border-radius:10px 10px 0 0;overflow:hidden;background:#2C2C2C;border:3px solid #404040}
+.mockup-container .laptop-topbar{height:20px;background:#363636;display:flex;align-items:center;padding:0 10px;gap:4px;border-bottom:1px solid #4a4a4a}
+.mockup-container .dot{width:6px;height:6px;border-radius:50%}.mockup-container .dot.r{background:#ff5f57}.mockup-container .dot.y{background:#febc2e}.mockup-container .dot.g{background:#28c840}
+.mockup-container .laptop-screen{aspect-ratio:16/10;overflow:hidden;position:relative}
+.mockup-container .laptop-kb{height:12px;background:linear-gradient(180deg,#3a3a3a,#2C2C2C);border-radius:0 0 4px 4px;margin:0 -1px;border:2px solid #404040;border-top:1px solid #4a4a4a;position:relative}
+.mockup-container .laptop-kb::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:3px;border-radius:2px;background:rgba(255,255,255,.08)}
+.mockup-container .laptop-kbd{width:108%;height:13px;margin:-1px auto 0;margin-left:-4%;background:linear-gradient(180deg,#353535,#2C2C2C);border-radius:0 0 5px 5px;border:2px solid #404040;border-top:none}
+.mockup-container .tablet{position:relative;border-radius:16px;overflow:hidden;background:#2C2C2C;border:3px solid #404040;padding:7px}
+.mockup-container .tablet-screen{aspect-ratio:3/4;overflow:hidden;border-radius:8px;position:relative}
+.mockup-container .tablet-home{width:16px;height:16px;border-radius:50%;border:1.5px solid #505050;margin:7px auto 4px;background:#383838}
+.mockup-container .phone{position:relative;border-radius:16px;overflow:hidden;background:#2C2C2C;border:3px solid #404040;padding:4px}
+.mockup-container .phone-notch{width:28%;height:4px;background:#404040;border-radius:3px;margin:4px auto}
+.mockup-container .phone-screen{aspect-ratio:9/19.5;overflow:hidden;border-radius:10px;position:relative}
+.mockup-container .phone-bar{width:26%;height:2.5px;background:#404040;border-radius:2px;margin:5px auto 3px}
+.mockup-container .paper{background:#fff;border-radius:3px;overflow:hidden}
+.mockup-container .paper-shadow{border-radius:3px}
+.mockup-container .screen-inner{position:absolute;inset:0;overflow:hidden}
+.mockup-container .artifact-wrap{transform-origin:top left;position:absolute;top:0;left:0;overflow:hidden}
+@keyframes mockupScrollUp{0%,8%{transform:translateY(0)}92%,100%{transform:translateY(var(--scroll-dist))}}
+.mockup-container .scroll-content{animation:mockupScrollUp var(--scroll-dur) ease-in-out infinite alternate}
+.mockup-container .hero-cover{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
+.mockup-container .paper-cover{width:100%;height:100%;padding:17px 13px;display:flex;flex-direction:column}
+.mockup-container .pc-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;margin-bottom:6px}
+.mockup-container .pc-title{font-size:18px;font-weight:800;line-height:1.2;margin-bottom:2px}
+.mockup-container .pc-sub{font-size:10px;font-style:italic;margin-bottom:10px}
+.mockup-container .pc-divider{width:100%;height:1px;background:rgba(0,0,0,.06);margin-bottom:10px}
+.mockup-container .pc-item{display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:9px}
+.mockup-container .pc-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.mockup-container .pc-footer{margin-top:auto;font-size:8px;letter-spacing:1px;text-transform:uppercase}
+.mockup-container .video-screen{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
+.mockup-container .video-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;margin-bottom:24px}
+.mockup-container .play-btn{width:90px;height:90px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.mockup-container .play-btn svg{width:36px;height:36px}
+.mockup-container .video-title{margin-top:28px;text-align:center;font-size:22px;font-weight:800;line-height:1.2}
+.mockup-container .video-dur{margin-top:14px;font-size:11px;opacity:.3}
+
+/* ═══ WIZZY MOCKUP #2: SMALL MEGA (1400×780, 742px container) ═══ */
+.mockup-container-sm{width:100%;max-width:742px;margin:44px auto 0;position:relative;aspect-ratio:1400/780;overflow:visible}
+.mockup-container-sm .mega-center{width:100%;height:100%;position:relative;overflow:hidden}
+.mockup-container-sm .mega-mockup{width:1400px;height:780px;position:absolute;top:50%;left:50%;transform-origin:0 0}
+.mockup-container-sm .fan-item{position:absolute;transform-origin:center center}
+.mockup-container-sm .pos-paper-s1{width:260px;height:340px;left:155px;top:40px;transform:rotate(-26deg);z-index:1}
+.mockup-container-sm .pos-paper-s2{width:260px;height:340px;left:155px;top:40px;transform:rotate(-23deg);z-index:1}
+.mockup-container-sm .pos-paper-s3{width:260px;height:340px;left:155px;top:40px;transform:rotate(-20deg);z-index:1}
+.mockup-container-sm .pos-paper-s4{width:260px;height:340px;left:155px;top:40px;transform:rotate(-17deg);z-index:2}
+.mockup-container-sm .pos-paper{width:260px;height:340px;left:155px;top:40px;transform:rotate(-15deg);z-index:3;box-shadow:0 3px 16px rgba(0,0,0,.1)}
+.mockup-container-sm .pos-tablet{left:985px;top:40px;width:260px;transform:rotate(15deg);z-index:3}
+.mockup-container-sm .pos-laptop{left:370px;top:5px;width:660px;z-index:10}
+.mockup-container-sm .pos-phone-l{left:155px;top:320px;width:100px;transform:rotate(-15deg);z-index:20}
+.mockup-container-sm .pos-phone-r{left:1145px;top:320px;width:100px;transform:rotate(15deg);z-index:20}
+.mockup-container-sm .laptop{position:relative;border-radius:10px 10px 0 0;overflow:hidden;background:#2C2C2C;border:3px solid #404040}
+.mockup-container-sm .laptop-topbar{height:20px;background:#363636;display:flex;align-items:center;padding:0 10px;gap:4px;border-bottom:1px solid #4a4a4a}
+.mockup-container-sm .dot{width:6px;height:6px;border-radius:50%}.mockup-container-sm .dot.r{background:#ff5f57}.mockup-container-sm .dot.y{background:#febc2e}.mockup-container-sm .dot.g{background:#28c840}
+.mockup-container-sm .laptop-screen{aspect-ratio:16/10;overflow:hidden;position:relative}
+.mockup-container-sm .laptop-kb{height:12px;background:linear-gradient(180deg,#3a3a3a,#2C2C2C);border-radius:0 0 4px 4px;margin:0 -1px;border:2px solid #404040;border-top:1px solid #4a4a4a;position:relative}
+.mockup-container-sm .laptop-kb::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:3px;border-radius:2px;background:rgba(255,255,255,.08)}
+.mockup-container-sm .laptop-kbd{width:108%;height:13px;margin:-1px auto 0;margin-left:-4%;background:linear-gradient(180deg,#353535,#2C2C2C);border-radius:0 0 5px 5px;border:2px solid #404040;border-top:none}
+.mockup-container-sm .tablet{position:relative;border-radius:16px;overflow:hidden;background:#2C2C2C;border:3px solid #404040;padding:7px}
+.mockup-container-sm .tablet-screen{aspect-ratio:3/4;overflow:hidden;border-radius:8px;position:relative}
+.mockup-container-sm .tablet-home{width:16px;height:16px;border-radius:50%;border:1.5px solid #505050;margin:7px auto 4px;background:#383838}
+.mockup-container-sm .phone{position:relative;border-radius:16px;overflow:hidden;background:#2C2C2C;border:3px solid #404040;padding:4px}
+.mockup-container-sm .phone-notch{width:28%;height:4px;background:#404040;border-radius:3px;margin:4px auto}
+.mockup-container-sm .phone-screen{aspect-ratio:9/19.5;overflow:hidden;border-radius:10px;position:relative}
+.mockup-container-sm .phone-bar{width:26%;height:2.5px;background:#404040;border-radius:2px;margin:5px auto 3px}
+.mockup-container-sm .paper{background:#fff;border-radius:3px;overflow:hidden}
+.mockup-container-sm .paper-shadow{border-radius:3px}
+.mockup-container-sm .screen-inner{position:absolute;inset:0;overflow:hidden}
+.mockup-container-sm .artifact-wrap{transform-origin:top left;position:absolute;top:0;left:0;overflow:hidden}
+.mockup-container-sm .scroll-content{animation:mockupScrollUp var(--scroll-dur) ease-in-out infinite alternate}
+.mockup-container-sm .hero-cover{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
+.mockup-container-sm .paper-cover{width:100%;height:100%;padding:17px 13px;display:flex;flex-direction:column}
+.mockup-container-sm .pc-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;margin-bottom:6px}
+.mockup-container-sm .pc-title{font-size:18px;font-weight:800;line-height:1.2;margin-bottom:2px}
+.mockup-container-sm .pc-sub{font-size:10px;font-style:italic;margin-bottom:10px}
+.mockup-container-sm .pc-divider{width:100%;height:1px;background:rgba(0,0,0,.06);margin-bottom:10px}
+.mockup-container-sm .pc-item{display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:9px}
+.mockup-container-sm .pc-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.mockup-container-sm .pc-footer{margin-top:auto;font-size:8px;letter-spacing:1px;text-transform:uppercase}
+.mockup-container-sm .video-screen{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
+.mockup-container-sm .video-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;margin-bottom:24px}
+.mockup-container-sm .play-btn{width:90px;height:90px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.mockup-container-sm .play-btn svg{width:36px;height:36px}
+.mockup-container-sm .video-title{margin-top:28px;text-align:center;font-size:22px;font-weight:800;line-height:1.2}
+.mockup-container-sm .video-dur{margin-top:14px;font-size:11px;opacity:.3}
+
+/* ═══ WIZZY MOCKUP #3: EDITORIAL (1400×680) ═══ */
+.editorial-container{width:100%;max-width:768px;margin:0 auto -80px;position:relative;aspect-ratio:1400/680;overflow:visible}
+.editorial-container .editorial-center{width:100%;height:100%;position:relative;overflow:visible;margin:0;padding:0;line-height:0}
+.editorial-container .editorial-mockup{width:1400px;height:680px;position:absolute;top:50%;left:50%;transform-origin:0 0}
+.editorial-container .fan-item{position:absolute;transform-origin:center center}
+.editorial-container .pos-paper-s1{width:380px;height:492px;left:340px;top:80px;transform:rotate(-17deg);z-index:1}
+.editorial-container .pos-paper-s2{width:380px;height:492px;left:340px;top:80px;transform:rotate(-14deg);z-index:1}
+.editorial-container .pos-paper-s3{width:380px;height:492px;left:340px;top:80px;transform:rotate(-11deg);z-index:2}
+.editorial-container .pos-paper-s4{width:380px;height:492px;left:340px;top:80px;transform:rotate(-9deg);z-index:2}
+.editorial-container .pos-paper{width:380px;height:492px;left:340px;top:80px;transform:rotate(-7deg);z-index:5;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+.editorial-container .pos-tablet{left:680px;top:10px;width:380px;transform:rotate(6deg);z-index:8}
+.editorial-container .tablet{position:relative;border-radius:18px;overflow:hidden;background:#2C2C2C;border:3px solid #404040;padding:8px}
+.editorial-container .tablet-screen{aspect-ratio:3/4;overflow:hidden;border-radius:10px;position:relative}
+.editorial-container .tablet-home{width:18px;height:18px;border-radius:50%;border:1.5px solid #505050;margin:8px auto 5px;background:#383838}
+.editorial-container .paper{background:#fff;border-radius:4px;overflow:hidden}
+.editorial-container .paper-shadow{border-radius:4px}
+.editorial-container .screen-inner{position:absolute;inset:0;overflow:hidden}
+.editorial-container .artifact-wrap{transform-origin:top left;position:absolute;top:0;left:0;overflow:hidden}
+@keyframes editorialScrollUp{0%,8%{transform:translateY(0)}92%,100%{transform:translateY(var(--scroll-dist))}}
+.editorial-container .scroll-content{animation:editorialScrollUp var(--scroll-dur) ease-in-out infinite alternate}
+.editorial-container .window-shadow{position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(to right,transparent 20%,rgba(0,0,0,.03) 20.5%,rgba(0,0,0,.03) 21%,transparent 21.5%,transparent 48%,rgba(0,0,0,.03) 48.5%,rgba(0,0,0,.03) 49%,transparent 49.5%,transparent 76%,rgba(0,0,0,.03) 76.5%,rgba(0,0,0,.03) 77%,transparent 77.5%),linear-gradient(to bottom,transparent 30%,rgba(0,0,0,.025) 30.5%,rgba(0,0,0,.025) 31%,transparent 31.5%,transparent 65%,rgba(0,0,0,.025) 65.5%,rgba(0,0,0,.025) 66%,transparent 66.5%);filter:blur(12px);opacity:.6}
+.editorial-container .ed-paper-cover{width:100%;height:100%;padding:5%;display:flex;flex-direction:column;font-family:'Anton',sans-serif;color:#1A1A1A;background:#fff}
+.editorial-container .ed-paper-top{flex-shrink:0;margin-bottom:12px}
+.editorial-container .ed-paper-label{font-family:'DM Sans',sans-serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:#888;margin-bottom:10px}
+.editorial-container .ed-paper-title{font-family:'Anton',sans-serif;font-size:26px;font-weight:300;line-height:1.15;color:#1A1A1A;margin-bottom:4px}
+.editorial-container .ed-paper-title em{font-style:italic;color:#FF5F00}
+.editorial-container .ed-paper-subtitle{font-family:'Anton',sans-serif;font-size:10px;color:#888;line-height:1.5}
+.editorial-container .ed-paper-band{width:100%;height:45px;background:#0A0A0A;margin-bottom:16px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.editorial-container .ed-paper-band span{font-family:'DM Sans',sans-serif;font-size:7px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,95,0,.6)}
+.editorial-container .ed-paper-bottom{flex:1;display:flex;flex-direction:column}
+.editorial-container .ed-paper-section-label{font-family:'DM Sans',sans-serif;font-size:7px;letter-spacing:3px;text-transform:uppercase;color:#888;margin-bottom:12px}
+.editorial-container .ed-paper-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:9px;font-family:'Anton',sans-serif;font-size:9px;line-height:1.4;color:#3A3A3A}
+.editorial-container .ed-paper-dot{width:5px;height:5px;border-radius:50%;background:#FF5F00;flex-shrink:0;margin-top:3px}
+.editorial-container .ed-paper-footer{margin-top:auto;font-family:'DM Sans',sans-serif;font-size:7px;letter-spacing:2px;text-transform:uppercase;color:#BBB;padding-top:10px}
+
+/* ═══ ANIMATIONS ═══ */
+.steps-section{background:#FFF0E0;padding:40px 40px 80px}
+.steps-wrap{display:flex;flex-direction:column;align-items:center;gap:28px;max-width:600px;margin:0 auto}
+.steps-boxes{display:flex;align-items:flex-start;gap:12px}
+.step-group{display:flex;align-items:center;gap:12px}
+.step-box{width:140px;padding:22px 14px;background:#fff;border:2px solid rgba(0,0,0,.08);border-radius:16px;display:flex;flex-direction:column;align-items:center;gap:8px;transition:all 0.5s cubic-bezier(0.34,1.56,0.64,1);transform:scale(0.88) translateY(4px);opacity:0.3}
+.step-box.active{background:var(--white);transform:scale(1) translateY(0);opacity:1}
+.step-box.highlight{border-color:#FF5F00;box-shadow:0 8px 30px rgba(255,95,0,.1)}
+.step-num{font-family:'Permanent Marker',cursive;font-size:32px;color:var(--rose);line-height:1}
+.step-icon{font-size:26px;opacity:0.3;transition:opacity 0.4s}.step-box.active .step-icon{opacity:1}
+.step-label{font-family:'DM Sans',sans-serif;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--dark);text-align:center}
+.step-sub{font-family:'Anton',sans-serif;font-size:13px;color:var(--muted);text-align:center;font-style:italic;opacity:0;transition:opacity 0.4s}
+.step-box.active .step-sub{opacity:1}
+.step-arrow{opacity:0.12;transition:opacity 0.5s}.step-arrow.visible{opacity:1}
+.steps-progress{width:100%;max-width:480px}
+.steps-bar-track{height:6px;background:rgba(0,0,0,.08);overflow:hidden;border-radius:3px}
+.steps-bar-fill{height:100%;background:var(--rose);width:0%;transition:width 0.8s cubic-bezier(0.23,1,0.32,1)}
+.steps-bar-labels{display:flex;justify-content:space-between;margin-top:6px}
+.steps-bar-label{font-family:'DM Sans',sans-serif;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--faint);transition:color 0.4s}
+.steps-bar-label.done{color:var(--rose)}
+.wvw-section{background:#FFF0E0;padding:80px 40px}
+.wvw-wrap{max-width:560px;margin:0 auto;display:flex;align-items:stretch;justify-content:center;gap:16px;min-height:320px}
+.wvw-card{flex:1;max-width:220px;background:var(--white);border:1px solid var(--line);padding:20px 22px;display:flex;flex-direction:column;gap:10px;transition:all 0.5s ease}
+.wvw-card.wvw-highlight{border-color:var(--rose);box-shadow:0 8px 30px rgba(196,149,110,.08)}
+.wvw-card-label{font-family:'DM Sans',sans-serif;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--faint);margin-bottom:8px;transition:color 0.5s ease}
+.wvw-card-label.wvw-label-active{color:var(--rose)}
+.wvw-problems{display:flex;flex-direction:column;gap:10px;flex:1}
+.wvw-problem{display:flex;align-items:center;gap:8px;opacity:0;transform:translateX(-6px);transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1)}
+.wvw-problem.active{opacity:1;transform:translateX(0)}.wvw-problem.dimmed{opacity:0.25;transform:translateX(0)}
+.wvw-problem svg{flex-shrink:0;stroke:var(--faint)}
+.wvw-problem span{font-family:'Anton',sans-serif;font-size:15px;color:var(--body);line-height:1.3}
+.wvw-tagline{font-family:'Anton',sans-serif;font-size:14px;margin-top:auto;padding-top:12px;font-style:italic;opacity:0;transition:opacity 0.5s ease}
+.wvw-tagline-left{color:var(--faint)}.wvw-tagline-left.visible{opacity:1}
+.wvw-tagline-right{font-style:normal;font-weight:600;color:var(--rose)}.wvw-tagline-right.visible{opacity:1}
+.wvw-center{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;width:50px}
+.wvw-center-line{width:1px;flex:1;max-height:60px;background:var(--line);transition:background 0.5s ease}
+.wvw-center-line.line-active{background:var(--rose)}
+.wvw-vs-circle{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;transition:all 0.5s cubic-bezier(0.34,1.56,0.64,1);transform:scale(0.7);background:transparent}
+.wvw-vs-circle.circle-active{border-color:var(--rose);transform:scale(1);background:rgba(255,95,0,0.08)}
+.wvw-vs-circle span{font-family:'Permanent Marker',cursive;font-size:14px;color:var(--rose);opacity:0;transition:opacity 0.3s ease}
+.wvw-vs-circle.circle-active span{opacity:1}
+.wvw-results{display:flex;flex-direction:column;gap:12px;flex:1}
+.wvw-result{transition:all 0.5s cubic-bezier(0.34,1.56,0.64,1)}
+.wvw-result-header{display:flex;justify-content:space-between;margin-bottom:4px}
+.wvw-result-header span{font-family:'DM Sans',sans-serif;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--faint);transition:color 0.4s ease}
+.wvw-result.active .wvw-result-header span{color:var(--dark)}
+.wvw-bar-track{height:4px;background:#F0F0F0;overflow:hidden}
+.wvw-bar-fill{height:100%;background:transparent;width:0%;transition:all 0.6s cubic-bezier(0.23,1,0.32,1)}
+.wvw-result.active .wvw-bar-fill{background:var(--rose)}
+
+@media(max-width:700px){
+.hero{padding:60px 20px 72px}.top-bar{padding:10px 16px}.top-bar-text{font-size:14px}
+.pain-section,.benefits-section,.intro-section,.story-section,.stack-section,.faq-section{padding:70px 20px}
+.story-header{flex-direction:column;align-items:center;text-align:center;gap:24px}.story-photo{width:160px;height:200px}
+.story-proof{grid-template-columns:repeat(2,1fr)}.final-cta{padding:70px 20px}.narrow,.wide{padding:0}
+.benefits-grid{grid-template-columns:1fr}.stack-num{min-width:36px;font-size:24px}
+.wvw-section{padding:56px 20px}.mockup-container{margin:28px auto -40px}.mockup-container-sm{margin:28px auto -20px}
+.editorial-container{margin:0 auto -40px;margin-top:-20px}.steps-section{padding:56px 20px}
+.editorial-container .pos-tablet{transform:rotate(4deg) !important;top:40px !important}
+.benefits-section{padding-top:40px !important}
+.benefits-section .wide > div:first-child{padding-top:40px !important}
+.editorial-section-wrap{margin-top:-40px !important;padding-bottom:0 !important}
+.intro-section .mockup-container-sm{margin-bottom:-30px}
+.intro-section .cta-wrapper{margin-top:0 !important}
+.step-box{width:100px;padding:16px 10px}.step-num{font-size:26px}.step-icon{font-size:20px}
+.step-label{font-size:8px}.step-sub{font-size:11px}.steps-boxes{gap:6px}.step-group{gap:6px}
+.offer-item-tag{display:none}.offer-row{gap:12px;padding:14px 0}.offer-item-text{font-size:15px}
+.wvw-wrap{gap:8px}.wvw-card{padding:16px 14px}.wvw-problem span{font-size:13px}
+.wvw-result-header span{font-size:9px}.wvw-center{width:36px}.wvw-vs-circle{width:26px;height:26px}.wvw-vs-circle span{font-size:12px}
+}
+
+.pain-section .section-label{color:#FF5F00}
+.pain-section .section-title{color:#fff}
+.pain-item{background:rgba(255,255,255,.04);border:2px solid rgba(255,255,255,.06) !important;border-radius:16px;padding:20px 24px !important;margin-bottom:8px}
+.pain-item:hover{background:rgba(255,95,0,.08);border-color:rgba(255,95,0,.2) !important;padding-left:30px !important}
+.pain-text{color:rgba(255,255,255,.7) !important}
+.pain-list{border-top:none}
+.pain-section h2[style]{color:#FF5F00 !important}
+
+.stack-section .section-label{color:rgba(255,255,255,.6)}
+.stack-section .section-title{color:#fff}
+.stack-item{background:rgba(255,255,255,.12);backdrop-filter:blur(8px);border:2px solid rgba(255,255,255,.15) !important;border-radius:16px;padding:28px !important;margin-bottom:8px}
+.stack-item:hover{background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.3) !important;padding-left:34px !important}
+.stack-num{color:#fff !important}
+.stack-content p{color:rgba(255,255,255,.8) !important}
+.stack-tag{color:rgba(255,255,255,.5) !important}
+.stack-list{border-top:none}
+
+.final-cta::before{content:'';position:absolute;width:300px;height:300px;border:4px solid rgba(255,255,255,.06);border-radius:50%;top:-60px;left:-80px;pointer-events:none}
+.final-cta::after{content:'';position:absolute;width:400px;height:400px;border:4px solid rgba(255,255,255,.08);border-radius:50%;bottom:-100px;right:-100px;pointer-events:none}
+.final-cta h3,.final-cta p,.final-cta .btn-white,.final-cta .cta-sub,.final-cta .section-label{position:relative;z-index:1}
+
+.faq-list{border-top:none}
+.faq-item{border-bottom:none !important;background:#fff;border-radius:16px;border:2px solid rgba(0,0,0,.08);margin-bottom:8px;padding:0 20px}
+.faq-item:hover{border-color:#FF5F00}
+.faq-q:hover{color:#FF5F00}
+.faq-icon{width:30px;height:30px;border-radius:50%;background:#FF5F00;color:#fff !important;display:flex;align-items:center;justify-content:center;font-weight:700}
+.faq-item.open .faq-icon{background:#0A0A0A;color:#fff !important}
+
+.wvw-card{border-radius:16px;border-width:2px}
+.wvw-card.wvw-highlight{border-color:#FF5F00;box-shadow:0 8px 30px rgba(255,95,0,.1)}
+.wvw-vs-circle.circle-active{border-color:#FF5F00;background:#FF5F00}
+.wvw-vs-circle.circle-active span{color:#fff}
+.wvw-center-line.line-active{background:#FF5F00;width:2px}
+.wvw-vs-circle span{font-family:'Permanent Marker',cursive}
+
+.hero::before{content:'';position:absolute;width:200px;height:200px;border:3px solid #FF5F00;border-radius:50%;opacity:.08;top:-40px;right:-60px;pointer-events:none}
+.hero::after{content:'';position:absolute;width:280px;height:280px;border:3px solid #FF5F00;border-radius:50%;opacity:.05;bottom:-80px;left:-80px;pointer-events:none}
+.hero{position:relative;overflow:hidden}
+.benefits-section::before{content:'';position:absolute;width:250px;height:250px;border:3px solid #FF5F00;border-radius:50%;opacity:.06;top:-60px;left:-80px;pointer-events:none}
+.pain-section::before{content:'';position:absolute;width:220px;height:220px;border:3px solid #FF5F00;border-radius:50%;opacity:.06;top:-50px;right:-60px;pointer-events:none;z-index:0}
+.stack-section::before{content:'';position:absolute;width:300px;height:300px;border:4px solid rgba(255,255,255,.06);border-radius:50%;top:-60px;right:-80px;pointer-events:none}
+.stack-section::after{content:'';position:absolute;width:250px;height:250px;border:4px solid rgba(255,255,255,.08);border-radius:50%;bottom:-80px;left:-60px;pointer-events:none}
+
+body{background:#FFF8F0}
+
+/* ── Keepsake Song Co. additions ── */
+html{scroll-behavior:smooth}
+.hero-logo{display:block;width:120px;height:auto;margin:0 auto 22px;background:#1A1A1A;border-radius:24px;padding:12px;box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.media-frame .price-badge-amount,.mockup .price-badge-amount{font-size:34px}
+.hero h1 em{display:block}
+.media-frame{position:relative;margin:44px auto 48px}
+.media-frame-video{max-width:420px}
+.media-frame-photo{max-width:560px}
+.media-frame video,.media-frame img{display:block;width:100%;height:auto;border-radius:20px;border:3px solid #1A1A1A;box-shadow:0 24px 60px rgba(255,95,0,.25);background:#1A1A1A}
+.media-frame .price-badge{right:-48px;left:auto;top:18%;transform:none}
+.media-caption{font-family:'DM Sans',sans-serif;font-size:13px;color:var(--muted);margin-top:14px;font-style:italic}
+.story-photo-logo{background:#1A1A1A;padding:18px}
+.story-photo-logo img{width:100%;height:auto}
+.stack-image{max-width:340px;margin:0 auto 44px}
+.stack-image img{display:block;width:100%;height:auto;border-radius:18px;border:3px solid #fff;box-shadow:0 18px 48px rgba(0,0,0,.25)}
+.offer-table-section{background:linear-gradient(rgba(10,10,10,.9),rgba(10,10,10,.92)),url('assets/music-background.jpg') center/cover}
+.pkg-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.pkg{position:relative;border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:28px 20px 22px;text-align:center;background:rgba(255,255,255,.03)}
+.pkg-best{border:2px solid #FF5F00;background:rgba(255,95,0,.08)}
+.pkg-flag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);white-space:nowrap;background:#FF5F00;color:#fff;font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:50px}
+.pkg-name{font-family:'Anton',sans-serif;font-size:18px;text-transform:uppercase;color:#fff;margin-bottom:6px}
+.pkg-price{font-family:'Permanent Marker',cursive;font-size:44px;color:#fff;line-height:1.1;margin-bottom:10px}
+.pkg-desc{font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.6;color:rgba(255,255,255,.7)}
+.pkg{display:flex;flex-direction:column}
+.pkg-desc{flex:1}
+.pkg-btn{display:inline-block;margin-top:18px;align-self:center;font-family:'Anton',sans-serif;font-size:13px;letter-spacing:1.2px;text-transform:uppercase;color:#fff;border:2px solid rgba(255,255,255,.4);padding:12px 22px;border-radius:50px;text-decoration:none}
+.pkg-btn-best{background:#FF5F00;border-color:#FF5F00}
+.pkg-btn:hover{transform:translateY(-2px)}
+.pkg-addons a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.pkg-addons{font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(255,255,255,.55);text-align:center;margin-bottom:32px}
+@media(max-width:600px){.pkg-grid{grid-template-columns:1fr;gap:28px}.pkg-flag{white-space:normal;width:max-content;max-width:90%}}
+[hidden]{display:none!important}
+.ks-signup{background:var(--warm);padding:80px 24px;text-align:center}
+.ks-signup h2{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(26px,4vw,40px);text-transform:uppercase;color:var(--dark);margin-bottom:12px}
+.ks-signup p{font-family:'DM Sans',sans-serif;font-size:16px;color:var(--body);max-width:520px;margin:0 auto 28px;line-height:1.6}
+.ks-signup .sender-form-field{max-width:620px;margin:0 auto}
+.ks-form{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:620px;margin:0 auto}
+.ks-form input{flex:1 1 200px;min-width:0;padding:16px 18px;border:2px solid var(--dark);border-radius:0;font-family:'DM Sans',sans-serif;font-size:16px;background:var(--white)}
+.ks-form button{flex:0 0 auto;padding:16px 28px;border:0;background:var(--rose);color:var(--white);font-family:'Anton',sans-serif;font-size:17px;text-transform:uppercase;letter-spacing:.5px;cursor:pointer}
+.ks-form button:hover{background:var(--rose-dark)}
+.ks-form button[disabled]{opacity:.6;cursor:wait}
+.ks-note{font-family:'DM Sans',sans-serif;font-size:12px;color:var(--muted);margin-top:14px}
+.ks-msg{font-family:'DM Sans',sans-serif;font-size:16px;color:var(--dark);margin-top:18px}
+@media (max-width:600px){.ks-form button{flex:1 1 100%}}
+.testimonials-section{background:#FFF8F0;padding-block:90px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.t-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.t-card{margin:0;background:#fff;border:2px solid #1A1A1A;border-radius:16px;padding:32px 28px;display:flex;flex-direction:column;gap:18px}
+.t-card blockquote{margin:0;font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.7;color:var(--body)}
+.t-card blockquote::before{content:'“';display:block;font-family:'Permanent Marker',cursive;font-size:56px;line-height:.6;color:var(--rose);margin-bottom:10px}
+.t-card figcaption{font-family:'DM Sans',sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:auto}
+.t-card figcaption strong{color:var(--dark)}
+.t-under{font-family:'Permanent Marker',cursive;font-size:clamp(20px,3vw,28px);color:var(--rose);text-align:center;margin-top:40px}
+@media(max-width:700px){.t-grid{grid-template-columns:1fr}}
+.footer-logo{width:56px;height:auto;margin:0 auto 10px;display:block}
+.footer p{font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(255,255,255,.5)}
+.btn-dark:hover,.btn-white:hover{transform:translateY(-2px)}
+@media(max-width:700px){.media-frame .price-badge{right:-8px;top:-24px}.media-frame .price-badge-amount{font-size:26px}.media-frame-video{max-width:320px}.stack-image{max-width:260px}}
+</style>
+</head>
+<body>
+<div class="top-bar"><div class="top-bar-text js-swap" data-std="Personalised songs from &lt;span&gt;£34.99&lt;/span&gt; · every word shaped by Edel">Intro offer: the first 15 orders get the full Keepsake Bundle for <span>£34.99</span></div></div>
+<div class="ticker-bar"><div class="ticker-track">
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">A completely custom song</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Written lyric version</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Full MP3</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Preview before it&#x27;s final</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Ready in 3–7 days</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Birthdays</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Partners</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Children</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Anniversaries</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Special memories</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Tribute songs</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Choose your genre</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Male or female singer</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">A completely custom song</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Written lyric version</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Full MP3</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Preview before it&#x27;s final</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Ready in 3–7 days</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Birthdays</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Partners</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Children</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Anniversaries</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Special memories</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Tribute songs</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Choose your genre</span></div>
+<div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">Male or female singer</span></div>
+</div></div>
+
+<section class="hero">
+<img class="hero-logo" src="assets/creative-mama-logo.png" alt="Creative Mama Media logo" width="120" height="115">
+<div class="hero-script">The Keepsake <span>Song Co.</span></div>
+<span class="hero-label">A personalised song experience by Creative Mama Media</span>
+<div class="hero-badge">Every word shaped by Edel · from £34.99</div>
+<h1>Turn their story into a song <em>they'll keep and play again and again</em></h1>
+<div class="media-frame media-frame-video"><div class="price-badge"><span class="price-badge-only">Only</span><span class="price-badge-amount">£34.99</span></div>
+<video class="hero-video" src="assets/keepsake-song-promo.mp4" poster="assets/video-poster.jpg" controls playsinline preload="metadata"></video>
+<p class="media-caption">Press play: this is the song I had made for my daughter.</p></div>
+<p class="hero-summary">Tell me about the person you love. I'll shape every word and turn them into a completely custom song, with written lyrics and a finished MP3, in 3 to 7 days. You'll hear a preview first, so you know you love it before it's finalised.</p>
+<div class="cta-wrapper"><a href="#order" class="btn-dark js-checkout">Create My Song · from £34.99</a><p class="cta-sub js-swap" data-std="Preview before it's finalised. One revision included. Ready in 3–7 days.">Intro offer: the full Keepsake Bundle for the price of the song, first 15 orders only. You preview your song before it's finalised.</p></div>
+</section>
+<div class="divider"></div>
+
+<section class="wvw-section"><div style="text-align:center;margin-bottom:52px"><span class="section-label">The Difference</span><h2 class="section-title" style="text-align:center">A Generic Gift vs A Keepsake Song</h2></div><div class="wvw-wrap"><div class="wvw-card"><div class="wvw-card-label">The usual gift</div><div class="wvw-problems">
+<div class="wvw-problem" data-index="0"><svg width="10" height="10" viewBox="0 0 10 10"><line x1="2" y1="2" x2="8" y2="8" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="2" x2="2" y2="8" stroke-width="1.2" stroke-linecap="round"/></svg><span>Flowers that wilt by the weekend</span></div><div class="wvw-problem" data-index="1"><svg width="10" height="10" viewBox="0 0 10 10"><line x1="2" y1="2" x2="8" y2="8" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="2" x2="2" y2="8" stroke-width="1.2" stroke-linecap="round"/></svg><span>Chocolates eaten and forgotten</span></div><div class="wvw-problem" data-index="2"><svg width="10" height="10" viewBox="0 0 10 10"><line x1="2" y1="2" x2="8" y2="8" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="2" x2="2" y2="8" stroke-width="1.2" stroke-linecap="round"/></svg><span>A card that could have been for anyone</span></div><div class="wvw-problem" data-index="3"><svg width="10" height="10" viewBox="0 0 10 10"><line x1="2" y1="2" x2="8" y2="8" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="2" x2="2" y2="8" stroke-width="1.2" stroke-linecap="round"/></svg><span>Struggling to find the right words</span></div><div class="wvw-problem" data-index="4"><svg width="10" height="10" viewBox="0 0 10 10"><line x1="2" y1="2" x2="8" y2="8" stroke-width="1.2" stroke-linecap="round"/><line x1="8" y1="2" x2="2" y2="8" stroke-width="1.2" stroke-linecap="round"/></svg><span>Something that feels a bit samey</span></div>
+</div><div class="wvw-tagline wvw-tagline-left">Nice for a day. Forgotten by next week.</div></div><div class="wvw-center"><div class="wvw-center-line wvw-center-line-top"></div><div class="wvw-vs-circle"><span>vs</span></div><div class="wvw-center-line wvw-center-line-bottom"></div></div><div class="wvw-card wvw-card-right"><div class="wvw-card-label wvw-card-label-right">A Keepsake Song</div><div class="wvw-results">
+<div class="wvw-result" data-index="0"><div class="wvw-result-header"><span>Built from their story</span></div><div class="wvw-bar-track"><div class="wvw-bar-fill" data-width="100%"></div></div></div><div class="wvw-result" data-index="1"><div class="wvw-result-header"><span>Says what words can&#x27;t</span></div><div class="wvw-bar-track"><div class="wvw-bar-fill" data-width="100%"></div></div></div><div class="wvw-result" data-index="2"><div class="wvw-result-header"><span>Completely one of a kind</span></div><div class="wvw-bar-track"><div class="wvw-bar-fill" data-width="100%"></div></div></div><div class="wvw-result" data-index="3"><div class="wvw-result-header"><span>A keepsake they&#x27;ll come back to</span></div><div class="wvw-bar-track"><div class="wvw-bar-fill" data-width="100%"></div></div></div><div class="wvw-result" data-index="4"><div class="wvw-result-header"><span>The good kind of tears</span></div><div class="wvw-bar-track"><div class="wvw-bar-fill" data-width="100%"></div></div></div>
+</div><div class="wvw-tagline wvw-tagline-right">Something they'll keep, and come back to.</div></div></div></section>
+<div class="divider"></div>
+
+<section class="pain-section"><div class="narrow"><span class="section-label">Sound Familiar?</span><h2 class="section-title">If any of this sounds familiar...</h2><div class="pain-list">
+<div class="pain-item"><span class="pain-num">01</span><span class="pain-text">You&#x27;re struggling with what to get someone this year. You want to give something that actually means something, but every idea feels like it&#x27;s been done a hundred times.</span></div>
+<div class="pain-item"><span class="pain-num">02</span><span class="pain-text">Flowers feel a bit samey. Chocolates get eaten and forgotten. Another gift card just doesn&#x27;t say what you really feel.</span></div>
+<div class="pain-item"><span class="pain-num">03</span><span class="pain-text">You know exactly how much they mean to you, but you&#x27;ve never been able to find the right words to tell them.</span></div>
+<div class="pain-item"><span class="pain-num">04</span><span class="pain-text">There&#x27;s a moment, a memory or a person you never want to forget, and you&#x27;d love a way to hold onto it forever.</span></div>
+<div class="pain-item"><span class="pain-num">05</span><span class="pain-text">You&#x27;re looking for a way to honour someone you&#x27;ve lost that feels personal, gentle and truly theirs.</span></div>
+<div class="pain-item"><span class="pain-num">06</span><span class="pain-text">You love the idea of a personalised song, but you assumed it would cost hundreds of pounds and be complicated to arrange.</span></div>
+</div><h2 class="section-title" style="text-align:center;margin-top:48px;margin-bottom:0;font-family:'Permanent Marker',cursive;font-weight:400;font-size:clamp(32px,5vw,52px);color:var(--rose)">...then this is for you!</h2></div></section>
+
+<section class="intro-section"><span class="section-label">The Gift</span><div class="intro-script">Introducing</div><h3>The Keepsake Song Co.</h3><p>A personalised song experience, built from their story. Their life. Their moments. It's not really about the music. It's about hearing your story reflected back in a way you've never heard before.</p>
+<div class="media-frame media-frame-photo"><div class="price-badge"><span class="price-badge-only">Only</span><span class="price-badge-amount">£34.99</span></div><img src="assets/listening.jpg" alt="A woman with headphones on, eyes closed, smiling as she listens" loading="lazy" width="900" height="900"></div>
+<div class="cta-wrapper"><a href="#order" class="btn-dark js-checkout">Create My Song · from £34.99</a><p class="cta-sub">Custom song, written lyrics and a full MP3. Preview plus one revision.</p></div></section>
+
+<section class="steps-section"><div style="text-align:center;margin-bottom:36px"><span class="section-label">How It Works</span><h2 class="section-title" style="text-align:center">It only takes 3 steps</h2></div><div class="steps-wrap"><div class="steps-boxes"><div class="step-group"><div class="step-box" id="stepBox0" data-index="0"><div class="step-num">1</div><div class="step-icon">🎤</div><div class="step-label">Tell me their story</div><div class="step-sub">After checkout you'll get a simple link for the key details</div></div><div class="step-arrow" id="stepArrow0"><svg width="24" height="12" viewBox="0 0 20 10"><path d="M0 5 H13 M10 1.5 L17 5 L10 8.5" stroke="#FF5F00" stroke-width="1.2" fill="none" stroke-linecap="round"/></svg></div></div><div class="step-group"><div class="step-box" id="stepBox1" data-index="1"><div class="step-num">2</div><div class="step-icon">🎶</div><div class="step-label">I create your song</div><div class="step-sub">Written and produced just for them, and you preview it first</div></div><div class="step-arrow" id="stepArrow1"><svg width="24" height="12" viewBox="0 0 20 10"><path d="M0 5 H13 M10 1.5 L17 5 L10 8.5" stroke="#FF5F00" stroke-width="1.2" fill="none" stroke-linecap="round"/></svg></div></div><div class="step-group"><div class="step-box" id="stepBox2" data-index="2"><div class="step-num">3</div><div class="step-icon">🎧</div><div class="step-label">Your keepsake arrives</div><div class="step-sub">The full MP3 and a written lyric version, in 3–7 days</div></div></div></div><div class="steps-progress"><div class="steps-bar-track"><div class="steps-bar-fill" id="stepsBarFill"></div></div><div class="steps-bar-labels"><span class="steps-bar-label">Your story</span><span class="steps-bar-label" id="stepsBarEnd">Your song</span></div></div></div></section>
+<div class="divider"></div>
+
+<section class="story-section"><div class="wide"><div class="story-header"><div class="story-photo story-photo-logo"><img src="assets/creative-mama-logo.png" alt="Creative Mama Media logo" loading="lazy" width="400" height="385"></div><div class="story-intro"><span class="section-label">The Story</span><h2 class="section-title">Why I started writing songs</h2><p class="story-intro-text">Hi, I'm Edel. I'm a photographer, business and mindset coach, and creative entrepreneur based in Cheslyn Hay, where I've lived for over 11 years. I've written poems and songs since I was very young, and I qualified as both a journalist and an English teacher. I'm also a mum of three and a SEN parent, which completely changes how you see connection, communication, and the ways people express themselves.</p></div></div><div class="story-proof"><div class="proof-item"><div class="proof-number">3–7</div><div class="proof-label">Days to your finished song</div></div><div class="proof-item"><div class="proof-number">3</div><div class="proof-label">Keepsakes: song, lyrics and MP3</div></div><div class="proof-item"><div class="proof-number">1st</div><div class="proof-label">You preview it before it's final</div></div><div class="proof-item"><div class="proof-number">£250+</div><div class="proof-label">What my daughter's song cost me</div></div></div><div class="story-body" style="max-width:700px;margin:0 auto"><div class="typewriter-container" id="typewriterContainer"><div class="typewriter-text" id="typewriterText"></div></div></div></div></section>
+<div class="divider"></div>
+
+<section class="stack-section"><div class="narrow"><div style="text-align:center;margin-bottom:52px"><span class="section-label">Make It Yours</span><h2 class="section-title" style="text-align:center">Here is how your song is personalised:</h2></div>
+<div class="stack-image"><a href="#order" class="js-checkout"><img src="assets/personalise-your-song.jpg" alt="Personalise your song: choose the genre, a male or female singer, the mood and more" loading="lazy" width="800" height="1200"></a></div>
+<div class="stack-list">
+<div class="stack-item"><span class="stack-num">One</span><div class="stack-content"><h4>Your story, in your words</h4><p>After checkout you&#x27;ll receive a link asking for the key details that matter: who or what the song is for, the moments, names and memories you want in it. Nothing overwhelming. You can even send a voice note about the person.</p><span class="stack-tag">Your Story</span></div></div>
+<div class="stack-item"><span class="stack-num">Two</span><div class="stack-content"><h4>Choose the genre</h4><p>Pick the style of music that suits them best, so the song sounds like something they&#x27;d actually put on.</p><span class="stack-tag">Genre</span></div></div>
+<div class="stack-item"><span class="stack-num">Three</span><div class="stack-content"><h4>Male or female singer</h4><p>Choose the voice you&#x27;d like to hear singing their story.</p><span class="stack-tag">Voice</span></div></div>
+<div class="stack-item"><span class="stack-num">Four</span><div class="stack-content"><h4>Set the mood</h4><p>Uplifting and joyful for a birthday, romantic for a partner, or soft and gentle for a tribute piece. You choose the feel.</p><span class="stack-tag">Mood</span></div></div>
+<div class="stack-item"><span class="stack-num">Five</span><div class="stack-content"><h4>Preview before it&#x27;s final</h4><p>You&#x27;ll hear your song first, so you know you love it before it&#x27;s finalised. If anything needs changing, one revision is included.</p><span class="stack-tag">Peace of Mind</span></div></div>
+<div class="stack-item"><span class="stack-num">Six</span><div class="stack-content"><h4>A second style, or a lyric artwork</h4><p>The Keepsake Bundle adds a second version of your song in another style and a designed lyric artwork with your own photo, ready to frame.</p><span class="stack-tag">Keepsake Bundle</span></div></div>
+</div></div></section>
+<div class="divider"></div>
+
+<section class="testimonials-section"><div class="wide"><div style="text-align:center;margin-bottom:44px"><span class="section-label">Kind Words</span><h2 class="section-title" style="text-align:center">The reactions say it all</h2></div><div class="t-grid">
+<figure class="t-card"><blockquote>This was the MOST talked about gift my brother received. It went down so well! Every detail was so personal, right down to the names of his kids included! It's so precious to all of us now to have.</blockquote><figcaption><strong>Louise</strong> · Brother's birthday celebration</figcaption></figure>
+<figure class="t-card"><blockquote>The song for our engagement party was the most incredible gift. We've been listening to it on repeat ever since! It is now our chosen wedding song and we can't wait to have our first dance to it.</blockquote><figcaption><strong>Jamie</strong> · Engagement party</figcaption></figure>
+</div><p class="t-under js-swap" data-std="Give them a song they'll keep forever.">Be one of my first 15 families, and get the full Keepsake Bundle for £34.99.</p></div></section>
+<div class="divider"></div>
+
+<section class="offer-table-section" id="order"><div class="offer-table-wrap"><div class="offer-table-header"><span class="offer-table-label">Everything You Get</span><div class="offer-table-title">Your Personalised Keepsake Song</div><p class="offer-table-sub">One simple payment. Your intake link arrives straight after checkout. Your finished song is ready in 3–7 days.</p></div><div class="offer-table">
+<div class="offer-row"><div class="offer-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#FF5F00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="offer-item-text">A completely custom song, written from your story</span><span class="offer-item-tag">Song</span></div>
+<div class="offer-row"><div class="offer-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#FF5F00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="offer-item-text">A written lyric version to keep</span><span class="offer-item-tag">Lyrics</span></div>
+<div class="offer-row"><div class="offer-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#FF5F00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="offer-item-text">A full MP3 to play, share and treasure</span><span class="offer-item-tag">MP3</span></div>
+<div class="offer-row"><div class="offer-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#FF5F00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="offer-item-text">Lyrics shaped and refined by Edel, a qualified journalist and English teacher</span><span class="offer-item-tag">Writer</span></div>
+<div class="offer-row"><div class="offer-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#FF5F00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="offer-item-text">Your choice of genre, singer and mood</span><span class="offer-item-tag">Personal</span></div>
+<div class="offer-row"><div class="offer-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#FF5F00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="offer-item-text">A preview before it&#x27;s finalised, plus one revision</span><span class="offer-item-tag">Preview</span></div>
+<div class="offer-row"><div class="offer-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#FF5F00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="offer-item-text">A simple intake link sent straight after checkout</span><span class="offer-item-tag">Easy</span></div>
+<div class="offer-row"><div class="offer-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#FF5F00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="offer-item-text">Ready in 3–7 days</span><span class="offer-item-tag">Speed</span></div>
+</div><div class="pkg-grid"><div class="pkg"><div class="pkg-name">The Keepsake Song</div><div class="pkg-price">£34.99</div><p class="pkg-desc">Custom song, written lyrics, full MP3, preview plus one revision, ready in 3–7 days.</p><a class="pkg-btn" id="pkg-song" href="#order" hidden>Choose the Song · £34.99</a></div><div class="pkg pkg-best"><span class="pkg-flag js-swap" data-std="Best value">Intro offer: £34.99 for the first 15</span><div class="pkg-name">The Keepsake Bundle</div><div class="pkg-price">£44.99</div><p class="pkg-desc">Everything in the song, plus a designed lyric artwork with your own photo (printable, ready to frame) and a second version of your song in a different style.</p><a class="pkg-btn pkg-btn-best" id="pkg-bundle" href="#order">Choose the Bundle · £34.99</a></div></div><p class="pkg-addons">Add-ons, bought separately after your order: <a href="https://buy.stripe.com/9B600j2fI9jnaGJ5sseZ202">rush delivery within 48 hours, £9.99</a> · <a href="https://buy.stripe.com/bJe9AT8E6eDHcOR6wweZ201">extra style version, £9.99</a></p><div class="cta-wrapper"><a href="#order" class="btn-white js-checkout">Create My Song · from £34.99</a><p class="cta-sub" style="color:rgba(255,255,255,.5)">Secure checkout. You'll get your details form straight away.</p></div></div></section>
+<div class="divider"></div>
+
+<section class="ks-signup" id="song-list" hidden>
+  <span class="section-label">Not ready yet?</span>
+  <h2>Join the Song List</h2>
+  <p>Be the first to hear about new offers, plus a reminder before the Christmas order deadline on 16 December.</p>
+  <!-- SENDER: paste Sender's universal script into <head>, then put the form ID in SENDER_FORM_ID near the end of the page script. Until then this section stays hidden. -->
+  <div style="text-align:center" class="sender-form-field" id="sender-form"></div>
+</section>
+<div class="divider" id="song-list-divider" hidden></div>
+
+<section class="faq-section"><div class="narrow"><div style="text-align:center;margin-bottom:52px"><span class="section-label">Questions</span><h2 class="section-title" style="text-align:center">Frequently Asked Questions</h2></div><div class="faq-list">
+<div class="faq-item open"><div class="faq-q" onclick="toggleFaq(this)"><span>What do I need to send you?</span><div class="faq-icon">+</div></div><div class="faq-a">Once you&#x27;ve gone through checkout, you&#x27;ll receive a link with everything I need from you. Nothing overwhelming, just the key details that matter, like who or what the song is for and the moments you&#x27;d like included. You can send a voice note about the person too.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>How long does it take?</span><div class="faq-icon">+</div></div><div class="faq-a">Turnaround is 3–7 days from when I receive your details.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Can I hear it before it&#x27;s finished?</span><div class="faq-icon">+</div></div><div class="faq-a">Yes. You&#x27;ll get to preview your song first, so you know you love it before it&#x27;s finalised.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>What if I don&#x27;t love it?</span><div class="faq-icon">+</div></div><div class="faq-a">If anything needs changing after your preview, one revision is included. If you&#x27;re not happy with your preview, you get a full refund. Once your finished song has been delivered, all digital sales are final and no refunds are given. Your happiness really matters to me, though, so if something still isn&#x27;t right after your revision, get in touch and I&#x27;ll do everything I can to put it right.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>What will I receive?</span><div class="faq-icon">+</div></div><div class="faq-a">A completely custom song, a written lyric version and a full MP3.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>What occasions is it for?</span><div class="faq-icon">+</div></div><div class="faq-a">Birthdays, partners, children, anniversaries, special memories and even emotional tribute pieces. If there&#x27;s a story behind it, it can become a song.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Can I choose the style of the song?</span><div class="faq-icon">+</div></div><div class="faq-a">Yes. You can choose the genre, a male or female singer, the type of mood, and more.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Can I get my song faster?</span><div class="faq-icon">+</div></div><div class="faq-a">Yes. Rush delivery within 48 hours is a £9.99 add-on. Buy it from the add-ons under the prices straight after your order.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Can I order a song for Christmas?</span><div class="faq-icon">+</div></div><div class="faq-a">Yes. Christmas orders need to be in by 16 December, so your song is ready in time.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Can you make a song in memory of someone?</span><div class="faq-icon">+</div></div><div class="faq-a">Yes. Some of the most meaningful songs are tribute pieces. Share the memories that matter most and I&#x27;ll create something gentle and personal to honour them.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>How are the songs made?</span><div class="faq-icon">+</div></div><div class="faq-a">I use AI to help capture all the details of your person and produce the music. Then the writer in me takes over. I&#x27;m a qualified journalist and English teacher, and I&#x27;ve written poems and songs all my life. I revise, refine and rewrite the lyrics until they sound exactly as they should. That way you get truly personal words with heart and meaning, not generic “AI slop”, at a fraction of a studio price.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Is it really written just for us?</span><div class="faq-icon">+</div></div><div class="faq-a">Yes. Every song is written from scratch around your story. No templates, no name swapped into an existing track.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Can I get more than one version?</span><div class="faq-icon">+</div></div><div class="faq-a">Yes. The Keepsake Bundle includes a second version in a different style, so you can pick a favourite. With the song on its own, you can buy an extra style version for £9.99 from the add-ons under the prices.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>What does it cost?</span><div class="faq-icon">+</div></div><div class="faq-a">The Keepsake Song is £34.99. The Keepsake Bundle is £44.99 and adds a lyric artwork with your own photo and a second style version. <span class="js-swap" data-std="">Right now, the first 15 orders get the full bundle for £34.99. </span>When I had my daughter&#x27;s song made, it cost over £250. I wanted every family to be able to have one.</div></div>
+</div></div></section>
+<div class="divider"></div>
+
+<section class="final-cta"><span class="section-label">Order Yours</span><h3>Give them something<br>they'll keep forever.</h3><p>If you've ever struggled to find the right words, or the right gift, this might be it. Tell me their story, and I'll turn it into a song they'll come back to again and again.</p><a href="#order" class="btn-white js-checkout">Create My Song · from £34.99</a><p class="cta-sub js-swap" data-std="Ready in 3–7 days. Preview before it's final.">First 15 orders get the Keepsake Bundle for £34.99. Ready in 3–7 days. Preview before it's final.</p></section>
+<footer class="footer"><img class="footer-logo" src="assets/creative-mama-logo.png" alt="Creative Mama Media" loading="lazy" width="64" height="62"><p>&copy; 2026 The Keepsake Song Co. A personalised song experience by Creative Mama Media. Cheslyn Hay, UK.</p></footer>
+
+<script>
+function toggleFaq(el){el.closest('.faq-item').classList.toggle('open')}
+(function(){var paragraphs=["Years ago, I had a song made for my daughter. She was three at the time, and non-verbal. The song was about her journey and our family, and it still means the absolute world to us. It cost over £250, and it was worth every penny.","As a SEN parent, I've learned that the things that matter most aren't always easy to say out loud. Sometimes they need a different way in.","Through my photography I've always been about real moments and true connection. So I started adding personalised songs to my clients' galleries as a surprise. One client pressed play, got a few seconds in, and burst into tears. The good kind. The \u201cI feel seen\u201d kind.","Then, when my own dad passed away, I wrote and created the song for his funeral. Months later, people are still talking about it. It was him in a nutshell, and he would have been so proud to hear it.","That's when I knew this shouldn't just be for my photography clients. So I created The Keepsake Song Co., to give everyone the same feeling at a price that doesn't need saving up for."];var el=document.getElementById('typewriterText'),container=document.getElementById('typewriterContainer');if(!el||!container)return;var fullText=paragraphs.join('\n\n'),charIndex=0,started=false,speed=18,cursorHtml='<span class="typewriter-cursor"></span>';function type(){if(charIndex<fullText.length){var chunk=fullText.substring(0,charIndex+1),html=chunk.replace(/\n\n/g,'</p><p>');el.innerHTML='<p>'+html+cursorHtml+'</p>';charIndex++;var c=fullText[charIndex-1],delay=speed;if(c==='.')delay=280;else if(c===',')delay=120;else if(c==='\n')delay=400;setTimeout(type,delay)}else{var cur=el.querySelector('.typewriter-cursor');if(cur)cur.style.display='none'}}var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting&&!started){started=true;type();observer.disconnect()}})},{threshold:0.3});observer.observe(container)})();
+(function(){var step=0,boxes=[document.getElementById('stepBox0'),document.getElementById('stepBox1'),document.getElementById('stepBox2')],arrows=[document.getElementById('stepArrow0'),document.getElementById('stepArrow1')],barFill=document.getElementById('stepsBarFill'),barEnd=document.getElementById('stepsBarEnd');function animate(){step=(step+1)%6;boxes.forEach(function(box,i){box.classList.toggle('active',step>=i+1);box.classList.toggle('highlight',step===i+1||(i===2&&step>=4))});arrows.forEach(function(arrow,i){arrow.classList.toggle('visible',step>=i+2)});barFill.style.width=['0%','15%','45%','75%','100%','100%'][step]||'0%';var done=step>=4;barEnd.classList.toggle('done',done);barEnd.textContent=done?'Song delivered':'Your song'}setInterval(animate,1100)})();
+(function(){let step=0;const problems=document.querySelectorAll('.wvw-problem'),results=document.querySelectorAll('.wvw-result'),vsCircle=document.querySelector('.wvw-vs-circle'),centerLines=document.querySelectorAll('.wvw-center-line'),labelRight=document.querySelector('.wvw-card-label-right'),cardRight=document.querySelector('.wvw-card-right'),tagLeft=document.querySelector('.wvw-tagline-left'),tagRight=document.querySelector('.wvw-tagline-right');function animate(){step=(step+1)%14;problems.forEach(function(el){var i=parseInt(el.dataset.index),active=step>=i+1&&step<7,dimmed=step>=7&&step<14;el.classList.toggle('active',active&&!dimmed);el.classList.toggle('dimmed',dimmed)});tagLeft.classList.toggle('visible',step>=4&&step<7);var centerActive=step>=6;vsCircle.classList.toggle('circle-active',centerActive);centerLines.forEach(function(l){l.classList.toggle('line-active',centerActive)});labelRight.classList.toggle('wvw-label-active',step>=6);cardRight.classList.toggle('wvw-highlight',step>=11);results.forEach(function(el){var i=parseInt(el.dataset.index),active=step>=i+7;el.classList.toggle('active',active);if(active){var fill=el.querySelector('.wvw-bar-fill');fill.style.width=fill.dataset.width}else{el.querySelector('.wvw-bar-fill').style.width='0%'}});tagRight.classList.toggle('visible',step>=11)}setInterval(animate,1000)})();
+
+/* SIGNUP: put the Sender form ID between the quotes (and Sender's universal script in <head>).
+   While it's empty, the Song List section stays hidden. */
+var SENDER_FORM_ID = "";
+(function(){if(!SENDER_FORM_ID)return;var f=document.getElementById('sender-form');f.setAttribute('data-sender-form-id',SENDER_FORM_ID);document.getElementById('song-list').hidden=false;var d=document.getElementById('song-list-divider');if(d)d.hidden=false})();
+
+
+/* CHECKOUT
+   INTRO_OFFER = true: every Order button goes to INTRO_URL (the Bundle at £34.99, first 15 orders).
+   When the 15 have sold, set INTRO_OFFER = false. Order buttons then scroll to the prices, the
+   intro wording is replaced, and the two package buttons go to SONG_URL (£34.99) and BUNDLE_URL (£44.99). */
+var INTRO_OFFER = true;
+var INTRO_URL = "https://buy.stripe.com/3cIfZh3jMdzD6qt3kkeZ200";
+var SONG_URL = "https://buy.stripe.com/bJecN507A8fjdSV1cceZ203";
+var BUNDLE_URL = "https://buy.stripe.com/28EcN5dYqanr8yBf32eZ204";
+(function(){
+  var song=document.getElementById('pkg-song'),bundle=document.getElementById('pkg-bundle');
+  if(INTRO_OFFER){
+    document.querySelectorAll('.js-checkout').forEach(function(a){a.href=INTRO_URL});
+    bundle.href=INTRO_URL;
+    return;
+  }
+  document.querySelectorAll('.js-swap').forEach(function(el){var t=el.getAttribute('data-std');if(t)el.innerHTML=t;else el.hidden=true});
+  if(SONG_URL){song.href=SONG_URL;song.hidden=false}
+  if(BUNDLE_URL)bundle.href=BUNDLE_URL;
+  bundle.textContent='Choose the Bundle · £44.99';
+})();
+</script>
+</body>
+</html>
