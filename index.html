@@ -422,15 +422,16 @@ html{scroll-behavior:smooth}
 @media (max-width:600px){.ks-form button{flex:1 1 100%}}
 .samples-section{background:var(--warm);padding-block:90px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
 .samples-sub{font-family:'DM Sans',sans-serif;font-size:17px;color:var(--body);text-align:center;margin-top:12px}
-.s-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;max-width:1000px;margin:0 auto}
-.s-card{display:flex;align-items:center;gap:18px;background:#fff;border:2px solid #1A1A1A;border-radius:16px;padding:20px 22px}
-.s-play{flex:0 0 56px;width:56px;height:56px;border-radius:50%;border:0;background:var(--rose);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.s-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:0 auto}
+@media(max-width:900px){.s-grid{grid-template-columns:1fr;max-width:560px}}
+.s-card{display:flex;align-items:flex-start;gap:18px;background:#fff;border:2px solid #1A1A1A;border-radius:16px;padding:20px 22px}
+.s-play{flex:0 0 52px;width:52px;height:52px;border-radius:50%;border:0;background:var(--rose);cursor:pointer;display:flex;align-items:center;justify-content:center}
 .s-play:focus-visible{outline:3px solid var(--dark);outline-offset:3px}
 .s-icon{display:block;width:0;height:0;border-style:solid;border-width:10px 0 10px 17px;border-color:transparent transparent transparent #fff;margin-left:4px}
 .s-card.playing .s-icon{width:16px;height:20px;border:0;margin:0;border-left:5px solid #fff;border-right:5px solid #fff}
 .s-info{flex:1;min-width:0}
 .s-title{font-family:'Anton',sans-serif;font-size:20px;text-transform:uppercase;color:var(--dark);letter-spacing:.3px}
-.s-occasion{font-family:'DM Sans',sans-serif;font-size:14px;color:var(--muted);margin:2px 0 10px}
+.s-occasion{font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.5;color:var(--body);margin:4px 0 12px}
 .s-bar{height:6px;background:#eee;border-radius:3px;overflow:hidden;cursor:pointer}
 .s-fill{height:100%;width:0;background:var(--rose)}
 .s-time{font-family:'DM Sans',sans-serif;font-size:12px;color:var(--muted);margin-top:6px}
@@ -534,9 +535,9 @@ html{scroll-behavior:smooth}
 
 <section class="samples-section" id="samples" hidden><div class="wide"><div style="text-align:center;margin-bottom:44px"><span class="section-label">Hear For Yourself</span><h2 class="section-title" style="text-align:center">Press play on a real Keepsake Song</h2><p class="samples-sub">Every song starts with someone's story. Here are a few I've made.</p></div><div class="s-grid">
 <!-- SAMPLE SONGS: put each MP3 in assets/songs/ with the file name shown below. A card only appears once its file is there. -->
-<div class="s-card" hidden><button class="s-play" type="button" aria-label="Play Alyssa's Song"><span class="s-icon"></span></button><div class="s-info"><div class="s-title">Alyssa's Song</div><div class="s-occasion">A song for Alyssa</div><div class="s-bar"><div class="s-fill"></div></div><div class="s-time">0:00</div></div><audio preload="none" src="assets/songs/alyssas-song.mp3"></audio></div>
-<div class="s-card" hidden><button class="s-play" type="button" aria-label="Play A Song for Dad"><span class="s-icon"></span></button><div class="s-info"><div class="s-title">A Song for Dad</div><div class="s-occasion">Written for my dad's funeral</div><div class="s-bar"><div class="s-fill"></div></div><div class="s-time">0:00</div></div><audio preload="none" src="assets/songs/dads-memorial-song.mp3"></audio></div>
-<div class="s-card" hidden><button class="s-play" type="button" aria-label="Play A Birthday Song"><span class="s-icon"></span></button><div class="s-info"><div class="s-title">A Birthday Song</div><div class="s-occasion">A birthday surprise</div><div class="s-bar"><div class="s-fill"></div></div><div class="s-time">0:00</div></div><audio preload="none" src="assets/songs/birthday-song.mp3"></audio></div>
+<div class="s-card" hidden><button class="s-play" type="button" aria-label="Play The Calm in Our Chaos"><span class="s-icon"></span></button><div class="s-info"><div class="s-title">The Calm in Our Chaos</div><div class="s-occasion">Written and created for my dad's funeral. It sums up exactly who he is to us, and the impact his life had on so many.</div><div class="s-bar"><div class="s-fill"></div></div><div class="s-time">0:00</div></div><audio preload="none" src="assets/songs/dads-memorial-song.mp3"></audio></div>
+<div class="s-card" hidden><button class="s-play" type="button" aria-label="Play The Man Who Shows Up"><span class="s-icon"></span></button><div class="s-info"><div class="s-title">The Man Who Shows Up</div><div class="s-occasion">A gift from a sister to her brother on his 40th birthday.</div><div class="s-bar"><div class="s-fill"></div></div><div class="s-time">0:00</div></div><audio preload="none" src="assets/songs/birthday-song.mp3"></audio></div>
+<div class="s-card" hidden><button class="s-play" type="button" aria-label="Play Light of My World"><span class="s-icon"></span></button><div class="s-info"><div class="s-title">Light of My World</div><div class="s-occasion">The beauty and joy of raising a non-verbal autistic little girl. My little girl, Alyssa.</div><div class="s-bar"><div class="s-fill"></div></div><div class="s-time">0:00</div></div><audio preload="none" src="assets/songs/alyssas-song.mp3"></audio></div>
 </div></div></section>
 <div class="divider" id="samples-divider" hidden></div>
 

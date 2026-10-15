@@ -1,9 +1,9 @@
 # Sample songs
 
-Upload the MP3s here with these exact file names. Each one appears on the sales page as soon as its file is here, and the "Hear for yourself" section stays hidden until at least one is.
+The sales page plays these in its "Hear for yourself" section. Each card shows only once its file is here.
 
-- `alyssas-song.mp3`: Alyssa's Song
-- `dads-memorial-song.mp3`: A Song for Dad
-- `birthday-song.mp3`: A Birthday Song
+- `dads-memorial-song.mp3`: The Calm in Our Chaos
+- `birthday-song.mp3`: The Man Who Shows Up
+- `alyssas-song.mp3`: Light of My World
 
-To change a title or the line under it, edit the matching `s-card` block in `index.html`.
+Files are re-encoded to 128 kbps MP3 with the cover art removed, to keep them small. To change a title or the line under it, edit the matching `s-card` block in `index.html`.
