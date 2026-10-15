@@ -420,6 +420,20 @@ html{scroll-behavior:smooth}
 .ks-note{font-family:'DM Sans',sans-serif;font-size:12px;color:var(--muted);margin-top:14px}
 .ks-msg{font-family:'DM Sans',sans-serif;font-size:16px;color:var(--dark);margin-top:18px}
 @media (max-width:600px){.ks-form button{flex:1 1 100%}}
+.samples-section{background:var(--warm);padding-block:90px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.samples-sub{font-family:'DM Sans',sans-serif;font-size:17px;color:var(--body);text-align:center;margin-top:12px}
+.s-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;max-width:1000px;margin:0 auto}
+.s-card{display:flex;align-items:center;gap:18px;background:#fff;border:2px solid #1A1A1A;border-radius:16px;padding:20px 22px}
+.s-play{flex:0 0 56px;width:56px;height:56px;border-radius:50%;border:0;background:var(--rose);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.s-play:focus-visible{outline:3px solid var(--dark);outline-offset:3px}
+.s-icon{display:block;width:0;height:0;border-style:solid;border-width:10px 0 10px 17px;border-color:transparent transparent transparent #fff;margin-left:4px}
+.s-card.playing .s-icon{width:16px;height:20px;border:0;margin:0;border-left:5px solid #fff;border-right:5px solid #fff}
+.s-info{flex:1;min-width:0}
+.s-title{font-family:'Anton',sans-serif;font-size:20px;text-transform:uppercase;color:var(--dark);letter-spacing:.3px}
+.s-occasion{font-family:'DM Sans',sans-serif;font-size:14px;color:var(--muted);margin:2px 0 10px}
+.s-bar{height:6px;background:#eee;border-radius:3px;overflow:hidden;cursor:pointer}
+.s-fill{height:100%;width:0;background:var(--rose)}
+.s-time{font-family:'DM Sans',sans-serif;font-size:12px;color:var(--muted);margin-top:6px}
 .testimonials-section{background:#FFF8F0;padding-block:90px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
 .t-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .t-card{margin:0;background:#fff;border:2px solid #1A1A1A;border-radius:16px;padding:32px 28px;display:flex;flex-direction:column;gap:18px}
@@ -518,6 +532,14 @@ html{scroll-behavior:smooth}
 </div></div></section>
 <div class="divider"></div>
 
+<section class="samples-section" id="samples" hidden><div class="wide"><div style="text-align:center;margin-bottom:44px"><span class="section-label">Hear For Yourself</span><h2 class="section-title" style="text-align:center">Press play on a real Keepsake Song</h2><p class="samples-sub">Every song starts with someone's story. Here are a few I've made.</p></div><div class="s-grid">
+<!-- SAMPLE SONGS: put each MP3 in assets/songs/ with the file name shown below. A card only appears once its file is there. -->
+<div class="s-card" hidden><button class="s-play" type="button" aria-label="Play Alyssa's Song"><span class="s-icon"></span></button><div class="s-info"><div class="s-title">Alyssa's Song</div><div class="s-occasion">A song for Alyssa</div><div class="s-bar"><div class="s-fill"></div></div><div class="s-time">0:00</div></div><audio preload="none" src="assets/songs/alyssas-song.mp3"></audio></div>
+<div class="s-card" hidden><button class="s-play" type="button" aria-label="Play A Song for Dad"><span class="s-icon"></span></button><div class="s-info"><div class="s-title">A Song for Dad</div><div class="s-occasion">Written for my dad's funeral</div><div class="s-bar"><div class="s-fill"></div></div><div class="s-time">0:00</div></div><audio preload="none" src="assets/songs/dads-memorial-song.mp3"></audio></div>
+<div class="s-card" hidden><button class="s-play" type="button" aria-label="Play A Birthday Song"><span class="s-icon"></span></button><div class="s-info"><div class="s-title">A Birthday Song</div><div class="s-occasion">A birthday surprise</div><div class="s-bar"><div class="s-fill"></div></div><div class="s-time">0:00</div></div><audio preload="none" src="assets/songs/birthday-song.mp3"></audio></div>
+</div></div></section>
+<div class="divider" id="samples-divider" hidden></div>
+
 <section class="testimonials-section"><div class="wide"><div style="text-align:center;margin-bottom:44px"><span class="section-label">Kind Words</span><h2 class="section-title" style="text-align:center">The reactions say it all</h2></div><div class="t-grid">
 <figure class="t-card"><blockquote>This was the MOST talked about gift my brother received. It went down so well! Every detail was so personal, right down to the names of his kids included! It's so precious to all of us now to have.</blockquote><figcaption><strong>Louise</strong> · Brother's birthday celebration</figcaption></figure>
 <figure class="t-card"><blockquote>The song for our engagement party was the most incredible gift. We've been listening to it on repeat ever since! It is now our chosen wedding song and we can't wait to have our first dance to it.</blockquote><figcaption><strong>Jamie</strong> · Engagement party</figcaption></figure>
@@ -571,6 +593,24 @@ function toggleFaq(el){el.closest('.faq-item').classList.toggle('open')}
 (function(){var paragraphs=["Years ago, I had a song made for my daughter. She was three at the time, and non-verbal. The song was about her journey and our family, and it still means the absolute world to us. It cost over £250, and it was worth every penny.","As a SEN parent, I've learned that the things that matter most aren't always easy to say out loud. Sometimes they need a different way in.","Through my photography I've always been about real moments and true connection. So I started adding personalised songs to my clients' galleries as a surprise. One client pressed play, got a few seconds in, and burst into tears. The good kind. The \u201cI feel seen\u201d kind.","Then, when my own dad passed away, I wrote and created the song for his funeral. Months later, people are still talking about it. It was him in a nutshell, and he would have been so proud to hear it.","That's when I knew this shouldn't just be for my photography clients. So I created The Keepsake Song Co., to give everyone the same feeling at a price that doesn't need saving up for."];var el=document.getElementById('typewriterText'),container=document.getElementById('typewriterContainer');if(!el||!container)return;var fullText=paragraphs.join('\n\n'),charIndex=0,started=false,speed=18,cursorHtml='<span class="typewriter-cursor"></span>';function type(){if(charIndex<fullText.length){var chunk=fullText.substring(0,charIndex+1),html=chunk.replace(/\n\n/g,'</p><p>');el.innerHTML='<p>'+html+cursorHtml+'</p>';charIndex++;var c=fullText[charIndex-1],delay=speed;if(c==='.')delay=280;else if(c===',')delay=120;else if(c==='\n')delay=400;setTimeout(type,delay)}else{var cur=el.querySelector('.typewriter-cursor');if(cur)cur.style.display='none'}}var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting&&!started){started=true;type();observer.disconnect()}})},{threshold:0.3});observer.observe(container)})();
 (function(){var step=0,boxes=[document.getElementById('stepBox0'),document.getElementById('stepBox1'),document.getElementById('stepBox2')],arrows=[document.getElementById('stepArrow0'),document.getElementById('stepArrow1')],barFill=document.getElementById('stepsBarFill'),barEnd=document.getElementById('stepsBarEnd');function animate(){step=(step+1)%6;boxes.forEach(function(box,i){box.classList.toggle('active',step>=i+1);box.classList.toggle('highlight',step===i+1||(i===2&&step>=4))});arrows.forEach(function(arrow,i){arrow.classList.toggle('visible',step>=i+2)});barFill.style.width=['0%','15%','45%','75%','100%','100%'][step]||'0%';var done=step>=4;barEnd.classList.toggle('done',done);barEnd.textContent=done?'Song delivered':'Your song'}setInterval(animate,1100)})();
 (function(){let step=0;const problems=document.querySelectorAll('.wvw-problem'),results=document.querySelectorAll('.wvw-result'),vsCircle=document.querySelector('.wvw-vs-circle'),centerLines=document.querySelectorAll('.wvw-center-line'),labelRight=document.querySelector('.wvw-card-label-right'),cardRight=document.querySelector('.wvw-card-right'),tagLeft=document.querySelector('.wvw-tagline-left'),tagRight=document.querySelector('.wvw-tagline-right');function animate(){step=(step+1)%14;problems.forEach(function(el){var i=parseInt(el.dataset.index),active=step>=i+1&&step<7,dimmed=step>=7&&step<14;el.classList.toggle('active',active&&!dimmed);el.classList.toggle('dimmed',dimmed)});tagLeft.classList.toggle('visible',step>=4&&step<7);var centerActive=step>=6;vsCircle.classList.toggle('circle-active',centerActive);centerLines.forEach(function(l){l.classList.toggle('line-active',centerActive)});labelRight.classList.toggle('wvw-label-active',step>=6);cardRight.classList.toggle('wvw-highlight',step>=11);results.forEach(function(el){var i=parseInt(el.dataset.index),active=step>=i+7;el.classList.toggle('active',active);if(active){var fill=el.querySelector('.wvw-bar-fill');fill.style.width=fill.dataset.width}else{el.querySelector('.wvw-bar-fill').style.width='0%'}});tagRight.classList.toggle('visible',step>=11)}setInterval(animate,1000)})();
+
+/* SAMPLE SONGS: each card shows once its MP3 is in assets/songs/. One plays at a time. */
+(function(){
+  var cards=[].slice.call(document.querySelectorAll('.s-card'));
+  function fmt(s){s=Math.floor(s||0);return Math.floor(s/60)+':'+('0'+s%60).slice(-2)}
+  function show(card){card.hidden=false;document.getElementById('samples').hidden=false;document.getElementById('samples-divider').hidden=false}
+  cards.forEach(function(card){
+    var au=card.querySelector('audio'),btn=card.querySelector('.s-play'),fill=card.querySelector('.s-fill'),time=card.querySelector('.s-time'),bar=card.querySelector('.s-bar');
+    if(location.protocol.indexOf('http')===0&&window.fetch){fetch(au.getAttribute('src'),{method:'HEAD'}).then(function(r){if(r.ok)show(card)}).catch(function(){})}
+    btn.addEventListener('click',function(){
+      if(au.paused){cards.forEach(function(c){var o=c.querySelector('audio');if(o!==au&&!o.paused)o.pause()});au.play()}else au.pause()});
+    au.addEventListener('play',function(){card.classList.add('playing');btn.setAttribute('aria-label',btn.getAttribute('aria-label').replace('Play','Pause'))});
+    au.addEventListener('pause',function(){card.classList.remove('playing');btn.setAttribute('aria-label',btn.getAttribute('aria-label').replace('Pause','Play'))});
+    au.addEventListener('timeupdate',function(){fill.style.width=(au.duration?au.currentTime/au.duration*100:0)+'%';time.textContent=fmt(au.currentTime)+(au.duration?' / '+fmt(au.duration):'')});
+    au.addEventListener('ended',function(){au.currentTime=0});
+    bar.addEventListener('click',function(e){if(!au.duration)return;var r=bar.getBoundingClientRect();au.currentTime=(e.clientX-r.left)/r.width*au.duration});
+  });
+})();
 
 /* SIGNUP: put the Sender form ID between the quotes (and Sender's universal script in <head>).
    While it's empty, the Song List section stays hidden. */
