@@ -30,93 +30,122 @@
   sender('c2e2c105431949')
 </script>
 <style>
-/* Layout: an autumn evening in two lights. Oat-paper sections for reading, espresso bands for listening and story,
-   one burnt-orange accent that carries every action. Asymmetric hero with an arched portrait, the songs as a row of records. */
+/* Layout: an autumn evening, warm and bright. Oat paper for reading, colour bands that change with each step
+   (apricot for the reason, sage for the voice note, espresso for listening and story, burnt orange to finish).
+   One burnt-orange accent carries every action; small line icons and illustrations break up the text. */
 :root{
-  --oat:#F5EDE3;       /* page ground */
-  --paper:#FBF6EF;     /* raised surfaces */
+  --oat:#F6EEE4;       /* page ground */
+  --paper:#FCF8F3;     /* raised surfaces */
   --ink:#2B1D16;       /* espresso text */
-  --muted:#6E5A4D;     /* secondary text */
-  --line:#E2D3C2;      /* hairlines on oat */
+  --muted:#6B574A;     /* secondary text */
+  --line:#E6D7C6;      /* hairlines */
   --rust:#B5501E;      /* burnt orange: every action */
   --rust-deep:#923E15;
-  --amber:#E39A48;     /* glow and highlights on dark */
-  --night:#21150F;     /* espresso band */
-  --night-2:#2E1F17;
-  --cream:#F3E6D6;     /* text on dark */
-  --cream-soft:#CDB8A3;
-  --spruce:#33504A;    /* complementary cool note, used sparingly */
+  --amber:#E9A04F;     /* glow and highlights */
+  --apricot:#F8DFC7;   /* reason band */
+  --blush:#F2C4AE;
+  --sage:#E1E8DC;      /* voice note band */
+  --spruce:#2F4D46;    /* complementary cool note */
+  --plum:#6E2F3A;      /* deep berry for depth */
+  --night:#22150F;     /* espresso band */
+  --night-2:#2F2018;
+  --cream:#F6EADC;     /* text on dark */
+  --cream-soft:#DCC8B4;
   --serif:'Cormorant Garamond','Iowan Old Style','Palatino Linotype',Georgia,serif;
   --sans:'Manrope','Segoe UI',system-ui,-apple-system,sans-serif;
   --label:'Unbounded','Manrope',system-ui,sans-serif;
   --measure:62ch;
-  --radius:14px;
+  --radius:16px;
   color-scheme:light;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 body{margin:0;background:var(--oat);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
-img,video{max-width:100%;display:block}
+img,video,svg{max-width:100%}
+img{display:block}
 [hidden]{display:none!important}
 a{color:inherit}
-:focus-visible{outline:2px solid var(--rust);outline-offset:3px;border-radius:4px}
+:focus-visible{outline:2px solid var(--rust);outline-offset:3px;border-radius:6px}
+button{font:inherit}
 
 .wrap{max-width:1160px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
-section{padding-block:clamp(72px,10vw,120px)}
-.band{background:var(--night);color:var(--cream)}
+section{padding-block:clamp(72px,9vw,112px)}
 
 /* type */
-.eyebrow{font-family:var(--label);font-weight:300;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--rust);display:block;margin-bottom:18px}
-.band .eyebrow{color:var(--amber)}
+.eyebrow{font-family:var(--label);font-weight:300;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--rust);display:inline-flex;align-items:center;gap:10px;margin-bottom:18px}
+.eyebrow::before{content:"";width:22px;height:1px;background:currentColor}
+.dark .eyebrow{color:var(--amber)}
 h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.005em}
-h1{font-size:clamp(46px,7.2vw,92px)}
-h2{font-size:clamp(36px,4.8vw,58px)}
-h3{font-size:clamp(24px,2.4vw,30px)}
+h1{font-size:clamp(46px,7vw,90px)}
+h2{font-size:clamp(36px,4.6vw,56px)}
+h3{font-size:clamp(23px,2.2vw,28px)}
 h1 em,h2 em{font-style:italic;color:var(--rust)}
-.band h2 em{color:var(--amber)}
-.lede{font-size:clamp(17px,1.5vw,19px);color:var(--muted);max-width:var(--measure);margin:22px 0 0}
-.band .lede{color:var(--cream-soft)}
+.dark h2 em{color:var(--amber)}
+.lede{font-size:clamp(17px,1.5vw,19px);color:var(--muted);max-width:var(--measure);margin:20px 0 0}
+.dark .lede{color:var(--cream)}
 p{margin:0}
+.center{text-align:center}
+.center .lede{margin-inline:auto}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(36px,5vw,56px)}
+.sec-head > div{max-width:660px;min-width:0}
+.center.sec-head{justify-content:center}
 
 /* buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--sans);font-weight:600;font-size:16px;letter-spacing:.01em;text-decoration:none;border-radius:999px;padding:16px 30px;transition:background .2s,transform .2s,box-shadow .2s;cursor:pointer;border:0}
-.btn-primary{background:var(--rust);color:#FFF8F1;box-shadow:0 10px 24px -12px rgba(146,62,21,.7)}
+.btn-primary{background:var(--rust);color:#FFF8F1;box-shadow:0 12px 26px -12px rgba(146,62,21,.75)}
 .btn-primary:hover{background:var(--rust-deep);transform:translateY(-1px)}
 .btn-ghost{color:var(--ink);background:transparent;box-shadow:inset 0 0 0 1px var(--ink)}
 .btn-ghost:hover{background:rgba(43,29,22,.05)}
-.band .btn-ghost{color:var(--cream);box-shadow:inset 0 0 0 1px var(--cream-soft)}
-.btn-ghost svg{width:14px;height:14px}
+.btn-light{background:#FFF8F1;color:var(--rust-deep)}
+.btn-light:hover{background:#fff;transform:translateY(-1px)}
+.btn svg{width:15px;height:15px}
+
+/* icons */
+.ico{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
 
 /* nav */
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--oat)}
-.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(245,237,227,.9);backdrop-filter:saturate(1.2) blur(10px);-webkit-backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(246,238,228,.92);backdrop-filter:saturate(1.2) blur(10px);-webkit-backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
 .nav.scrolled{border-bottom-color:var(--line)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:72px}
-.brand{font-family:var(--serif);font-style:italic;font-weight:500;font-size:24px;text-decoration:none;white-space:nowrap}
-.brand span{font-style:normal;font-family:var(--label);font-weight:300;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--rust);margin-left:10px;vertical-align:middle}
-.nav-links{display:flex;gap:30px;font-size:14px;font-weight:500}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-style:italic;font-weight:500;font-size:24px;text-decoration:none;white-space:nowrap}
+.brand-mark{width:30px;height:30px;border-radius:50%;background:var(--rust);color:#FFF8F1;display:grid;place-items:center}
+.brand-mark svg{width:16px;height:16px}
+.nav-links{display:flex;gap:28px;font-size:14px;font-weight:500}
 .nav-links a{text-decoration:none;color:var(--muted)}
 .nav-links a:hover{color:var(--ink)}
 .nav .btn{padding:11px 22px;font-size:14px}
-@media(max-width:900px){.nav-links{display:none}}
-@media(max-width:480px){.brand span{display:none}.brand{font-size:21px}.nav .btn{padding:10px 16px}}
+@media(max-width:960px){.nav-links{display:none}}
+@media(max-width:480px){.brand{font-size:20px}.brand-mark{display:none}.nav .btn{padding:10px 16px}}
 
 /* hero */
-.hero{padding-block:clamp(40px,6vw,80px) clamp(72px,9vw,110px);position:relative;overflow:hidden}
-.hero::before{content:"";position:absolute;right:-10%;top:-20%;width:70%;aspect-ratio:1;background:radial-gradient(closest-side,rgba(227,154,72,.28),rgba(227,154,72,0));pointer-events:none}
-.hero .wrap{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(40px,6vw,90px);align-items:center;position:relative}
+.hero{padding-block:clamp(36px,5vw,72px) clamp(80px,9vw,110px);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-12%;top:-25%;width:75%;aspect-ratio:1;background:radial-gradient(closest-side,rgba(233,160,79,.38),rgba(233,160,79,0));pointer-events:none}
+.hero::after{content:"";position:absolute;left:-20%;bottom:-45%;width:60%;aspect-ratio:1;background:radial-gradient(closest-side,rgba(242,196,174,.55),rgba(242,196,174,0));pointer-events:none}
+.hero .wrap{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(40px,6vw,90px);align-items:center;position:relative;z-index:1}
 .hero-copy{min-width:0}
-.offer-pill{display:inline-flex;align-items:center;gap:10px;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:7px 16px 7px 8px;font-size:13.5px;font-weight:500;color:var(--ink);margin-bottom:28px}
+.offer-pill{display:inline-flex;align-items:center;gap:10px;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:7px 16px 7px 8px;font-size:13.5px;font-weight:500;margin-bottom:26px}
 .offer-pill b{white-space:nowrap;font-family:var(--label);font-weight:400;font-size:10px;letter-spacing:.16em;text-transform:uppercase;background:var(--rust);color:#FFF8F1;border-radius:999px;padding:5px 10px}
-.hero .lede{font-size:clamp(18px,1.6vw,20px);margin-top:26px}
-.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
-.assure{display:flex;flex-wrap:wrap;gap:10px 26px;margin:34px 0 0;padding:0;list-style:none;font-size:14px;color:var(--muted)}
-.assure li{display:flex;align-items:center;gap:9px}
-.assure li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--amber)}
+.hero .lede{font-size:clamp(18px,1.6vw,20px);margin-top:24px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.assure{display:flex;flex-wrap:wrap;gap:10px 22px;margin:30px 0 0;padding:0;list-style:none;font-size:14px;color:var(--ink)}
+.assure li{display:flex;align-items:center;gap:8px}
+.assure .ico{width:18px;height:18px;color:var(--rust)}
+.eta-box{margin-top:26px;padding:16px 20px;border-radius:14px;background:rgba(252,248,243,.75);border:1px dashed var(--blush);font-size:14.5px;color:var(--muted);display:grid;gap:6px;max-width:560px}
+.eta-box b{color:var(--ink);font-weight:600}
+.eta-box .ico{width:18px;height:18px;color:var(--rust);vertical-align:-3px;margin-right:6px}
+.eta-add{font-size:13.5px}
+.eta-add a{color:var(--rust);font-weight:600;text-underline-offset:3px;white-space:nowrap}
 .hero-art{position:relative;min-width:0;max-width:480px;justify-self:end;width:100%}
 .arch{border-radius:999px 999px var(--radius) var(--radius);overflow:hidden;aspect-ratio:4/5;background:var(--night);box-shadow:0 40px 80px -40px rgba(43,29,22,.55)}
 .arch img{width:100%;height:100%;object-fit:cover;object-position:35% 30%}
+.note-float{position:absolute;color:var(--rust);opacity:.85;animation:bob 6s ease-in-out infinite}
+.note-float svg{width:100%;height:100%;fill:currentColor}
+.nf1{width:34px;height:34px;left:-26px;top:16%}
+.nf2{width:24px;height:24px;right:-14px;top:38%;color:var(--amber);animation-delay:-2s}
+.nf3{width:28px;height:28px;left:12%;top:-10px;color:var(--plum);animation-delay:-4s}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-10px) rotate(4deg)}}
 .hero-player{position:absolute;left:-36px;bottom:34px;display:flex;align-items:center;gap:14px;background:var(--night);color:var(--cream);border-radius:18px;padding:12px 18px 12px 12px;box-shadow:0 24px 48px -20px rgba(33,21,15,.7);max-width:calc(100% + 18px)}
 .hero-player .play{width:46px;height:46px;flex:0 0 46px}
 .hero-player small{display:block;font-family:var(--label);font-weight:300;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--amber)}
@@ -130,160 +159,181 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .hero .wrap{grid-template-columns:1fr}
   .hero-art{justify-self:center;max-width:400px;margin-top:8px}
   .hero-player{left:50%;transform:translateX(-50%);bottom:-26px;width:max-content;max-width:calc(100% - 16px)}
+  .nf1{left:-8px}.nf2{right:-4px}
 }
 
-/* play button, shared */
-.play{border:0;border-radius:50%;background:var(--rust);color:#FFF8F1;display:grid;place-items:center;cursor:pointer;transition:background .2s,transform .2s}
+/* play button */
+.play{border:0;border-radius:50%;background:var(--rust);color:#FFF8F1;display:grid;place-items:center;cursor:pointer;transition:background .2s,transform .2s;padding:0}
 .play:hover{background:var(--rust-deep);transform:scale(1.04)}
 .play svg{width:40%;height:40%}
 .play .i-pause{display:none}
 .is-playing .play .i-play{display:none}
 .is-playing .play .i-pause{display:block}
 
-/* listen */
-#listen{background:var(--night);color:var(--cream);position:relative;overflow:hidden}
-#listen::after{content:"";position:absolute;left:-15%;bottom:-40%;width:60%;aspect-ratio:1;background:radial-gradient(closest-side,rgba(181,80,30,.28),rgba(181,80,30,0));pointer-events:none}
-.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(40px,5vw,64px)}
-.sec-head > div{max-width:640px;min-width:0}
-.records{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;position:relative;z-index:1}
-@media(max-width:960px){.records{grid-template-columns:1fr;max-width:560px}}
-.record{background:var(--night-2);border:1px solid rgba(243,230,214,.08);border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:18px;transition:border-color .3s,transform .3s}
-.record:hover{border-color:rgba(227,154,72,.35)}
-.record.is-playing{border-color:rgba(227,154,72,.6)}
-.cover{margin:0;position:relative;border-radius:12px;overflow:hidden;aspect-ratio:1/1;background:var(--night)}
-.cover img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
-.record.is-playing .cover img{transform:scale(1.05)}
-.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(33,21,15,0) 35%,rgba(33,21,15,.82))}
-.cover figcaption{position:absolute;left:20px;right:20px;bottom:18px;z-index:1}
-.cover .occasion{font-family:var(--label);font-weight:300;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);display:block;margin-bottom:6px}
-.cover h3{color:#FFF6EC;font-size:clamp(26px,2.6vw,32px)}
-.record-body{padding:0 6px 6px;display:flex;flex-direction:column;gap:18px;flex:1}
-.record-body p{font-size:15px;line-height:1.65;color:var(--cream-soft);flex:1}
-.controls{display:flex;align-items:center;gap:14px}
+/* listen: compact playlist */
+.dark{background:var(--night);color:var(--cream)}
+#listen{position:relative;overflow:hidden;background:radial-gradient(120% 80% at 100% 0%,#4A2418 0%,rgba(74,36,24,0) 55%),radial-gradient(90% 70% at 0% 100%,#3D1E26 0%,rgba(61,30,38,0) 60%),var(--night)}
+.playlist{display:grid;gap:14px;max-width:940px;margin:0 auto}
+.track{display:grid;grid-template-columns:96px minmax(0,1fr) minmax(0,1.1fr);gap:22px;align-items:center;background:rgba(246,234,220,.05);border:1px solid rgba(246,234,220,.1);border-radius:20px;padding:14px 22px 14px 14px;transition:border-color .3s,background .3s}
+.track:hover{border-color:rgba(233,160,79,.35)}
+.track.is-playing{border-color:rgba(233,160,79,.65);background:rgba(246,234,220,.08)}
+.art{width:96px;height:96px;border-radius:14px;overflow:hidden;background:var(--night-2)}
+.art svg{width:100%;height:100%;display:block}
+.track-info{min-width:0}
+.track-info small{display:block;font-family:var(--label);font-weight:300;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:4px}
+.track-info h3{color:#FFF6EC;font-size:clamp(22px,2.2vw,27px)}
+.track-info p{font-size:14.5px;line-height:1.55;color:var(--cream-soft);margin-top:6px}
+.controls{display:flex;align-items:center;gap:14px;min-width:0}
 .controls .play{width:48px;height:48px;flex:0 0 48px}
-.wave{flex:1;min-width:0;height:44px;display:flex;align-items:center;gap:2px;cursor:pointer;touch-action:manipulation}
-.wave i{flex:1;min-width:1px;border-radius:2px;background:rgba(243,230,214,.22);transition:background .15s}
+.wave{flex:1;min-width:0;height:40px;display:flex;align-items:center;gap:2px;cursor:pointer;touch-action:manipulation}
+.wave i{flex:1;min-width:1px;border-radius:2px;background:rgba(246,234,220,.25);transition:background .15s}
 .wave i.on{background:var(--amber)}
 .time{font-family:var(--label);font-weight:300;font-size:10.5px;letter-spacing:.04em;color:var(--cream-soft);font-variant-numeric:tabular-nums;white-space:nowrap;flex:0 0 auto}
+@media(max-width:820px){
+  .track{grid-template-columns:80px minmax(0,1fr);gap:16px;padding:14px}
+  .art{width:80px;height:80px}
+  .controls{grid-column:1/-1}
+}
 
-/* gift */
-.gift .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,7vw,110px);align-items:start}
-@media(max-width:900px){.gift .wrap{grid-template-columns:1fr}}
-.gift-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.gift-list li{padding:22px 0;border-bottom:1px solid var(--line);font-size:17px;color:var(--ink);display:grid;grid-template-columns:28px 1fr;gap:14px}
-.gift-list li::before{content:"";width:14px;height:1px;background:var(--rust);margin-top:14px}
-.gift-close{font-family:var(--serif);font-style:italic;font-size:clamp(24px,2.4vw,30px);line-height:1.35;margin-top:34px;color:var(--ink)}
-.gift-close em{color:var(--rust)}
+/* reason */
+.reason{background:var(--apricot);position:relative;overflow:hidden}
+.reason::after{content:"";position:absolute;right:-10%;bottom:-50%;width:50%;aspect-ratio:1;background:radial-gradient(closest-side,rgba(233,160,79,.35),rgba(233,160,79,0));pointer-events:none}
+.reason .wrap{position:relative;z-index:1}
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+@media(max-width:820px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tile{display:flex;flex-direction:column;align-items:flex-start;gap:14px;text-align:left;background:var(--paper);border:1px solid rgba(181,80,30,.15);border-radius:18px;padding:20px;cursor:pointer;color:var(--ink);transition:transform .2s,box-shadow .2s,border-color .2s,background .2s}
+.tile:hover{transform:translateY(-2px);box-shadow:0 16px 30px -20px rgba(146,62,21,.6)}
+.tile .ico-wrap{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--tint,#F6D2BC);color:var(--tone,var(--rust))}
+.tile strong{font-family:var(--serif);font-size:21px;font-weight:500;line-height:1.15}
+.tile span.sub{font-size:13px;color:var(--muted);line-height:1.4;margin-top:-8px}
+.tile[aria-pressed="true"]{border-color:var(--rust);background:#FFF5EC;box-shadow:inset 0 0 0 1px var(--rust)}
+.reason-note{margin-top:28px;font-family:var(--serif);font-style:italic;font-size:clamp(21px,2vw,25px);color:var(--ink)}
 
 /* how */
-.how{background:var(--paper);border-block:1px solid var(--line)}
-.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,4vw,56px);counter-reset:s}
-@media(max-width:820px){.steps{grid-template-columns:1fr}}
-.steps li{counter-increment:s;padding-top:26px;border-top:1px solid var(--ink);min-width:0}
-.steps li::before{content:counter(s,decimal-leading-zero);font-family:var(--label);font-weight:300;font-size:12px;letter-spacing:.14em;color:var(--rust);display:block;margin-bottom:20px}
-.steps h3{margin-bottom:12px}
-.steps p{color:var(--muted);font-size:16px}
-.chips{display:flex;flex-wrap:wrap;gap:10px}
-.chips span{border:1px solid var(--line);background:var(--oat);border-radius:999px;padding:9px 18px;font-size:15px;color:var(--ink)}
-.chips span b{font-weight:600;color:var(--rust)}
-
-.steps{grid-template-columns:repeat(4,minmax(0,1fr))}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,3vw,32px);position:relative}
 @media(max-width:1000px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:600px){.steps{grid-template-columns:1fr}}
-.steps li.key{border-top:2px solid var(--rust)}
-.steps li.key h3{color:var(--rust)}
-.eta{margin-top:18px;font-size:14.5px;color:var(--muted)}
-.eta b{color:var(--ink);font-weight:600}
+@media(max-width:560px){.steps{grid-template-columns:1fr}}
+.steps li{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:26px 24px;min-width:0;position:relative}
+.step-ico{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;background:var(--tint);color:var(--tone);margin-bottom:20px}
+.step-ico .ico{width:28px;height:28px}
+.step-n{position:absolute;top:24px;right:24px;font-family:var(--label);font-weight:300;font-size:11px;letter-spacing:.14em;color:var(--muted)}
+.steps h3{margin-bottom:10px}
+.steps p{color:var(--muted);font-size:15.5px}
+.steps li.key{background:var(--spruce);border-color:var(--spruce);color:var(--cream)}
+.steps li.key h3{color:#fff}
+.steps li.key p,.steps li.key .step-n{color:#D7E2DC}
 
-/* voice note */
+/* voice */
+.voice{background:var(--sage)}
 .voice-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(40px,7vw,100px);align-items:center}
 @media(max-width:900px){.voice-grid{grid-template-columns:1fr}}
+.voice .eyebrow{color:var(--spruce)}
+.voice h2 em{color:var(--spruce)}
 .voice-copy{min-width:0}
-.ways{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:38px}
+.ways{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
 @media(max-width:560px){.ways{grid-template-columns:1fr}}
-.ways h3{font-size:24px;margin-bottom:8px}
-.ways p{color:var(--muted);font-size:15.5px}
+.ways div{background:rgba(252,248,243,.75);border-radius:16px;padding:20px}
+.ways .ico{color:var(--spruce);margin-bottom:10px}
+.ways h3{font-size:22px;margin-bottom:6px}
+.ways p{color:var(--muted);font-size:15px}
 .vn{min-width:0;display:flex;flex-direction:column;gap:14px;max-width:440px;justify-self:center;width:100%}
-.vn-bubble{display:flex;align-items:center;gap:14px;background:var(--paper);border:1px solid var(--line);border-radius:22px 22px 22px 6px;padding:14px 20px 14px 14px;box-shadow:0 30px 60px -36px rgba(43,29,22,.45)}
+.vn-bubble{display:flex;align-items:center;gap:14px;background:#DCF8C6;border-radius:22px 22px 6px 22px;padding:14px 20px 14px 14px;box-shadow:0 30px 60px -36px rgba(47,77,70,.6);align-self:flex-end;width:100%}
 .vn-play{width:44px;height:44px;flex:0 0 44px;border-radius:50%;background:var(--spruce);color:#F5EDE3;display:grid;place-items:center}
 .vn-play svg{width:40%;height:40%}
 .vn-wave{flex:1;min-width:0;height:34px;display:flex;align-items:center;gap:2px}
 .vn-wave i{flex:1;min-width:1px;border-radius:2px;background:var(--spruce);opacity:.35}
 .vn-wave i:nth-child(-n+16){opacity:1}
-.vn-time{font-family:var(--label);font-weight:300;font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
-.vn-quote{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.2vw,26px);line-height:1.4;color:var(--ink);padding-left:8px;margin-top:10px}
+.vn-time{font-family:var(--label);font-weight:300;font-size:11px;color:var(--spruce);font-variant-numeric:tabular-nums}
+.vn-quote{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.2vw,26px);line-height:1.4;color:var(--ink);padding-left:8px;margin-top:6px}
 .vn-note{font-size:13px;color:var(--muted);padding-left:8px}
-.prompts{margin-top:clamp(56px,7vw,90px);display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,6vw,80px);padding:clamp(28px,4vw,48px);background:var(--paper);border:1px solid var(--line);border-radius:22px}
+.prompts{margin-top:clamp(48px,6vw,80px);display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,6vw,80px);padding:clamp(28px,4vw,48px);background:var(--paper);border-radius:22px}
 @media(max-width:900px){.prompts{grid-template-columns:1fr}}
 .prompts-head{min-width:0}
+.prompts-head .ico{width:40px;height:40px;color:var(--spruce);margin-bottom:12px}
 .prompts-head h3{font-style:italic;margin-bottom:12px}
 .prompts-head p{color:var(--muted);font-size:16px}
 .prompts ul{list-style:none;margin:0;padding:0;columns:2;column-gap:40px;min-width:0}
 @media(max-width:600px){.prompts ul{columns:1}}
-.prompts li{break-inside:avoid;padding:10px 0 10px 26px;position:relative;font-size:15.5px;border-bottom:1px solid var(--line)}
-.prompts li::before{content:"";position:absolute;left:0;top:22px;width:12px;height:1px;background:var(--rust)}
+.prompts li{break-inside:avoid;padding:10px 0 10px 28px;position:relative;font-size:15.5px;border-bottom:1px solid var(--line)}
+.prompts li::before{content:"";position:absolute;left:0;top:16px;width:14px;height:14px;border-radius:50%;background:var(--sage);box-shadow:inset 0 0 0 4px var(--spruce)}
 
-/* occasions */
-.occasions{background:var(--paper);border-block:1px solid var(--line)}
-.occ-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,7vw,100px);align-items:start}
-@media(max-width:900px){.occ-grid{grid-template-columns:1fr}}
-.occ-cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);min-width:0}
-@media(max-width:600px){.occ-cols{grid-template-columns:1fr}}
-.occ-cols h3{font-style:italic;margin-bottom:14px}
-.occ-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.occ-list li{padding:11px 0;border-bottom:1px solid var(--line);font-size:15.5px}
-
-/* promise and giving */
-.promise{max-width:940px;margin:34px auto 0;display:flex;gap:20px;align-items:center;padding:24px 28px;border:1px solid var(--line);border-radius:18px;background:var(--oat)}
-.promise svg{width:44px;height:44px;flex:0 0 44px;color:var(--spruce)}
-.promise h3{font-size:24px;margin-bottom:4px}
-.promise p{color:var(--muted);font-size:15.5px}
-.give{border-top:1px solid var(--line)}
-.give-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,4vw,56px);margin-top:clamp(36px,5vw,56px)}
-@media(max-width:820px){.give-grid{grid-template-columns:1fr}}
-.give-grid div{padding-top:22px;border-top:1px solid var(--ink)}
-.give-grid h3{margin-bottom:10px}
-.give-grid p{color:var(--muted);font-size:16px}
+/* sound picker */
+.sound .wrap > .picker{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media(max-width:960px){.sound .wrap > .picker{grid-template-columns:1fr}}
+.pick{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:24px;min-width:0}
+.pick-head{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.pick-head .ico{color:var(--rust)}
+.pick-head h3{font-size:24px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--oat);border-radius:999px;padding:9px 16px;font-size:14.5px;color:var(--ink);cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.chip:hover{border-color:var(--rust)}
+.chip[aria-pressed="true"]{background:var(--rust);border-color:var(--rust);color:#FFF8F1}
+.singers{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.singer{display:flex;flex-direction:column;align-items:center;gap:10px;padding:16px 10px;border-radius:16px;border:1px solid var(--line);background:var(--oat);cursor:pointer;color:var(--ink);font-size:15px;font-weight:500;transition:border-color .2s,background .2s}
+.singer img{width:78px;height:78px;border-radius:50%;object-fit:cover;border:3px solid var(--paper);box-shadow:0 8px 18px -10px rgba(43,29,22,.6)}
+.singer[aria-pressed="true"]{border-color:var(--rust);background:#FFF5EC;box-shadow:inset 0 0 0 1px var(--rust)}
+.moods{display:grid;gap:10px}
+.mood{display:flex;align-items:center;gap:14px;padding:12px 14px;border-radius:14px;border:1px solid transparent;background:var(--mt);cursor:pointer;text-align:left;color:var(--ink);transition:border-color .2s,transform .2s}
+.mood:hover{transform:translateX(2px)}
+.mood .ico{color:var(--mc)}
+.mood strong{display:block;font-family:var(--serif);font-size:20px;font-weight:500;line-height:1.1}
+.mood span{font-size:13px;color:var(--muted)}
+.mood[aria-pressed="true"]{border-color:var(--mc);box-shadow:inset 0 0 0 1px var(--mc)}
+.summary{margin-top:28px;background:var(--night);color:var(--cream);border-radius:22px;padding:clamp(22px,3vw,30px) clamp(22px,4vw,40px);display:flex;align-items:center;justify-content:space-between;gap:20px 30px;flex-wrap:wrap}
+.summary > div{min-width:0;flex:1 1 380px}
+.summary small{font-family:var(--label);font-weight:300;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber)}
+.summary p{font-family:var(--serif);font-size:clamp(23px,2.4vw,30px);line-height:1.3;margin-top:6px}
+.summary p b{font-weight:500;font-style:italic;color:var(--amber)}
+.summary .fine{font-family:var(--sans);font-size:13px;color:var(--cream-soft);margin-top:8px}
+.summary .btn-primary{background:var(--amber);color:var(--night);box-shadow:none}
+.summary .btn-primary:hover{background:#F3B468}
 
 /* story */
-.story .wrap.story-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(40px,7vw,100px);align-items:start}
-@media(max-width:900px){.story .wrap.story-grid{grid-template-columns:1fr}}
-.story-media{position:sticky;top:110px;min-width:0}
+.story{background:var(--night);color:var(--cream)}
+.story-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(40px,7vw,100px);align-items:start}
+@media(max-width:900px){.story-grid{grid-template-columns:1fr}}
+.story-media{position:sticky;top:110px;min-width:0;margin:0}
 @media(max-width:900px){.story-media{position:static;max-width:420px}}
-.story-media{margin:0}
-.story-cover{position:relative;border-radius:999px 999px var(--radius) var(--radius);overflow:visible;aspect-ratio:4/5}
-.story-cover img{width:100%;height:100%;object-fit:cover;border-radius:inherit}
-.story-cover .hero-player{left:50%;transform:translateX(-50%);bottom:24px;width:max-content;max-width:calc(100% - 24px);background:rgba(33,21,15,.92)}
-.story-media figcaption{color:var(--cream-soft);margin-top:18px;font-style:italic;font-family:var(--serif);font-size:19px}
+.story-cover{position:relative;aspect-ratio:4/5}
+.story-cover img{width:100%;height:100%;object-fit:cover;object-position:40% 20%;border-radius:999px 999px var(--radius) var(--radius)}
+.story-cover::before{content:"";position:absolute;inset:-14px -14px 14px 14px;border:1px solid rgba(233,160,79,.45);border-radius:999px 999px var(--radius) var(--radius);pointer-events:none}
+.story-cover .hero-player{left:50%;transform:translateX(-50%);bottom:24px;width:max-content;max-width:calc(100% - 24px);background:rgba(34,21,15,.92)}
+.story-media figcaption{color:var(--cream-soft);margin-top:20px;font-style:italic;font-family:var(--serif);font-size:19px}
 .story-copy{min-width:0;max-width:var(--measure)}
-.story-copy p{color:var(--cream-soft);margin-top:22px}
+.story-copy p{color:var(--cream-soft);margin-top:20px}
 .story-copy p.first{font-size:clamp(19px,1.7vw,22px);color:var(--cream);line-height:1.6}
-.pull{font-family:var(--serif);font-style:italic;font-size:clamp(26px,2.8vw,34px);line-height:1.3;color:var(--cream);border-left:1px solid var(--amber);padding-left:24px;margin:40px 0 18px}
-.sign{font-family:var(--serif);font-style:italic;font-size:34px;color:var(--amber);margin-top:34px}
-
-/* words */
-.craft{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,80px);margin-top:clamp(56px,7vw,90px);padding-top:clamp(40px,5vw,56px);border-top:1px solid rgba(243,230,214,.14)}
+.pull{font-family:var(--serif);font-style:italic;font-size:clamp(26px,2.8vw,34px);line-height:1.3;color:var(--cream)!important;border-left:2px solid var(--amber);padding-left:24px;margin:38px 0 14px!important}
+.sign{font-family:var(--serif);font-style:italic;font-size:34px;color:var(--amber)!important;margin-top:30px!important}
+.craft{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:clamp(56px,7vw,90px)}
 @media(max-width:820px){.craft{grid-template-columns:1fr}}
-.craft h3{color:var(--cream)}
-.craft p{color:var(--cream-soft);margin-top:14px}
+.craft > div{background:rgba(246,234,220,.06);border:1px solid rgba(246,234,220,.12);border-radius:20px;padding:28px}
+.craft .ico{color:var(--amber);width:32px;height:32px;margin-bottom:14px}
+.craft h3{color:#FFF6EC}
+.craft p{color:var(--cream-soft);margin-top:12px;font-size:16px}
 
 /* kind words */
-.quotes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,4vw,48px)}
+.kind{background:var(--blush)}
+.kind .eyebrow{color:var(--plum)}
+.kind h2 em{color:var(--plum)}
+.quotes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,3vw,32px)}
 @media(max-width:820px){.quotes{grid-template-columns:1fr}}
-.quotes figure{margin:0;padding:clamp(28px,4vw,44px);background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);display:flex;flex-direction:column;gap:26px}
+.quotes figure{margin:0;padding:clamp(28px,4vw,44px);background:var(--paper);border-radius:22px;display:flex;flex-direction:column;gap:22px;box-shadow:0 30px 60px -40px rgba(110,47,58,.55)}
+.stars{display:flex;gap:4px;color:var(--amber)}
+.stars svg{width:18px;height:18px;fill:currentColor}
 .quotes blockquote{margin:0;font-family:var(--serif);font-size:clamp(23px,2.2vw,27px);line-height:1.42;color:var(--ink)}
-.quotes blockquote::before{content:"\201C";display:block;font-size:64px;line-height:.5;color:var(--rust);margin-bottom:12px}
-.quotes figcaption{margin-top:auto;font-size:14px;color:var(--muted)}
-.quotes figcaption strong{color:var(--ink);font-weight:600;margin-right:6px}
+.quotes figcaption{margin-top:auto;display:flex;align-items:center;gap:12px;font-size:14px;color:var(--muted)}
+.quotes figcaption i{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--apricot);color:var(--rust);font-style:normal;font-family:var(--serif);font-size:20px}
+.quotes figcaption strong{display:block;color:var(--ink);font-weight:600}
 
 /* prices */
-.prices{background:var(--paper);border-block:1px solid var(--line)}
 .prices .sec-head{justify-content:center;text-align:center}
 .prices .sec-head .lede{margin-inline:auto}
 .pkgs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:940px;margin:0 auto}
 @media(max-width:820px){.pkgs{grid-template-columns:1fr;max-width:520px}}
-.pkg{background:var(--oat);border:1px solid var(--line);border-radius:22px;padding:clamp(28px,4vw,40px);display:flex;flex-direction:column;gap:22px;position:relative;min-width:0}
-.pkg-best{background:var(--night);color:var(--cream);border-color:var(--night);box-shadow:0 40px 70px -40px rgba(33,21,15,.75)}
+.pkg{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:clamp(28px,4vw,40px);display:flex;flex-direction:column;gap:22px;position:relative;min-width:0}
+.pkg-ico{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:var(--apricot);color:var(--rust)}
+.pkg-best{background:linear-gradient(160deg,#3A2017 0%,var(--night) 60%);color:var(--cream);border-color:var(--night);box-shadow:0 40px 70px -40px rgba(34,21,15,.8)}
+.pkg-best .pkg-ico{background:rgba(233,160,79,.18);color:var(--amber)}
 .pkg-flag{position:absolute;top:-14px;left:clamp(28px,4vw,40px);font-family:var(--label);font-weight:400;font-size:10px;letter-spacing:.16em;text-transform:uppercase;background:var(--amber);color:var(--night);border-radius:999px;padding:7px 14px}
 .pkg h3{font-size:30px}
 .price{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
@@ -298,40 +348,74 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .incl li.plus{font-weight:600}
 .pkg .btn{width:100%}
 .pkg-best .btn-primary{background:var(--amber);color:var(--night);box-shadow:none}
-.pkg-best .btn-primary:hover{background:#F0AE63}
+.pkg-best .btn-primary:hover{background:#F3B468}
 .pkg-note{font-size:14px;color:var(--muted);text-align:center;line-height:1.5}
-.addons{max-width:940px;margin:34px auto 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 22px;font-size:15px;color:var(--muted);text-align:center}
-.addons a{color:var(--rust);font-weight:600;text-underline-offset:4px}
-.secure{text-align:center;font-size:13.5px;color:var(--muted);margin-top:18px}
+.promise{max-width:940px;margin:28px auto 0;display:flex;gap:20px;align-items:center;padding:22px 28px;border-radius:20px;background:var(--sage)}
+.promise .ico{width:44px;height:44px;color:var(--spruce)}
+.promise h3{font-size:24px;margin-bottom:2px}
+.promise p{color:var(--muted);font-size:15.5px}
+.addons{max-width:940px;margin:22px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:620px){.addons{grid-template-columns:1fr}}
+.addon{display:flex;align-items:center;gap:14px;padding:16px 18px;border:1px dashed var(--blush);border-radius:16px;text-decoration:none;background:var(--paper);transition:border-color .2s}
+.addon:hover{border-color:var(--rust)}
+.addon .ico{color:var(--rust)}
+.addon strong{display:block;font-weight:600;font-size:15px}
+.addon span{font-size:13.5px;color:var(--muted)}
+.addon em{margin-left:auto;font-style:normal;font-family:var(--serif);font-size:22px;color:var(--rust)}
+.secure{text-align:center;font-size:13.5px;color:var(--muted);margin-top:22px}
 
 /* faq */
+.faq{background:var(--paper);border-top:1px solid var(--line)}
 .faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,7vw,100px);align-items:start}
 @media(max-width:900px){.faq .wrap{grid-template-columns:1fr}}
 .faq-list{border-top:1px solid var(--line)}
 .faq details{border-bottom:1px solid var(--line)}
-.faq summary{list-style:none;cursor:pointer;padding:22px 44px 22px 0;position:relative;font-family:var(--serif);font-size:clamp(21px,2vw,24px);font-weight:500;line-height:1.3}
+.faq summary{list-style:none;cursor:pointer;padding:20px 44px 20px 0;position:relative;font-family:var(--serif);font-size:clamp(21px,2vw,24px);font-weight:500;line-height:1.3}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{content:"";position:absolute;right:6px;top:50%;width:12px;height:12px;border-right:1.5px solid var(--rust);border-bottom:1.5px solid var(--rust);transform:translateY(-70%) rotate(45deg);transition:transform .25s}
 .faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
-.faq details p{padding:0 0 24px;color:var(--muted);max-width:var(--measure);font-size:16px}
+.faq details p{padding:0 0 22px;color:var(--muted);max-width:var(--measure);font-size:16px}
+.contact{margin-top:26px;display:flex;align-items:center;gap:12px;font-size:15px;color:var(--muted);flex-wrap:wrap}
+.contact .ico{color:var(--rust)}
+.contact a{color:var(--rust);font-weight:600;word-break:break-all}
 
 /* song list */
-.songlist{padding-block:clamp(56px,8vw,90px)}
-.songlist .wrap{max-width:820px;text-align:center}
-.songlist .lede{margin-inline:auto}
+.songlist{background:var(--spruce);color:#F2EEE6;padding-block:clamp(56px,8vw,90px)}
+.songlist .wrap{max-width:820px}
+.songlist .eyebrow{color:#F3C08A}
+.songlist h2 em{color:#F3C08A}
+.songlist .lede{color:#E2E9E4;margin-inline:auto}
 .songlist .sender-form-field{margin-top:30px}
 
+/* giving */
+.give-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:clamp(32px,4vw,48px)}
+@media(max-width:820px){.give-grid{grid-template-columns:1fr}}
+.give-grid > div{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:26px}
+.give-grid .ico-wrap{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--tint);color:var(--tone);margin-bottom:16px}
+.give-grid h3{margin-bottom:8px}
+.give-grid p{color:var(--muted);font-size:15.5px}
+
 /* final */
-.final{text-align:center;position:relative;overflow:hidden}
-.final::before{content:"";position:absolute;left:50%;top:0;transform:translate(-50%,-55%);width:900px;max-width:140%;aspect-ratio:1;background:radial-gradient(closest-side,rgba(227,154,72,.22),rgba(227,154,72,0));pointer-events:none}
+.final{text-align:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#B5501E 0%,#9A3F1A 45%,#6E2F3A 100%);color:#FFF6EC}
+.final::before{content:"";position:absolute;left:50%;top:0;transform:translate(-50%,-55%);width:900px;max-width:140%;aspect-ratio:1;background:radial-gradient(closest-side,rgba(233,160,79,.45),rgba(233,160,79,0));pointer-events:none}
 .final .wrap{position:relative;max-width:820px}
-.final .lede{margin-inline:auto}
-.final .btn{margin-top:38px}
-.final .small{font-size:14px;color:var(--muted);margin-top:18px}
-footer{background:var(--night);color:var(--cream-soft);border-top:1px solid rgba(243,230,214,.1);padding-block:40px calc(40px + env(safe-area-inset-bottom,0px))}
-footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13.5px}
-footer img{width:52px;height:auto}
-footer .fbrand{display:flex;align-items:center;gap:14px}
+.final .eyebrow{color:#FFD7A8}
+.final h2 em{color:#FFD7A8}
+.final .lede{color:#FCE6D2;margin-inline:auto}
+.final .btn{margin-top:36px}
+.final .small{font-size:14px;color:#FCE6D2;margin-top:18px}
+footer{background:var(--night);color:var(--cream-soft);padding-block:44px calc(44px + env(safe-area-inset-bottom,0px))}
+footer .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;font-size:14px}
+@media(max-width:720px){footer .wrap{grid-template-columns:1fr}}
+footer img{width:56px;height:auto}
+.fbrand{display:flex;align-items:center;gap:16px;line-height:1.5}
+.fbrand strong{color:var(--cream);font-weight:500;font-family:var(--serif);font-size:20px;display:block}
+.flinks{display:grid;gap:8px;justify-items:end}
+@media(max-width:720px){.flinks{justify-items:start}}
+.flinks a{display:inline-flex;align-items:center;gap:10px;color:var(--cream);text-decoration:none;word-break:break-all}
+.flinks a:hover{color:var(--amber)}
+.flinks .ico{width:18px;height:18px;color:var(--amber)}
+.fcopy{grid-column:1/-1;border-top:1px solid rgba(246,234,220,.1);padding-top:20px;font-size:13px}
 
 /* mobile order bar */
 .orderbar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--night);color:var(--cream);padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));display:none;align-items:center;justify-content:space-between;gap:14px;transform:translateY(110%);transition:transform .35s ease;box-shadow:0 -10px 30px -10px rgba(0,0,0,.4)}
@@ -343,12 +427,13 @@ footer .fbrand{display:flex;align-items:center;gap:14px}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-ear" viewBox="0 0 24 24"><path d="M6 9a6 6 0 1 1 12 0c0 3-2 4-3 5.5S14 18 12 19.5 8.5 20 8 18"/><path d="M9.5 9.5a2.5 2.5 0 0 1 5 0c0 1.5-1.5 2-1.5 3.5"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol><symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol><symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></symbol><symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M9 21h6"/></symbol><symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20l1-4L16 5l3 3L8 19z"/><path d="M14 7l3 3"/></symbol><symbol id="i-headphones" viewBox="0 0 24 24"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3.5" y="14" width="4" height="6" rx="1.5"/><rect x="16.5" y="14" width="4" height="6" rx="1.5"/></symbol><symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 19l1.3-3.6A8 8 0 1 1 8.4 18.6z"/><path d="M9 10.5v3M12 9v6M15 10.5v3"/></symbol><symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 15.5h6M9 9h3"/></symbol><symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 17h6M10 20.5h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></symbol><symbol id="i-guitar" viewBox="0 0 24 24"><path d="M14 10l6-6M18 3l3 3"/><path d="M11.5 8.5a3 3 0 0 0-3 .8L4 13.8a4 4 0 0 0 0 5.6l.6.6a4 4 0 0 0 5.6 0l4.5-4.5a3 3 0 0 0 .8-3"/><circle cx="9.5" cy="14.5" r="1.5"/></symbol><symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.7 1.8 1.8.7-1.8.7L19 21l-.7-1.8-1.8-.7 1.8-.7z"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></symbol><symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C5 10 10 5 20 4c0 10-5 15-13 15"/><path d="M5 19l8-8"/></symbol><symbol id="i-quill" viewBox="0 0 24 24"><path d="M20 4C11 5 7 10 6 18"/><path d="M20 4c-1 7-5 10-10 10M4 20l2-2"/></symbol><symbol id="i-gift" viewBox="0 0 24 24"><rect x="3.5" y="8" width="17" height="4" rx="1"/><path d="M5 12v8h14v-8M12 8v12"/><path d="M12 8C10 4 6.5 5 8 7.5c.6.5 2 .5 4 .5zM12 8c2-4 5.5-3 4-.5-.6.5-2 .5-4 .5z"/></symbol><symbol id="i-note" viewBox="0 0 24 24"><path d="M9 18V5l11-2v13"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.5c0 4.5-3.2 8-7.5 9.5-4.3-1.5-7.5-5-7.5-9.5V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol><symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3L5 13.5h6L10 21l8-10.5h-6z"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 4l9 4.5-9 4.5-9-4.5z"/><path d="M3 12.5l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></symbol><symbol id="i-party" viewBox="0 0 24 24"><path d="M4 20l4.5-12 7.5 7.5z"/><path d="M14 4.5c0 1.5 1 2 2 2M18 9h2.5M17 3.5l.5 2M20 6l-1.5 1"/></symbol><symbol id="i-sunrise" viewBox="0 0 24 24"><path d="M3 18h18M6.5 18a5.5 5.5 0 0 1 11 0"/><path d="M12 4v4M4.5 10l1.8 1.3M19.5 10l-1.8 1.3M9 6.5l3-2.5 3 2.5"/></symbol><symbol id="i-frame" viewBox="0 0 24 24"><rect x="4" y="3.5" width="16" height="17" rx="1.5"/><rect x="7" y="6.5" width="10" height="11"/><path d="M7 15l3-3 2.5 2.5L14 13l3 3"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.5 3.5 5.5 3.5 8.5s-1 6-3.5 8.5c-2.5-2.5-3.5-5.5-3.5-8.5s1-6 3.5-8.5z"/></symbol><symbol id="i-cake" viewBox="0 0 24 24"><path d="M4 20h16M5 20v-6h14v6"/><path d="M5 16.5c1.4 1 2.6 1 4 0s2.6-1 4 0 2.6 1 4 0 1.4-1 2 0"/><path d="M8 14v-3M12 14v-3M16 14v-3"/><path d="M8 8.5c-.8-1 0-2 0-2.5.8.5 1 1.6 0 2.5zM12 8.5c-.8-1 0-2 0-2.5.8.5 1 1.6 0 2.5zM16 8.5c-.8-1 0-2 0-2.5.8.5 1 1.6 0 2.5z"/></symbol><symbol id="i-rings" viewBox="0 0 24 24"><circle cx="9" cy="14" r="5.5"/><circle cx="15" cy="14" r="5.5"/><path d="M13 5l2-2 2 2-2 2z"/></symbol><symbol id="i-dance" viewBox="0 0 24 24"><path d="M9 17V6l10-2v11"/><circle cx="6.5" cy="17" r="2.5"/><circle cx="16.5" cy="15" r="2.5"/><path d="M3.5 7.5c0-1 .8-1.7 1.6-1.7.6 0 1 .3 1.2.7.2-.4.6-.7 1.2-.7.8 0 1.5.7 1.5 1.7"/></symbol><symbol id="i-family" viewBox="0 0 24 24"><circle cx="8" cy="6.5" r="2.5"/><circle cx="16" cy="6.5" r="2.5"/><path d="M4 20v-5a4 4 0 0 1 8 0M12 20v-5a4 4 0 0 1 8 0"/><circle cx="12" cy="13" r="1.8"/></symbol><symbol id="i-baby" viewBox="0 0 24 24"><circle cx="12" cy="13" r="7"/><path d="M12 6c-1.5-2 1-3.5 2-2"/><circle cx="9.5" cy="12.5" r=".6"/><circle cx="14.5" cy="12.5" r=".6"/><path d="M10 15.5c1.2 1 2.8 1 4 0"/></symbol><symbol id="i-tree" viewBox="0 0 24 24"><path d="M12 3l5 6h-3l4 5h-3l4 5H5l4-5H6l4-5H7z"/><path d="M12 19v2.5"/></symbol><symbol id="i-dove" viewBox="0 0 24 24"><path d="M3 13c3 0 5-1 7-3.5C11.5 7 13.5 5.5 16 5.5c1.5 0 2.6.7 3 1.5l2 .5-2 1c0 5-4 9-10 9-2 0-4-1-5-2l3-1C5 14.5 3.5 14 3 13z"/><path d="M10 11c1.5 1.5 3.5 2 5.5 1.5"/></symbol></defs></svg>
 
 <header class="nav" id="nav">
   <div class="wrap">
-    <a class="brand" href="#top">The Keepsake Song Co.<span>by Creative Mama Media</span></a>
+    <a class="brand" href="#top"><span class="brand-mark"><svg viewBox="0 0 24 24"><path d="M9 18V6l10-2v12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6.5" cy="18" r="2.5" fill="currentColor"/><circle cx="16.5" cy="16" r="2.5" fill="currentColor"/></svg></span>The Keepsake Song Co.</a>
     <nav class="nav-links" aria-label="Sections">
-      <a href="#listen">Listen</a><a href="#how">How it works</a><a href="#voice">Voice note</a><a href="#story">My story</a><a href="#order">Prices</a><a href="#faq">Questions</a>
+      <a href="#listen">Listen</a><a href="#reason">Occasions</a><a href="#how">How it works</a><a href="#story">About Edel</a><a href="#order">Prices</a><a href="#faq">Questions</a>
     </nav>
     <a class="btn btn-primary js-checkout" href="#order">Order a song</a>
   </div>
@@ -362,25 +447,28 @@ footer .fbrand{display:flex;align-items:center;gap:14px}
       <div class="offer-pill js-swap" data-std="&lt;b&gt;Now booking&lt;/b&gt; Christmas orders close 16 December"><b>Launch offer</b> First 15 orders get the full Bundle for £34.99</div>
       <span class="eyebrow">Personalised songs, written from your story</span>
       <h1>Their story, <em>set to music.</em></h1>
-      <p class="lede">Tell me about someone you love. I'll turn their names, their moments and the little things only you would know into a completely original song, with the lyrics written out for you and a finished MP3, ready in 3 to 7 days.</p>
+      <p class="lede">Tell me about someone you love. I'll turn their names, their moments and the little things only you would know into a completely original song, with the lyrics written out for you and a finished MP3.</p>
       <div class="hero-actions">
         <a class="btn btn-primary js-checkout" href="#order">Create their song · from £34.99</a>
         <a class="btn btn-ghost" href="#listen"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.8v10.4L12 7z" fill="currentColor"/></svg>Hear a song first</a>
       </div>
       <ul class="assure">
-        <li>Preview before it's final</li>
-        <li>Full refund if you don't love your preview</li>
-        <li>Ready in 3–7 days</li>
+        <li><svg class="ico"><use href="#i-ear"/></svg>Preview before it's final</li>
+        <li><svg class="ico"><use href="#i-heart"/></svg>Full refund if you don't love your preview</li>
+        <li><svg class="ico"><use href="#i-clock"/></svg>Ready in 3–7 days</li>
       </ul>
-      <p class="eta" id="eta" hidden>Order today and your song can be with you by <b></b>.</p>
+      <div class="eta-box">
+        <span id="eta" hidden><svg class="ico"><use href="#i-calendar"/></svg>Order today and your song can be with you by <b></b>.</span>
+        <span class="eta-add">Add-ons after you order: <a href="https://buy.stripe.com/9B600j2fI9jnaGJ5sseZ202">Rush delivery in 48 hours · £9.99</a> · <a href="https://buy.stripe.com/bJe9AT8E6eDHcOR6wweZ201">Extra style version · £9.99</a></span>
+      </div>
     </div>
     <div class="hero-art">
+      <span class="note-float nf1" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3v11.6A3.5 3.5 0 1 0 11 18V8h7V3z"/></svg></span>
+      <span class="note-float nf2" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3v11.6A3.5 3.5 0 1 0 11 18V8h7V3z"/></svg></span>
+      <span class="note-float nf3" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v11.6A3.5 3.5 0 1 0 14 18V7l5 2V5z"/></svg></span>
       <div class="arch"><img src="assets/listening.jpg" alt="A woman listening to music on headphones with her eyes closed, smiling" width="900" height="900"></div>
       <div class="hero-player jump" data-target="0">
-        <button class="play" type="button" aria-label="Play The Calm in Our Chaos">
-          <svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.2v11.6L14 8z" fill="currentColor"/></svg>
-          <svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 2h3v12h-3zM9.5 2h3v12h-3z" fill="currentColor"/></svg>
-        </button>
+        <button class="play" type="button" aria-label="Play The Calm in Our Chaos"><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.2v11.6L14 8z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 2h3v12h-3zM9.5 2h3v12h-3z" fill="currentColor"/></svg></button>
         <div><small>Press play</small><strong>The Calm in Our Chaos</strong></div>
         <div class="mini-eq" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
       </div>
@@ -388,61 +476,74 @@ footer .fbrand{display:flex;align-items:center;gap:14px}
   </div>
 </section>
 
-<section id="listen" aria-labelledby="listen-h">
+<section id="listen" class="dark" aria-labelledby="listen-h">
   <div class="wrap">
-    <div class="sec-head">
-      <div>
+    <div class="sec-head center">
+      <div class="center">
         <span class="eyebrow">Hear for yourself</span>
         <h2 id="listen-h">Three songs. <em>Three real stories.</em></h2>
         <p class="lede">Every Keepsake Song begins with a real person and a real story. Press play on three of mine.</p>
       </div>
     </div>
-    <div class="records">
-      <article class="record" data-peaks="dads-memorial-song" data-length="5:22">
-        <figure class="cover"><img src="assets/covers/cover-calm.jpg" alt="" width="600" height="600" loading="lazy"><figcaption><span class="occasion">A memorial song</span><h3>The Calm in Our Chaos</h3></figcaption></figure>
-        <div class="record-body">
-          <p>Written and created for my dad&#x27;s funeral. It sums up exactly who he is to us, and the impact his life had on so many. It&#x27;s the reason I finally pushed to launch The Keepsake Song Co.</p>
-          <div class="controls"><button class="play" type="button" aria-label="Play The Calm in Our Chaos"><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.2v11.6L14 8z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 2h3v12h-3zM9.5 2h3v12h-3z" fill="currentColor"/></svg></button><div class="wave" aria-hidden="true"></div><span class="time">0:00</span></div>
-        </div>
+    <div class="playlist">
+      <article class="track" data-peaks="dads-memorial-song" data-length="5:22">
+        <div class="art"><svg viewBox="0 0 100 100" role="img" aria-label="A red tractor in a field at sunset"><defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3A35A"/><stop offset=".6" stop-color="#F7C987"/><stop offset="1" stop-color="#F9DDB0"/></linearGradient></defs>
+<rect width="100" height="100" fill="url(#g1)"/><circle cx="72" cy="44" r="14" fill="#FFF0D2" opacity=".9"/>
+<path d="M0 62 Q25 52 50 58 T100 54 V100 H0z" fill="#8FA36B"/><path d="M0 72 Q30 62 60 70 T100 66 V100 H0z" fill="#5E7A4A"/>
+<path d="M0 84 L100 78 M0 92 L100 87" stroke="#4C6639" stroke-width="1.2" opacity=".6"/>
+<g transform="translate(18 52)"><rect x="18" y="8" width="16" height="14" rx="1.5" fill="#C8321F"/><rect x="21" y="11" width="9" height="7" fill="#FCE9CF"/><rect x="2" y="17" width="34" height="10" rx="2" fill="#D63A24"/><rect x="8" y="4" width="2.5" height="13" fill="#3B2A22"/>
+<circle cx="29" cy="29" r="8" fill="#2B1D16"/><circle cx="29" cy="29" r="3" fill="#E9A04F"/><circle cx="8" cy="30" r="5" fill="#2B1D16"/><circle cx="8" cy="30" r="2" fill="#E9A04F"/></g></svg></div>
+        <div class="track-info"><small>A memorial song</small><h3>The Calm in Our Chaos</h3><p>Written and created for my dad&#x27;s funeral. It sums up exactly who he is to us, and the impact his life had on so many. It&#x27;s the reason I finally pushed to launch The Keepsake Song Co.</p></div>
+        <div class="controls"><button class="play" type="button" aria-label="Play The Calm in Our Chaos"><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.2v11.6L14 8z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 2h3v12h-3zM9.5 2h3v12h-3z" fill="currentColor"/></svg></button><div class="wave" aria-hidden="true"></div><span class="time">0:00</span></div>
         <audio preload="none" src="assets/songs/dads-memorial-song.mp3"></audio>
       </article>
-      <article class="record" data-peaks="birthday-song" data-length="6:03">
-        <figure class="cover"><img src="assets/covers/cover-shows-up.jpg" alt="" width="600" height="600" loading="lazy"><figcaption><span class="occasion">A 40th birthday</span><h3>The Man Who Shows Up</h3></figcaption></figure>
-        <div class="record-body">
-          <p>A gift from a sister to her brother on his 40th birthday.</p>
-          <div class="controls"><button class="play" type="button" aria-label="Play The Man Who Shows Up"><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.2v11.6L14 8z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 2h3v12h-3zM9.5 2h3v12h-3z" fill="currentColor"/></svg></button><div class="wave" aria-hidden="true"></div><span class="time">0:00</span></div>
-        </div>
+      <article class="track" data-peaks="birthday-song" data-length="6:03">
+        <div class="art"><svg viewBox="0 0 100 100" role="img" aria-label="Balloons and the number 40"><defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3E2A5C"/><stop offset="1" stop-color="#6E2F3A"/></linearGradient></defs>
+<rect width="100" height="100" fill="url(#g2)"/>
+<g fill="#F6EADC" opacity=".8"><circle cx="12" cy="14" r="1"/><circle cx="88" cy="20" r="1.2"/><circle cx="80" cy="84" r="1"/><circle cx="20" cy="80" r=".8"/></g>
+<path d="M30 40 Q33 60 44 74M70 38 Q66 58 56 74M50 30 Q51 52 50 74" stroke="#F6EADC" stroke-width=".8" fill="none" opacity=".7"/>
+<ellipse cx="30" cy="30" rx="10" ry="12" fill="#E9A04F"/><ellipse cx="70" cy="28" rx="10" ry="12" fill="#D9593A"/><ellipse cx="50" cy="20" rx="10" ry="12" fill="#F2C4AE"/>
+<path d="M26 24 q2-4 5-4" stroke="#fff" stroke-width="1.5" fill="none" opacity=".6"/><path d="M66 22 q2-4 5-4" stroke="#fff" stroke-width="1.5" fill="none" opacity=".6"/>
+<text x="50" y="94" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-style="italic" font-weight="600" font-size="30" fill="#FFF6EC">40</text>
+<g fill="#E9A04F"><rect x="16" y="58" width="3" height="3" transform="rotate(20 17 59)"/><rect x="82" y="56" width="3" height="3" transform="rotate(-20 83 57)"/><rect x="86" y="70" width="2.5" height="2.5" fill="#F2C4AE"/><rect x="10" y="68" width="2.5" height="2.5" fill="#D9593A"/></g></svg></div>
+        <div class="track-info"><small>A 40th birthday</small><h3>The Man Who Shows Up</h3><p>A gift from a sister to her brother on his 40th birthday.</p></div>
+        <div class="controls"><button class="play" type="button" aria-label="Play The Man Who Shows Up"><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.2v11.6L14 8z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 2h3v12h-3zM9.5 2h3v12h-3z" fill="currentColor"/></svg></button><div class="wave" aria-hidden="true"></div><span class="time">0:00</span></div>
         <audio preload="none" src="assets/songs/birthday-song.mp3"></audio>
       </article>
-      <article class="record" data-peaks="alyssas-song" data-length="4:13">
-        <figure class="cover"><img src="assets/covers/cover-light.jpg" alt="" width="600" height="600" loading="lazy"><figcaption><span class="occasion">For my daughter</span><h3>Light of My World</h3></figcaption></figure>
-        <div class="record-body">
-          <p>The beauty and joy of raising a non-verbal autistic little girl. My little girl, Alyssa.</p>
-          <div class="controls"><button class="play" type="button" aria-label="Play Light of My World"><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.2v11.6L14 8z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 2h3v12h-3zM9.5 2h3v12h-3z" fill="currentColor"/></svg></button><div class="wave" aria-hidden="true"></div><span class="time">0:00</span></div>
-        </div>
+      <article class="track" data-peaks="alyssas-song" data-length="4:13">
+        <div class="art"><svg viewBox="0 0 100 100" role="img" aria-label="A bright sun rising over hills"><defs><linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7B9A3"/><stop offset=".55" stop-color="#FBD9A8"/><stop offset="1" stop-color="#FCE8C6"/></linearGradient></defs>
+<rect width="100" height="100" fill="url(#g3)"/>
+<g stroke="#FFF4DE" stroke-width="2" stroke-linecap="round" opacity=".95"><path d="M50 22v-8M30 30l-5-5M70 30l5-5M22 48h-8M78 48h8"/></g>
+<circle cx="50" cy="52" r="20" fill="#FFF1D0"/><circle cx="50" cy="52" r="14" fill="#F8C46B"/>
+<path d="M0 66 Q30 54 55 64 T100 60 V100 H0z" fill="#E59A6E"/><path d="M0 78 Q40 66 70 76 T100 74 V100 H0z" fill="#B5501E"/>
+<path d="M50 88 c-3-3-7-4-7-8a3.5 3.5 0 0 1 7-1 3.5 3.5 0 0 1 7 1c0 4-4 5-7 8z" fill="#FFF1D0"/>
+<g fill="#FFF8EA"><path d="M82 14l1 3 3 1-3 1-1 3-1-3-3-1 3-1z"/><path d="M16 18l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></g></svg></div>
+        <div class="track-info"><small>For my daughter</small><h3>Light of My World</h3><p>The beauty and joy of raising a non-verbal autistic little girl. My little girl, Alyssa.</p></div>
+        <div class="controls"><button class="play" type="button" aria-label="Play Light of My World"><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.2v11.6L14 8z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 2h3v12h-3zM9.5 2h3v12h-3z" fill="currentColor"/></svg></button><div class="wave" aria-hidden="true"></div><span class="time">0:00</span></div>
         <audio preload="none" src="assets/songs/alyssas-song.mp3"></audio>
       </article>
     </div>
   </div>
 </section>
 
-<section class="gift" aria-labelledby="gift-h">
+<section class="reason" id="reason" aria-labelledby="reason-h">
   <div class="wrap">
-    <div>
-      <span class="eyebrow">Sound familiar?</span>
-      <h2 id="gift-h">For the gift that <em>says what you can't.</em></h2>
-      <p class="lede">You know exactly how much they mean to you. Finding a way to show it is the hard part.</p>
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Step one</span>
+        <h2 id="reason-h">What's the <em>reason for the song?</em></h2>
+        <p class="lede">Flowers wilt and chocolates get eaten. A song gets played at every birthday after. Tap the one that fits.</p>
+      </div>
     </div>
-    <div>
-      <ul class="gift-list">
-        <li>Every gift idea feels like it's been done a hundred times before.</li>
-        <li>Flowers wilt by the weekend, chocolates get eaten and the card could have been for anyone.</li>
-        <li>You've never quite found the words to tell them how you feel.</li>
-        <li>There's a person, a moment or a memory you never want to forget.</li>
-        <li>You'd love to honour someone you've lost in a way that feels gentle and truly theirs.</li>
-        <li>You assumed a personalised song would cost hundreds of pounds and be complicated to arrange.</li>
-      </ul>
-      <p class="gift-close">A Keepsake Song is built from their story, so it could only ever be <em>theirs</em>. It's the gift they'll play again at every birthday after.</p>
+    <div class="tiles" role="group" aria-label="Choose the reason for the song" data-group="reason">
+      <button class="tile" type="button" aria-pressed="true" data-v="a birthday" style="--tint:#F6D2BC;--tone:#B5501E"><span class="ico-wrap"><svg class="ico"><use href="#i-cake"/></svg></span><strong>Birthday</strong><span class="sub">Milestones and every year between</span></button>
+      <button class="tile" type="button" aria-pressed="false" data-v="an anniversary" style="--tint:#F6D0CB;--tone:#9C2F3E"><span class="ico-wrap"><svg class="ico"><use href="#i-rings"/></svg></span><strong>Anniversary</strong><span class="sub">Years together, set to music</span></button>
+      <button class="tile" type="button" aria-pressed="false" data-v="a wedding" style="--tint:#F3E0C4;--tone:#A0601A"><span class="ico-wrap"><svg class="ico"><use href="#i-dance"/></svg></span><strong>Wedding</strong><span class="sub">Engagements and first dances</span></button>
+      <button class="tile" type="button" aria-pressed="false" data-v="Mum or Dad" style="--tint:#E1E8DC;--tone:#2F4D46"><span class="ico-wrap"><svg class="ico"><use href="#i-family"/></svg></span><strong>Mum, Dad &amp; family</strong><span class="sub">Mother's Day, Father's Day, grandparents</span></button>
+      <button class="tile" type="button" aria-pressed="false" data-v="a little one" style="--tint:#F8E3CE;--tone:#C56A12"><span class="ico-wrap"><svg class="ico"><use href="#i-baby"/></svg></span><strong>New baby &amp; children</strong><span class="sub">A lullaby that's theirs alone</span></button>
+      <button class="tile" type="button" aria-pressed="false" data-v="Christmas" style="--tint:#DDE7DF;--tone:#2F4D46"><span class="ico-wrap"><svg class="ico"><use href="#i-tree"/></svg></span><strong>Christmas</strong><span class="sub">Orders close 16 December</span></button>
+      <button class="tile" type="button" aria-pressed="false" data-v="a loved one's memory" style="--tint:#E6DDE8;--tone:#5A3F66"><span class="ico-wrap"><svg class="ico"><use href="#i-dove"/></svg></span><strong>In memory</strong><span class="sub">A tribute to someone you've lost</span></button>
+      <button class="tile" type="button" aria-pressed="false" data-v="no reason but love" style="--tint:#F8DFC7;--tone:#923E15"><span class="ico-wrap"><svg class="ico"><use href="#i-gift"/></svg></span><strong>Just because</strong><span class="sub">Simply to say I love you</span></button>
     </div>
   </div>
 </section>
@@ -452,16 +553,16 @@ footer .fbrand{display:flex;align-items:center;gap:14px}
     <div class="sec-head">
       <div>
         <span class="eyebrow">How it works</span>
-        <h2 id="how-h">From your voice <em>to their song.</em></h2>
+        <h2 id="how-h">Simple, <em>start to finish.</em></h2>
         <p class="lede">No long forms full of boxes. You simply talk to me about the person you love, and I do the rest.</p>
       </div>
       <a class="btn btn-primary js-checkout" href="#order">Start your song</a>
     </div>
     <ol class="steps">
-      <li><h3>Order your song</h3><p>Choose the Song or the Bundle at secure checkout. Your story form arrives straight away, with everything you need to get started.</p></li>
-      <li class="key"><h3>Send me a voice note</h3><p>This is the heart of it. Talk to me about them for two or three minutes, just as you would to a friend. That gives me everything I need.</p></li>
-      <li><h3>I write your song</h3><p>AI helps me capture every detail and produces the music. Then I take over the words, revising and rewriting each line until it sounds like them.</p></li>
-      <li><h3>Hear it, then keep it</h3><p>You'll hear a preview before anything is final, with one revision included. Then your MP3 and written lyrics arrive, ready to play, share and treasure.</p></li>
+      <li style="--tint:#F8DFC7;--tone:#B5501E"><span class="step-n">01</span><div class="step-ico"><svg class="ico"><use href="#i-bag"/></svg></div><h3>Order your song</h3><p>Choose the Song or the Bundle at secure checkout. Your story form arrives straight away.</p></li>
+      <li class="key" style="--tint:rgba(255,255,255,.12);--tone:#F3C08A"><span class="step-n">02</span><div class="step-ico"><svg class="ico"><use href="#i-mic"/></svg></div><h3>Send me a voice note</h3><p>The heart of it. Talk about them for two or three minutes, just as you would to a friend.</p></li>
+      <li style="--tint:#F2C4AE;--tone:#6E2F3A"><span class="step-n">03</span><div class="step-ico"><svg class="ico"><use href="#i-pen"/></svg></div><h3>I write your song</h3><p>AI helps me capture the details and makes the music. I shape every word until it sounds like them.</p></li>
+      <li style="--tint:#E1E8DC;--tone:#2F4D46"><span class="step-n">04</span><div class="step-ico"><svg class="ico"><use href="#i-headphones"/></svg></div><h3>Hear it, then keep it</h3><p>Hear a preview first, with one revision included. Then your MP3 and lyrics arrive to keep forever.</p></li>
     </ol>
   </div>
 </section>
@@ -469,12 +570,12 @@ footer .fbrand{display:flex;align-items:center;gap:14px}
 <section class="voice" id="voice" aria-labelledby="voice-h">
   <div class="wrap voice-grid">
     <div class="voice-copy">
-      <span class="eyebrow">The voice note</span>
+      <span class="eyebrow">Step two · The voice note</span>
       <h2 id="voice-h">Just talk about them <em>for two or three minutes.</em></h2>
       <p class="lede">The most important part of your order is a short voice note. The way you talk about someone, the stories you reach for and the little things that make you smile, is where their song comes from.</p>
       <div class="ways">
-        <div><h3>Send it on WhatsApp</h3><p>Record a voice message, just as you would to a friend, and send it straight to me. My number comes with your form.</p></div>
-        <div><h3>Or type it out</h3><p>Prefer not to send audio? Record yourself talking, let your phone or an AI app transcribe it, and paste the text into your form.</p></div>
+        <div><svg class="ico"><use href="#i-chat"/></svg><h3>Send it on WhatsApp</h3><p>Record a voice message, just as you would to a friend, and send it straight to me. My number comes with your form.</p></div>
+        <div><svg class="ico"><use href="#i-doc"/></svg><h3>Or type it out</h3><p>Prefer not to send audio? Record yourself, let your phone or an AI app transcribe it, and paste the text into your form.</p></div>
       </div>
     </div>
     <div class="vn" aria-hidden="true">
@@ -490,6 +591,7 @@ footer .fbrand{display:flex;align-items:center;gap:14px}
   <div class="wrap">
     <div class="prompts">
       <div class="prompts-head">
+        <svg class="ico"><use href="#i-bulb"/></svg>
         <h3>Stuck for what to say?</h3>
         <p>Don't worry. Pick a few of these talking points and you'll have plenty. Keep this list handy when you press record.</p>
       </div>
@@ -509,51 +611,73 @@ footer .fbrand{display:flex;align-items:center;gap:14px}
   </div>
 </section>
 
-<section class="occasions" aria-labelledby="occ-h">
+<section class="sound" id="sound" aria-labelledby="sound-h">
   <div class="wrap">
-    <div class="occ-grid">
+    <div class="sec-head">
       <div>
-        <span class="eyebrow">Every moment deserves a song</span>
-        <h2 id="occ-h">For the people <em>who matter most.</em></h2>
+        <span class="eyebrow">Step three</span>
+        <h2 id="sound-h">Choose how it <em>sounds.</em></h2>
+        <p class="lede">Have a play with the options below. It really is this easy, and you'll confirm your choices on your story form.</p>
       </div>
-      <div class="occ-cols">
-        <div>
-          <h3>Perfect for</h3>
-          <ul class="occ-list">
-            <li>Milestone birthdays</li><li>Anniversaries</li><li>Weddings and first dances</li><li>Engagements</li><li>Mother's Day and Father's Day</li><li>Christmas</li><li>New babies and children</li><li>Memorials and tributes</li><li>Just because</li>
-          </ul>
-        </div>
-        <div>
-          <h3>You choose</h3>
-          <ul class="occ-list">
-            <li>The genre: pop, acoustic, country, folk, rock, a gentle lullaby and more</li><li>A male or female singer</li><li>The mood: joyful, romantic or soft and gentle</li><li>The names, places and in-jokes to weave in</li>
-          </ul>
+    </div>
+    <div class="picker">
+      <div class="pick">
+        <div class="pick-head"><svg class="ico"><use href="#i-guitar"/></svg><h3>The genre</h3></div>
+        <div class="chips" role="group" aria-label="Genre" data-group="genre">
+          <button class="chip" type="button" aria-pressed="true" data-v="pop">Pop</button>
+          <button class="chip" type="button" aria-pressed="false" data-v="acoustic">Acoustic</button>
+          <button class="chip" type="button" aria-pressed="false" data-v="country">Country</button>
+          <button class="chip" type="button" aria-pressed="false" data-v="folk">Folk</button>
+          <button class="chip" type="button" aria-pressed="false" data-v="rock">Rock</button>
+          <button class="chip" type="button" aria-pressed="false" data-v="soul">Soul</button>
+          <button class="chip" type="button" aria-pressed="false" data-v="ballad">Ballad</button>
+          <button class="chip" type="button" aria-pressed="false" data-v="lullaby">Lullaby</button>
         </div>
       </div>
+      <div class="pick">
+        <div class="pick-head"><svg class="ico"><use href="#i-mic"/></svg><h3>The singer</h3></div>
+        <div class="singers" role="group" aria-label="Singer" data-group="singer">
+          <button class="singer" type="button" aria-pressed="false" data-v="male"><img src="assets/img/singer-male.jpg" alt="" width="200" height="200" loading="lazy">Male voice</button>
+          <button class="singer" type="button" aria-pressed="true" data-v="female"><img src="assets/img/singer-female.jpg" alt="" width="200" height="200" loading="lazy">Female voice</button>
+        </div>
+      </div>
+      <div class="pick">
+        <div class="pick-head"><svg class="ico"><use href="#i-sparkle"/></svg><h3>The mood</h3></div>
+        <div class="moods" role="group" aria-label="Mood" data-group="mood">
+          <button class="mood" type="button" aria-pressed="true" data-v="joyful" style="--mt:#FBE3C2;--mc:#C56A12"><svg class="ico"><use href="#i-sun"/></svg><div><strong>Joyful</strong><span>Upbeat, for celebrations</span></div></button>
+          <button class="mood" type="button" aria-pressed="false" data-v="romantic" style="--mt:#F6D0CB;--mc:#9C2F3E"><svg class="ico"><use href="#i-heart"/></svg><div><strong>Romantic</strong><span>Warm, for partners</span></div></button>
+          <button class="mood" type="button" aria-pressed="false" data-v="gentle" style="--mt:#DDE7DF;--mc:#2F4D46"><svg class="ico"><use href="#i-leaf"/></svg><div><strong>Soft and gentle</strong><span>Tender, for tributes</span></div></button>
+        </div>
+      </div>
+    </div>
+    <div class="summary" aria-live="polite">
+      <div>
+        <small>Your song</small>
+        <p id="summaryText">A <b>joyful pop</b> song for <b>a birthday</b>, sung by a <b>female voice</b>.</p>
+        <p class="fine">Plus the names, memories and in-jokes from your voice note.</p>
+      </div>
+      <a class="btn btn-primary js-checkout" href="#order">Create this song</a>
     </div>
   </div>
 </section>
 
-<section class="band story" id="story" aria-labelledby="story-h">
+<section class="story" id="story" aria-labelledby="story-h">
   <div class="wrap story-grid">
     <figure class="story-media">
-      <div class="story-cover"><img src="assets/covers/cover-light.jpg" alt="" width="600" height="600" loading="lazy">
+      <div class="story-cover"><img src="assets/img/edel.jpg" alt="Edel, founder of Creative Mama Media" width="560" height="700" loading="lazy">
         <div class="hero-player jump" data-target="2">
-          <button class="play" type="button" aria-label="Play Light of My World">
-            <svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.2v11.6L14 8z" fill="currentColor"/></svg>
-            <svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 2h3v12h-3zM9.5 2h3v12h-3z" fill="currentColor"/></svg>
-          </button>
+          <button class="play" type="button" aria-label="Play Light of My World"><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.2v11.6L14 8z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 2h3v12h-3zM9.5 2h3v12h-3z" fill="currentColor"/></svg></button>
           <div><small>For my daughter</small><strong>Light of My World</strong></div>
           <div class="mini-eq" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
         </div>
       </div>
-      <figcaption>The song I wrote for my little girl, Alyssa.</figcaption>
+      <figcaption>Edel, creator of Creative Mama Media</figcaption>
     </figure>
     <div class="story-copy">
-      <span class="eyebrow">Why I started</span>
+      <span class="eyebrow">About me</span>
       <h2 id="story-h">Hi, I'm <em>Edel.</em></h2>
-      <p class="first">I'm a photographer, course creator and certified business &amp; mindset coach, a mum of three and a SEN parent, living in a sleepy village in South Staffordshire, England. At heart, I love empowering others and capturing what's important in life.</p>
-      <p>I've loved poetry, words, language and music for as long as I can remember, and I've always wanted to make things that last.</p>
+      <p class="first">I'm the creator of Creative Mama Media, the company The Keepsake Song Co. was born from. I run several successful businesses, with heart and soul at the centre of each.</p>
+      <p>I'm a photographer, course creator and certified business &amp; mindset coach, a mum of three and a SEN parent, living in a sleepy village in South Staffordshire, England. At heart, I love empowering others and capturing what's important in life, and I've loved poetry, words, language and music for as long as I can remember.</p>
       <p>Years ago, I had a song made for my daughter. She was three at the time, and non-verbal. The song told the story of her journey and our family, and it still means the absolute world to us. It cost over £250, and it was worth every penny.</p>
       <p class="pull">The things that matter most aren't always easy to say out loud. Sometimes they need a different way in.</p>
       <p>Through my photography I've always been about real moments and true connection, so I started adding personalised songs to my clients' galleries as a surprise. One client pressed play, got a few seconds in and burst into tears. The good kind. The kind that says "I feel seen".</p>
@@ -565,10 +689,12 @@ footer .fbrand{display:flex;align-items:center;gap:14px}
   <div class="wrap">
     <div class="craft">
       <div>
+        <svg class="ico"><use href="#i-quill"/></svg>
         <h3>Where the words come from</h3>
-        <p>Words have always been my thing. I've written poems and songs since I was very small, and I care about every line. AI helps me gather the details of your person and produces the music. The lyrics are where I come in: I revise, refine and rewrite them until they sound exactly like the person they're for.</p>
+        <p>Words have always been my thing, and I care about every line. AI helps me gather the details of your person and produces the music. The lyrics are where I come in: I revise, refine and rewrite them until they sound exactly like the person they're for.</p>
       </div>
       <div>
+        <svg class="ico"><use href="#i-gift"/></svg>
         <h3>Why it costs £34.99, not £250</h3>
         <p>Using AI for the music means I can give you a fully produced song with truly personal words for a fraction of what I once paid. I wanted every family to be able to have one, not just the people who can save up for it.</p>
       </div>
@@ -585,8 +711,8 @@ footer .fbrand{display:flex;align-items:center;gap:14px}
       </div>
     </div>
     <div class="quotes">
-      <figure><blockquote>This was the MOST talked about gift my brother received. It went down so well! Every detail was so personal, right down to the names of his kids included! It's so precious to all of us now to have.</blockquote><figcaption><strong>Louise</strong> Brother's birthday celebration</figcaption></figure>
-      <figure><blockquote>The song for our engagement party was the most incredible gift. We've been listening to it on repeat ever since! It is now our chosen wedding song and we can't wait to have our first dance to it.</blockquote><figcaption><strong>Jamie</strong> Engagement party</figcaption></figure>
+      <figure><div class="stars" aria-label="5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.8-4.9 4.5 1.3 6.5L12 17l-5.9 3.3 1.3-6.5L2.5 9.3l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.8-4.9 4.5 1.3 6.5L12 17l-5.9 3.3 1.3-6.5L2.5 9.3l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.8-4.9 4.5 1.3 6.5L12 17l-5.9 3.3 1.3-6.5L2.5 9.3l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.8-4.9 4.5 1.3 6.5L12 17l-5.9 3.3 1.3-6.5L2.5 9.3l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.8-4.9 4.5 1.3 6.5L12 17l-5.9 3.3 1.3-6.5L2.5 9.3l6.6-.8z"/></svg></div><blockquote>This was the MOST talked about gift my brother received. It went down so well! Every detail was so personal, right down to the names of his kids included! It's so precious to all of us now to have.</blockquote><figcaption><i aria-hidden="true">L</i><span><strong>Louise</strong>Brother's birthday celebration</span></figcaption></figure>
+      <figure><div class="stars" aria-label="5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.8-4.9 4.5 1.3 6.5L12 17l-5.9 3.3 1.3-6.5L2.5 9.3l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.8-4.9 4.5 1.3 6.5L12 17l-5.9 3.3 1.3-6.5L2.5 9.3l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.8-4.9 4.5 1.3 6.5L12 17l-5.9 3.3 1.3-6.5L2.5 9.3l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.8-4.9 4.5 1.3 6.5L12 17l-5.9 3.3 1.3-6.5L2.5 9.3l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.8-4.9 4.5 1.3 6.5L12 17l-5.9 3.3 1.3-6.5L2.5 9.3l6.6-.8z"/></svg></div><blockquote>The song for our engagement party was the most incredible gift. We've been listening to it on repeat ever since! It is now our chosen wedding song and we can't wait to have our first dance to it.</blockquote><figcaption><i aria-hidden="true">J</i><span><strong>Jamie</strong>Engagement party</span></figcaption></figure>
     </div>
   </div>
 </section>
@@ -602,6 +728,7 @@ footer .fbrand{display:flex;align-items:center;gap:14px}
     </div>
     <div class="pkgs">
       <div class="pkg">
+        <div class="pkg-ico"><svg class="ico"><use href="#i-note"/></svg></div>
         <h3>The Keepsake Song</h3>
         <div class="price"><span class="amt">£34.99</span><small>one-off</small></div>
         <ul class="incl">
@@ -617,6 +744,7 @@ footer .fbrand{display:flex;align-items:center;gap:14px}
       </div>
       <div class="pkg pkg-best">
         <span class="pkg-flag js-swap" data-std="Best value">Launch offer · first 15 only</span>
+        <div class="pkg-ico"><svg class="ico"><use href="#i-gift"/></svg></div>
         <h3>The Keepsake Bundle</h3>
         <div class="price"><span class="amt js-swap" data-std="£44.99">£34.99</span><s class="js-swap" data-std="">£44.99</s><small>one-off</small></div>
         <ul class="incl">
@@ -628,15 +756,14 @@ footer .fbrand{display:flex;align-items:center;gap:14px}
       </div>
     </div>
     <div class="promise">
-      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18.5" fill="none" stroke="currentColor" stroke-width="1"/><path d="M13 20.5l4.5 4.5L27.5 15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg class="ico"><use href="#i-shield"/></svg>
       <div><h3>The love-it promise</h3><p>You'll hear your song before it's final. If you don't love your preview, you get a full refund.</p></div>
     </div>
     <div class="addons">
-      <span>Add-ons, bought separately after you order:</span>
-      <a href="https://buy.stripe.com/9B600j2fI9jnaGJ5sseZ202">Rush delivery within 48 hours · £9.99</a>
-      <a href="https://buy.stripe.com/bJe9AT8E6eDHcOR6wweZ201">Extra style version · £9.99</a>
+      <a class="addon" href="https://buy.stripe.com/9B600j2fI9jnaGJ5sseZ202"><svg class="ico"><use href="#i-bolt"/></svg><div><strong>Rush delivery</strong><span>Your song within 48 hours</span></div><em>£9.99</em></a>
+      <a class="addon" href="https://buy.stripe.com/bJe9AT8E6eDHcOR6wweZ201"><svg class="ico"><use href="#i-layers"/></svg><div><strong>Extra style version</strong><span>Hear it in a second genre</span></div><em>£9.99</em></a>
     </div>
-    <p class="secure">Secure checkout by Stripe. Christmas orders close 16 December.</p>
+    <p class="secure">Add-ons are bought separately after your order. Secure checkout by Stripe. Christmas orders close 16 December.</p>
   </div>
 </section>
 
@@ -646,6 +773,7 @@ footer .fbrand{display:flex;align-items:center;gap:14px}
       <span class="eyebrow">Questions</span>
       <h2 id="faq-h">Good to <em>know.</em></h2>
       <p class="lede">Everything you might want to know before you order.</p>
+      <p class="contact"><svg class="ico"><use href="#i-mail"/></svg>Anything else? Email me at <a href="mailto:TheKeepsakeSongCo@creativemamamedia.com">TheKeepsakeSongCo@creativemamamedia.com</a></p>
     </div>
     <div class="faq-list">
       <details><summary>What do I need to send you?</summary><p>A short voice note. Straight after checkout you&#x27;ll get your story form with a few quick questions, and the key part is a two to three minute voice note about your person. Send it to me on WhatsApp, or record yourself and paste in a transcription. If you get stuck, there&#x27;s a list of talking points on this page to help.</p></details>
@@ -666,7 +794,7 @@ footer .fbrand{display:flex;align-items:center;gap:14px}
   </div>
 </section>
 
-<section class="songlist band" id="song-list" aria-label="Join the Song List">
+<section class="songlist center" id="song-list" aria-label="Join the Song List">
   <div class="wrap">
     <span class="eyebrow">Not ready to order yet?</span>
     <h2>Join the <em>Song List.</em></h2>
@@ -681,9 +809,9 @@ footer .fbrand{display:flex;align-items:center;gap:14px}
     <span class="eyebrow">The moment they press play</span>
     <h2 id="give-h">Ways to <em>give it.</em></h2>
     <div class="give-grid">
-      <div><h3>At the party</h3><p>Play it after the speeches, at the birthday tea or as the candles come out, and watch the room go quiet.</p></div>
-      <div><h3>First thing in the morning</h3><p>Send the MP3 on WhatsApp so it's the first thing they hear on their big day.</p></div>
-      <div><h3>On the wall</h3><p>With the Bundle, frame the lyric artwork with your own photo, so the words stay where they can see them.</p></div>
+      <div><div class="ico-wrap" style="--tint:#F8DFC7;--tone:#B5501E"><svg class="ico"><use href="#i-party"/></svg></div><h3>At the party</h3><p>Play it after the speeches, at the birthday tea or as the candles come out, and watch the room go quiet.</p></div>
+      <div><div class="ico-wrap" style="--tint:#E1E8DC;--tone:#2F4D46"><svg class="ico"><use href="#i-sunrise"/></svg></div><h3>First thing in the morning</h3><p>Send the MP3 on WhatsApp so it's the first thing they hear on their big day.</p></div>
+      <div><div class="ico-wrap" style="--tint:#F2C4AE;--tone:#6E2F3A"><svg class="ico"><use href="#i-frame"/></svg></div><h3>On the wall</h3><p>With the Bundle, frame the lyric artwork with your own photo, so the words stay where they can see them.</p></div>
     </div>
   </div>
 </section>
@@ -693,7 +821,7 @@ footer .fbrand{display:flex;align-items:center;gap:14px}
     <span class="eyebrow">Order yours</span>
     <h2 id="final-h">Give them something <em>they'll keep forever.</em></h2>
     <p class="lede">If you've ever struggled to find the right words, or the right gift, this might be it. Tell me their story, and I'll turn it into a song they'll come back to again and again.</p>
-    <a class="btn btn-primary js-checkout" href="#order">Create their song · from £34.99</a>
+    <a class="btn btn-light js-checkout" href="#order">Create their song · from £34.99</a>
     <p class="small js-swap" data-std="Preview before it's final. Ready in 3–7 days.">First 15 orders get the Keepsake Bundle for £34.99. Preview before it's final. Ready in 3–7 days.</p>
   </div>
 </section>
@@ -702,8 +830,12 @@ footer .fbrand{display:flex;align-items:center;gap:14px}
 
 <footer>
   <div class="wrap">
-    <div class="fbrand"><img src="assets/creative-mama-logo.png" alt="Creative Mama Media" width="400" height="385" loading="lazy"><span>The Keepsake Song Co.<br>A personalised song experience by Creative Mama Media</span></div>
-    <span>&copy; 2026 Creative Mama Media · South Staffordshire, England</span>
+    <div class="fbrand"><img src="assets/creative-mama-logo.png" alt="Creative Mama Media" width="400" height="385" loading="lazy"><span><strong>The Keepsake Song Co.</strong>A personalised song experience by Creative Mama Media</span></div>
+    <div class="flinks">
+      <a href="https://creativemamamedia.com"><svg class="ico"><use href="#i-globe"/></svg>creativemamamedia.com</a>
+      <a href="mailto:TheKeepsakeSongCo@creativemamamedia.com"><svg class="ico"><use href="#i-mail"/></svg>TheKeepsakeSongCo@creativemamamedia.com</a>
+    </div>
+    <p class="fcopy">&copy; 2026 Creative Mama Media · South Staffordshire, England</p>
   </div>
 </footer>
 
@@ -716,17 +848,17 @@ footer .fbrand{display:flex;align-items:center;gap:14px}
 /* SONG PLAYERS: one plays at a time. The waveform is drawn from each MP3's real loudness. */
 var PEAKS = {"dads-memorial-song":[63,49,59,61,67,62,64,66,72,78,74,90,88,83,100,91,91,91,88,93,82,52,77,78,78,74,78,79,84,83,81,78,87,90,85,84,79,79,83,77,83,82,86,78,79,81,73,67,59,56,67,71,80,78,81,79,81,77,83,61,43,33,19,8],"birthday-song":[13,37,41,39,42,38,60,66,68,56,53,67,78,92,100,91,88,92,89,81,48,71,73,73,71,69,67,73,80,74,95,93,93,97,95,94,91,51,70,84,87,85,75,57,39,31,49,45,73,76,84,82,75,77,75,77,74,79,47,50,62,48,37,8],"alyssas-song":[19,32,68,77,72,68,33,67,77,71,84,63,77,96,81,84,86,82,100,70,41,44,68,78,65,65,62,70,78,63,95,65,69,91,86,86,93,80,100,74,43,52,70,84,61,79,64,70,67,83,79,94,87,92,88,82,85,71,39,34,27,24,8,8]};
 (function(){
-  var records=[].slice.call(document.querySelectorAll('.record'));
+  var tracks=[].slice.call(document.querySelectorAll('.track'));
   var jumps=[].slice.call(document.querySelectorAll('.jump'));
   function mirror(idx,on){jumps.forEach(function(j){if(+j.getAttribute('data-target')===idx)j.classList.toggle('is-playing',on)})}
   function fmt(s){s=Math.floor(s||0);return Math.floor(s/60)+':'+('0'+s%60).slice(-2)}
-  records.forEach(function(rec,idx){
+  tracks.forEach(function(rec,idx){
     var au=rec.querySelector('audio'),btn=rec.querySelector('.play'),wave=rec.querySelector('.wave'),time=rec.querySelector('.time');
     var peaks=PEAKS[rec.getAttribute('data-peaks')]||[],bars=[];
     peaks.forEach(function(p){var i=document.createElement('i');i.style.height=p+'%';wave.appendChild(i);bars.push(i)});
     var label=btn.getAttribute('aria-label');
     function paint(){var f=au.duration?au.currentTime/au.duration:0,n=Math.round(f*bars.length);bars.forEach(function(b,k){b.classList.toggle('on',k<n)});time.textContent=fmt(au.currentTime)+' / '+(au.duration?fmt(au.duration):rec.getAttribute('data-length'))}
-    function toggle(){if(au.paused){records.forEach(function(r){var o=r.querySelector('audio');if(o!==au&&!o.paused)o.pause()});au.play()}else au.pause()}
+    function toggle(){if(au.paused){tracks.forEach(function(r){var o=r.querySelector('audio');if(o!==au&&!o.paused)o.pause()});au.play()}else au.pause()}
     btn.addEventListener('click',toggle);
     rec._toggle=toggle;
     au.addEventListener('play',function(){rec.classList.add('is-playing');btn.setAttribute('aria-label',label.replace('Play','Pause'));mirror(idx,true)});
@@ -740,7 +872,28 @@ var PEAKS = {"dads-memorial-song":[63,49,59,61,67,62,64,66,72,78,74,90,88,83,100
       if(au.paused)toggle()});
     paint();
   });
-  jumps.forEach(function(j){j.querySelector('.play').addEventListener('click',function(){records[+j.getAttribute('data-target')]._toggle()})});
+  jumps.forEach(function(j){j.querySelector('.play').addEventListener('click',function(){tracks[+j.getAttribute('data-target')]._toggle()})});
+})();
+
+/* SONG BUILDER: shows how simple the choices are. The real choices are made on the story form. */
+(function(){
+  var state={reason:'a birthday',genre:'pop',singer:'female',mood:'joyful'};
+  var out=document.getElementById('summaryText');
+  function an(w){return /^[aeiou]/i.test(w)?'An':'A'}
+  function render(){
+    var mg=state.mood==='gentle'?'soft and gentle '+state.genre:state.mood+' '+state.genre;
+    out.innerHTML=an(mg)+' <b>'+mg+'</b> song for <b>'+state.reason+'</b>, sung by a <b>'+state.singer+' voice</b>.';
+  }
+  document.querySelectorAll('[data-group]').forEach(function(g){
+    var key=g.getAttribute('data-group');
+    g.querySelectorAll('button').forEach(function(b){
+      b.addEventListener('click',function(){
+        g.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+        state[key]=b.getAttribute('data-v');render();
+      });
+    });
+  });
+  render();
 })();
 
 /* Delivery date: today plus 7 days, the longest turnaround */
