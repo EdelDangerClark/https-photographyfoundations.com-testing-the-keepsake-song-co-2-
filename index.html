@@ -10,6 +10,21 @@
 <meta property="og:image" content="assets/share-image.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="assets/creative-mama-logo.png">
+<!-- Sender universal script (site key c2e2c105431949): loads the Song List signup form -->
+<script>
+  (function (s, e, n, d, er) {
+    s['Sender'] = er;
+    s[er] = s[er] || function () {
+      (s[er].q = s[er].q || []).push(arguments)
+    }, s[er].l = 1 * new Date();
+    var a = e.createElement(n),
+        m = e.getElementsByTagName(n)[0];
+    a.async = 1;
+    a.src = d;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
+  sender('c2e2c105431949')
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Permanent+Marker&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -559,14 +574,12 @@ html{scroll-behavior:smooth}
 </div><div class="pkg-grid"><div class="pkg"><div class="pkg-name">The Keepsake Song</div><div class="pkg-price">£34.99</div><p class="pkg-desc">Custom song, written lyrics, full MP3, preview plus one revision, ready in 3–7 days.</p><a class="pkg-btn" id="pkg-song" href="#order" hidden>Choose the Song · £34.99</a></div><div class="pkg pkg-best"><span class="pkg-flag js-swap" data-std="Best value">Intro offer: £34.99 for the first 15</span><div class="pkg-name">The Keepsake Bundle</div><div class="pkg-price">£44.99</div><p class="pkg-desc">Everything in the song, plus a designed lyric artwork with your own photo (printable, ready to frame) and a second version of your song in a different style.</p><a class="pkg-btn pkg-btn-best" id="pkg-bundle" href="#order">Choose the Bundle · £34.99</a></div></div><p class="pkg-addons">Add-ons, bought separately after your order: <a href="https://buy.stripe.com/9B600j2fI9jnaGJ5sseZ202">rush delivery within 48 hours, £9.99</a> · <a href="https://buy.stripe.com/bJe9AT8E6eDHcOR6wweZ201">extra style version, £9.99</a></p><div class="cta-wrapper"><a href="#order" class="btn-white js-checkout">Create My Song · from £34.99</a><p class="cta-sub" style="color:rgba(255,255,255,.5)">Secure checkout. You'll get your details form straight away.</p></div></div></section>
 <div class="divider"></div>
 
-<section class="ks-signup" id="song-list" hidden>
+<section class="ks-signup" id="song-list">
   <span class="section-label">Not ready yet?</span>
-  <h2>Join the Song List</h2>
-  <p>Be the first to hear about new offers, plus a reminder before the Christmas order deadline on 16 December.</p>
-  <!-- SENDER: paste Sender's universal script into <head>, then put the form ID in SENDER_FORM_ID near the end of the page script. Until then this section stays hidden. -->
-  <div style="text-align:center" class="sender-form-field" id="sender-form"></div>
+  <!-- Sender embedded form "The Keepsake Song Co." (form eER31l), adds signups to the Keepsake – Song List group -->
+  <div style="text-align:center" class="sender-form-field" data-sender-form-id="mva8a59aeer31l61rup"></div>
 </section>
-<div class="divider" id="song-list-divider" hidden></div>
+<div class="divider" id="song-list-divider"></div>
 
 <section class="faq-section"><div class="narrow"><div style="text-align:center;margin-bottom:52px"><span class="section-label">Questions</span><h2 class="section-title" style="text-align:center">Frequently Asked Questions</h2></div><div class="faq-list">
 <div class="faq-item open"><div class="faq-q" onclick="toggleFaq(this)"><span>What do I need to send you?</span><div class="faq-icon">+</div></div><div class="faq-a">Once you&#x27;ve gone through checkout, you&#x27;ll receive a link with everything I need from you. Nothing overwhelming, just the key details that matter, like who or what the song is for and the moments you&#x27;d like included. You can send a voice note about the person too.</div></div>
@@ -612,11 +625,6 @@ function toggleFaq(el){el.closest('.faq-item').classList.toggle('open')}
     bar.addEventListener('click',function(e){if(!au.duration)return;var r=bar.getBoundingClientRect();au.currentTime=(e.clientX-r.left)/r.width*au.duration});
   });
 })();
-
-/* SIGNUP: put the Sender form ID between the quotes (and Sender's universal script in <head>).
-   While it's empty, the Song List section stays hidden. */
-var SENDER_FORM_ID = "";
-(function(){if(!SENDER_FORM_ID)return;var f=document.getElementById('sender-form');f.setAttribute('data-sender-form-id',SENDER_FORM_ID);document.getElementById('song-list').hidden=false;var d=document.getElementById('song-list-divider');if(d)d.hidden=false})();
 
 
 /* CHECKOUT
