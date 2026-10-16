@@ -10,7 +10,7 @@
 <meta property="og:description" content="Their story, set to music. An original song, written lyrics and MP3 from £34.99.">
 <meta property="og:image" content="assets/share-image.jpg">
 <meta property="og:type" content="website">
-<link rel="icon" type="image/png" href="assets/creative-mama-logo.png">
+<link rel="icon" type="image/svg+xml" href="assets/img/keepsake-locket.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600&family=Unbounded:wght@300;400&display=swap">
@@ -110,14 +110,14 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .nav.scrolled{border-bottom-color:var(--line)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:72px}
 .brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-style:italic;font-weight:500;font-size:24px;text-decoration:none;white-space:nowrap}
-.brand-mark{width:30px;height:30px;border-radius:50%;background:var(--rust);color:#FFF8F1;display:grid;place-items:center}
-.brand-mark svg{width:16px;height:16px}
+.brand-mark{width:38px;height:36px;display:block;flex:none}
+.brand-mark svg{width:100%;height:100%;display:block}
 .nav-links{display:flex;gap:28px;font-size:14px;font-weight:500}
 .nav-links a{text-decoration:none;color:var(--muted)}
 .nav-links a:hover{color:var(--ink)}
 .nav .btn{padding:11px 22px;font-size:14px}
 @media(max-width:960px){.nav-links{display:none}}
-@media(max-width:480px){.brand{font-size:20px}.brand-mark{display:none}.nav .btn{padding:10px 16px}}
+@media(max-width:480px){.brand{font-size:20px;gap:8px}.brand-mark{width:28px;height:27px}.nav .btn{padding:10px 16px}}
 
 /* hero */
 .hero{padding-block:clamp(36px,5vw,72px) clamp(80px,9vw,110px);position:relative;overflow:hidden}
@@ -451,7 +451,10 @@ footer img{width:56px;height:auto}
 
 <header class="nav" id="nav">
   <div class="wrap">
-    <a class="brand" href="#top"><span class="brand-mark"><svg viewBox="0 0 24 24"><path d="M9 18V6l10-2v12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6.5" cy="18" r="2.5" fill="currentColor"/><circle cx="16.5" cy="16" r="2.5" fill="currentColor"/></svg></span>The Keepsake Song Co.</a>
+    <a class="brand" href="#top"><span class="brand-mark"><svg aria-hidden="true" viewBox="14 18 172 162"><path d="M100 172 C44 132 22 102 30 70 C38 40 78 34 100 64 C122 34 162 40 170 70 C178 102 156 132 100 172 Z" fill="none" stroke="#B5501E" stroke-width="6.5" stroke-linejoin="round"/>
+<path d="M92 162 C54 132 37 108 41 80" fill="none" stroke="#E9A04F" stroke-width="2" stroke-linecap="round" opacity=".75"/>
+<circle cx="100" cy="38" r="9" fill="none" stroke="#B5501E" stroke-width="5"/><line x1="100" y1="47" x2="100" y2="58" stroke="#B5501E" stroke-width="5" stroke-linecap="round"/>
+<path transform="translate(91 38) rotate(198) scale(1.05)" d="M0 0 C6 -9 19 -11 28 -6 C19 3 6 4 0 0 Z" fill="#E9A04F"/><path transform="translate(109 38) rotate(-18) scale(1.05)" d="M0 0 C6 -9 19 -11 28 -6 C19 3 6 4 0 0 Z" fill="#E9A04F"/><rect x="61.2" y="98.7" width="3.6" height="8.5" rx="1.8" fill="#B5501E"/><rect x="67.2" y="92.8" width="3.6" height="20.4" rx="1.8" fill="#B5501E"/><rect x="73.2" y="89.6" width="3.6" height="26.7" rx="1.8" fill="#B5501E"/><rect x="79.2" y="85.7" width="3.6" height="34.7" rx="1.8" fill="#B5501E"/><rect x="85.2" y="82.3" width="3.6" height="41.4" rx="1.8" fill="#B5501E"/><rect x="91.2" y="83.7" width="3.6" height="38.6" rx="1.8" fill="#B5501E"/><rect x="97.2" y="78.4" width="3.6" height="49.2" rx="1.8" fill="#B5501E"/><rect x="103.2" y="85.8" width="3.6" height="34.5" rx="1.8" fill="#B5501E"/><rect x="109.2" y="79.0" width="3.6" height="47.9" rx="1.8" fill="#B5501E"/><rect x="115.2" y="90.3" width="3.6" height="25.4" rx="1.8" fill="#B5501E"/><rect x="121.2" y="84.6" width="3.6" height="36.9" rx="1.8" fill="#B5501E"/><rect x="127.2" y="92.8" width="3.6" height="20.3" rx="1.8" fill="#B5501E"/><rect x="133.2" y="94.4" width="3.6" height="17.2" rx="1.8" fill="#B5501E"/></svg></span>The Keepsake Song Co.</a>
     <nav class="nav-links" aria-label="Sections">
       <a href="#listen">Listen</a><a href="#reason">Occasions</a><a href="#how">How it works</a><a href="#story">About Edel</a><a href="#order">Prices</a><a href="#faq">Questions</a>
     </nav>
