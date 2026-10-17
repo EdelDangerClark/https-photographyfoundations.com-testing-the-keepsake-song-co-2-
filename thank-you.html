@@ -66,6 +66,7 @@ p{margin:0}
 
 .card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:clamp(24px,4vw,38px);box-shadow:0 24px 50px -36px rgba(43,29,22,.45)}
 .email-card{border-top:5px solid var(--rust);text-align:center}
+.email-card .sender-form-field{margin-top:0}
 .email-card .note{font-size:14px;color:var(--muted);margin-top:14px}
 .sender-form-field{margin-top:18px}
 .fallback{margin-top:18px}
@@ -97,7 +98,7 @@ footer a{color:var(--cream)}
   <div class="hero">
     <span class="eyebrow">Thank you for your order</span>
     <h1>One more <em>step.</em></h1>
-    <p class="lede"><b>We need your email in order to send you the song!</b><br>Pop it in below and your order details will be on their way.</p>
+    <p class="lede">Your payment has gone through. <b>Pop your email in below so I can send you your song.</b></p>
     <ol class="steps" aria-label="Your order">
       <li class="done"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></span>Paid</li>
       <li class="now" id="stepEmail"><span class="dot">2</span>Your email</li>
@@ -105,15 +106,13 @@ footer a{color:var(--cream)}
     </ol>
   </div>
 
-  <section class="card email-card" aria-labelledby="email-h">
-    <h2 id="email-h">Where should I send <em>your song?</em></h2>
-    <!-- Sender embedded form that adds people to the Keepsake – Customers group (this starts the order emails).
-         Replace FORM_EMBED_ID with the data-sender-form-id from Sender's embed code. -->
-    <div style="text-align:center" class="sender-form-field" id="senderBox" data-sender-form-id="FORM_EMBED_ID"></div>
+  <section class="card email-card" aria-label="Your email">
+    <!-- Sender embedded form elYrLM: adds people to the Keepsake – Customers group, which starts the order emails -->
+    <div style="text-align:center" class="sender-form-field" id="senderBox" data-sender-form-id="18d36105a1cd5e83BUw"></div>
     <!-- Shown only if the form hasn't appeared (for example, a blocker stops it loading) -->
     <div class="fallback" id="fallback" hidden>
-      <a class="btn btn-primary" href="mailto:TheKeepsakeSongCo@creativemamamedia.com?subject=My%20Keepsake%20Song%20order&amp;body=Hi%20Edel%2C%20here%20is%20my%20email%20for%20my%20song%20order.%20My%20name%20is%3A%20">Email me instead</a>
-      <p class="note">The form didn't load, so just send me a quick email and I'll take it from there.</p>
+      <a class="btn btn-primary" href="https://stats.sender.net/forms/elYrLM/view" target="_blank" rel="noopener">Add my email</a>
+      <p class="note">The form didn't load here, so this opens it in a new tab.</p>
     </div>
     <p class="thanks" id="thanks" hidden>Thank you! Check your inbox for your order details, then tell me their story below.</p>
     <p class="note">Please use the email you'd like your song sent to. I'll only email you about your order.</p>
