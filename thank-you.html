@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>One more step | The Keepsake Song Co.</title>
+<meta name="description" content="Thank you for your order. One more step: tell us where to send your song.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="assets/img/keepsake-locket.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Manrope:wght@400;500;600&family=Unbounded:wght@300&display=swap">
+<!-- Sender universal script (site key c2e2c105431949): loads the "where should I send your song?" form -->
+<script>
+  (function (s, e, n, d, er) {
+    s['Sender'] = er;
+    s[er] = s[er] || function () {
+      (s[er].q = s[er].q || []).push(arguments)
+    }, s[er].l = 1 * new Date();
+    var a = e.createElement(n),
+        m = e.getElementsByTagName(n)[0];
+    a.async = 1;
+    a.src = d;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', 'https://cdn.sender.net/accounts_resources/universal.js', 'sender');
+  sender('c2e2c105431949')
+</script>
+<style>
+:root{--oat:#F6EEE4;--paper:#FCF8F3;--ink:#2B1D16;--muted:#6B574A;--line:#E6D7C6;--rust:#B5501E;--rust-deep:#923E15;--amber:#E9A04F;--apricot:#F8DFC7;--sage:#E1E8DC;--night:#22150F;--cream:#F6EADC;--cream-soft:#DCC8B4;
+  --serif:'Cormorant Garamond','Iowan Old Style',Georgia,serif;--sans:'Manrope','Segoe UI',system-ui,sans-serif;--label:'Unbounded','Manrope',sans-serif;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:var(--oat);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+[hidden]{display:none!important}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--rust);outline-offset:3px;border-radius:6px}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+header{border-bottom:1px solid var(--line);background:rgba(246,238,228,.92)}
+header .wrap{display:flex;align-items:center;height:72px;max-width:1160px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-style:italic;font-weight:500;font-size:24px;text-decoration:none;white-space:nowrap}
+.brand-mark{width:38px;height:36px;display:block;flex:none}
+.brand-mark svg{width:100%;height:100%;display:block}
+@media(max-width:480px){.brand{font-size:20px;gap:8px}.brand-mark{width:28px;height:27px}}
+.eyebrow{font-family:var(--label);font-weight:300;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--rust);display:inline-flex;align-items:center;gap:10px;margin-bottom:16px}
+.eyebrow::before{content:"";width:22px;height:1px;background:currentColor}
+h1,h2{font-family:var(--serif);font-weight:500;line-height:1.08;margin:0;text-wrap:balance}
+h1{font-size:clamp(44px,7vw,74px)}
+h2{font-size:clamp(28px,3.6vw,38px)}
+h1 em,h2 em{font-style:italic;color:var(--rust)}
+p{margin:0}
+.lede{font-size:clamp(18px,1.8vw,21px);color:var(--muted);margin-top:16px}
+.hero{padding:clamp(48px,8vw,84px) 0 28px;text-align:center}
+.hero .lede b{color:var(--ink);font-weight:600}
+
+/* three steps */
+.steps{display:flex;justify-content:center;gap:0;list-style:none;margin:30px auto 0;padding:0;max-width:520px}
+.steps li{flex:1;position:relative;text-align:center;font-size:13px;color:var(--muted);line-height:1.35;padding:0 6px}
+.steps li::before{content:"";position:absolute;top:17px;left:-50%;width:100%;height:2px;background:var(--line);z-index:0}
+.steps li:first-child::before{display:none}
+.steps .dot{position:relative;z-index:1;width:36px;height:36px;border-radius:50%;margin:0 auto 8px;display:grid;place-items:center;background:var(--paper);border:2px solid var(--line);font-weight:600;color:var(--muted)}
+.steps .done .dot{background:var(--rust);border-color:var(--rust);color:#FFF8F1}
+.steps .done::before,.steps .now::before{background:var(--rust)}
+.steps .now .dot{border-color:var(--rust);color:var(--rust);box-shadow:0 0 0 5px rgba(181,80,30,.14)}
+.steps .now{color:var(--ink);font-weight:600}
+.steps svg{width:16px;height:16px}
+
+.card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:clamp(24px,4vw,38px);box-shadow:0 24px 50px -36px rgba(43,29,22,.45)}
+.email-card{border-top:5px solid var(--rust);text-align:center}
+.email-card .sender-form-field{margin-top:0}
+.email-card .note{font-size:14px;color:var(--muted);margin-top:14px}
+.sender-form-field{margin-top:18px}
+.fallback{margin-top:18px}
+.thanks{margin-top:18px;background:var(--sage);border-radius:16px;padding:18px 20px;font-weight:600}
+
+.next{margin:26px 0 clamp(56px,8vw,90px);background:var(--night);color:var(--cream);border-color:transparent;text-align:center}
+.next .eyebrow{color:var(--amber)}
+.next h2 em{color:var(--amber)}
+.next p{color:var(--cream-soft);max-width:52ch;margin:12px auto 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--sans);font-weight:600;font-size:16px;text-decoration:none;border-radius:999px;padding:16px 30px;transition:background .2s,transform .2s;border:0;cursor:pointer}
+.btn-primary{background:var(--rust);color:#FFF8F1;box-shadow:0 12px 26px -12px rgba(146,62,21,.75)}
+.btn-primary:hover{background:var(--rust-deep);transform:translateY(-1px)}
+.btn-light{background:#FFF8F1;color:var(--rust-deep);margin-top:22px}
+.btn-light:hover{background:#fff;transform:translateY(-1px)}
+.next.is-ready{box-shadow:0 0 0 4px var(--amber)}
+
+footer{background:var(--night);color:var(--cream-soft);padding:30px 0 calc(30px + env(safe-area-inset-bottom,0px));font-size:14px;border-top:1px solid rgba(255,255,255,.08)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;max-width:1160px}
+footer a{color:var(--cream)}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="brand" href="index.html"><span class="brand-mark"><svg aria-hidden="true" viewBox="14 18 172 162"><path d="M100 172 C44 132 22 102 30 70 C38 40 78 34 100 64 C122 34 162 40 170 70 C178 102 156 132 100 172 Z" fill="none" stroke="#B5501E" stroke-width="6.5" stroke-linejoin="round"/>
+<path d="M92 162 C54 132 37 108 41 80" fill="none" stroke="#E9A04F" stroke-width="2" stroke-linecap="round" opacity=".75"/>
+<circle cx="100" cy="38" r="9" fill="none" stroke="#B5501E" stroke-width="5"/><line x1="100" y1="47" x2="100" y2="58" stroke="#B5501E" stroke-width="5" stroke-linecap="round"/>
+<path transform="translate(91 38) rotate(198) scale(1.05)" d="M0 0 C6 -9 19 -11 28 -6 C19 3 6 4 0 0 Z" fill="#E9A04F"/><path transform="translate(109 38) rotate(-18) scale(1.05)" d="M0 0 C6 -9 19 -11 28 -6 C19 3 6 4 0 0 Z" fill="#E9A04F"/><rect x="61.2" y="98.7" width="3.6" height="8.5" rx="1.8" fill="#B5501E"/><rect x="67.2" y="92.8" width="3.6" height="20.4" rx="1.8" fill="#B5501E"/><rect x="73.2" y="89.6" width="3.6" height="26.7" rx="1.8" fill="#B5501E"/><rect x="79.2" y="85.7" width="3.6" height="34.7" rx="1.8" fill="#B5501E"/><rect x="85.2" y="82.3" width="3.6" height="41.4" rx="1.8" fill="#B5501E"/><rect x="91.2" y="83.7" width="3.6" height="38.6" rx="1.8" fill="#B5501E"/><rect x="97.2" y="78.4" width="3.6" height="49.2" rx="1.8" fill="#B5501E"/><rect x="103.2" y="85.8" width="3.6" height="34.5" rx="1.8" fill="#B5501E"/><rect x="109.2" y="79.0" width="3.6" height="47.9" rx="1.8" fill="#B5501E"/><rect x="115.2" y="90.3" width="3.6" height="25.4" rx="1.8" fill="#B5501E"/><rect x="121.2" y="84.6" width="3.6" height="36.9" rx="1.8" fill="#B5501E"/><rect x="127.2" y="92.8" width="3.6" height="20.3" rx="1.8" fill="#B5501E"/><rect x="133.2" y="94.4" width="3.6" height="17.2" rx="1.8" fill="#B5501E"/></svg></span>The Keepsake Song Co.</a></div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <span class="eyebrow">Thank you for your order</span>
+    <h1>One more <em>step.</em></h1>
+    <p class="lede">Your payment has gone through. <b>Pop your email in below so I can send you your song.</b></p>
+    <ol class="steps" aria-label="Your order">
+      <li class="done"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></span>Paid</li>
+      <li class="now" id="stepEmail"><span class="dot">2</span>Your email</li>
+      <li id="stepStory"><span class="dot">3</span>Their story</li>
+    </ol>
+  </div>
+
+  <section class="card email-card" aria-label="Your email">
+    <!-- Sender embedded form elYrLM: adds people to the Keepsake – Customers group, which starts the order emails -->
+    <div style="text-align:center" class="sender-form-field" id="senderBox" data-sender-form-id="18d36105a1cd5e83BUw"></div>
+    <!-- Shown only if the form hasn't appeared (for example, a blocker stops it loading) -->
+    <div class="fallback" id="fallback" hidden>
+      <a class="btn btn-primary" href="https://stats.sender.net/forms/elYrLM/view" target="_blank" rel="noopener">Add my email</a>
+      <p class="note">The form didn't load here, so this opens it in a new tab.</p>
+    </div>
+    <p class="thanks" id="thanks" hidden>Thank you! Check your inbox for your order details, then tell me their story below.</p>
+    <p class="note">Please use the email you'd like your song sent to. I'll only email you about your order.</p>
+  </section>
+
+  <section class="card next" id="story" aria-labelledby="story-h">
+    <span class="eyebrow">Then step 3</span>
+    <h2 id="story-h">Tell me <em>their story.</em></h2>
+    <p>The heart of your song is a 2 to 3 minute voice note about them. The form walks you through it, with prompts if you get stuck.</p>
+    <a class="btn btn-light" href="https://tally.so/r/6DJr8J">Tell me their story &rarr;</a>
+  </section>
+</main>
+
+<footer><div class="wrap"><span>&copy; 2026 Creative Mama Media Ltd</span><span><a href="mailto:TheKeepsakeSongCo@creativemamamedia.com">TheKeepsakeSongCo@creativemamamedia.com</a> · <a href="terms.html">Terms</a></span></div></footer>
+
+<script>
+/* Show a fallback if the Sender form hasn't appeared, and a thank-you once it has been sent */
+(function(){
+  var box=document.getElementById('senderBox'),fb=document.getElementById('fallback'),ty=document.getElementById('thanks');
+  var seen=false,done=false,n=0;
+  function finish(){
+    if(done)return;done=true;ty.hidden=false;
+    document.getElementById('stepEmail').className='done';
+    document.getElementById('stepEmail').querySelector('.dot').innerHTML=document.querySelector('.steps .done .dot').innerHTML;
+    document.getElementById('stepStory').className='now';
+    document.getElementById('story').classList.add('is-ready');
+  }
+  var t=setInterval(function(){
+    n++;
+    var inp=box.querySelector('input[type=email],input[name*=email i]');
+    var showing=!!(inp&&inp.offsetParent!==null);
+    if(showing){seen=true;fb.hidden=true}else if(n>=6&&!seen)fb.hidden=false;
+    /* once the form has loaded, its email box disappearing means it was sent */
+    if(seen&&!showing)finish();
+    if(done||n>=900)clearInterval(t);
+  },1000);
+})();
+</script>
+</body>
+</html>
