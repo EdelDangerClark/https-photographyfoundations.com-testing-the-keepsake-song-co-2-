@@ -1,2 +1,4 @@
-/songlist   /songlist.html   200
-/songlist/  /songlist.html   200
+/frontrow   /frontrow.html   200
+/frontrow/  /frontrow.html   200
+/songlist   /frontrow   301
+/songlist/  /frontrow   301
