@@ -68,7 +68,8 @@ export default async (req) => {
   if (!SONG_LINKS.has(session.payment_link)) {
     return new Response("Not a song order", { status: 200 });
   }
-  if (session.payment_status !== "paid") {
+  // "no_payment_required" covers £0 orders made with a 100% discount code.
+  if (session.payment_status !== "paid" && session.payment_status !== "no_payment_required") {
     return new Response("Not paid", { status: 200 });
   }
 
