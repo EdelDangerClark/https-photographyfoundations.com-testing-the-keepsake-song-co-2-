@@ -1,4 +1,5 @@
-/frontrow   /frontrow.html   200
-/frontrow/  /frontrow.html   200
-/songlist   /frontrow   301
-/songlist/  /frontrow   301
+/earlybirds   /earlybirds.html   200
+/earlybirds/  /earlybirds.html   200
+/songlist   /earlybirds   301
+/songlist/  /earlybirds   301
+/frontrow   /earlybirds   301
