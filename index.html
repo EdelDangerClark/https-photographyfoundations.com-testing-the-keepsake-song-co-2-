@@ -192,6 +192,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .tile strong{font-family:var(--serif);font-size:21px;font-weight:500;line-height:1.15}
 .tile span.sub{font-size:13px;color:var(--muted);line-height:1.4;margin-top:-8px}
 .tile[aria-pressed="true"]{border-color:var(--rust);background:#FFF5EC;box-shadow:inset 0 0 0 1px var(--rust)}
+.reason-note a{color:var(--rust);font-family:var(--sans);font-style:normal;font-size:16px;font-weight:600;white-space:nowrap}
 .reason-note{margin-top:28px;font-family:var(--serif);font-style:italic;font-size:clamp(21px,2vw,25px);color:var(--ink)}
 
 /* how */
@@ -538,6 +539,7 @@ footer img{width:56px;height:auto}
       <button class="tile" type="button" aria-pressed="false" data-v="a loved one's memory" style="--tint:#E6DDE8;--tone:#5A3F66"><span class="ico-wrap"><svg class="ico"><use href="#i-dove"/></svg></span><strong>In memory</strong><span class="sub">A tribute to someone you've lost</span></button>
       <button class="tile" type="button" aria-pressed="false" data-v="no reason but love" style="--tint:#F8DFC7;--tone:#923E15"><span class="ico-wrap"><svg class="ico"><use href="#i-gift"/></svg></span><strong>Just because</strong><span class="sub">Simply to say I love you</span></button>
     </div>
+    <p class="reason-note" id="reasonNote" aria-live="polite" hidden>Lovely, a song for <b id="reasonPick"></b>. <a href="#voice">Next, tell me about them &darr;</a></p>
   </div>
 </section>
 
@@ -875,6 +877,7 @@ var PEAKS = {"dads-memorial-song":[63,49,59,61,67,62,64,66,72,78,74,90,88,83,100
       b.addEventListener('click',function(){
         g.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
         state[key]=b.getAttribute('data-v');render();
+        if(key==='reason'){var n=document.getElementById('reasonNote');document.getElementById('reasonPick').textContent=state.reason;n.hidden=false;var r=n.getBoundingClientRect();if(r.bottom>innerHeight-90)n.scrollIntoView({behavior:'smooth',block:'center'})}
       });
     });
   });
