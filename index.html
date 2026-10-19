@@ -192,7 +192,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .tile strong{font-family:var(--serif);font-size:21px;font-weight:500;line-height:1.15}
 .tile span.sub{font-size:13px;color:var(--muted);line-height:1.4;margin-top:-8px}
 .tile[aria-pressed="true"]{border-color:var(--rust);background:#FFF5EC;box-shadow:inset 0 0 0 1px var(--rust)}
-.reason-note{margin-top:28px;font-family:var(--serif);font-style:italic;font-size:clamp(21px,2vw,25px);color:var(--ink)}
 
 /* how */
 .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,3vw,32px);position:relative}
@@ -253,6 +252,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .chip{border:1px solid var(--line);background:var(--oat);border-radius:999px;padding:9px 16px;font-size:14.5px;color:var(--ink);cursor:pointer;transition:background .2s,border-color .2s,color .2s}
 .chip:hover{border-color:var(--rust)}
 .chip[aria-pressed="true"]{background:var(--rust);border-color:var(--rust);color:#FFF8F1}
+.pick-wide{grid-column:1/-1}
+.chip.occ{display:inline-flex;align-items:center;gap:8px}
+.chip.occ .ico{width:18px;height:18px;color:var(--tone)}
+.chip.occ[aria-pressed="true"] .ico{color:#FFF8F1}
 .singers{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .singer{display:flex;flex-direction:column;align-items:center;gap:10px;padding:16px 10px;border-radius:16px;border:1px solid var(--line);background:var(--oat);cursor:pointer;color:var(--ink);font-size:15px;font-weight:500;transition:border-color .2s,background .2s}
 .singer img{width:78px;height:78px;border-radius:50%;object-fit:cover;border:3px solid var(--paper);box-shadow:0 8px 18px -10px rgba(43,29,22,.6)}
@@ -426,7 +429,7 @@ footer img{width:56px;height:auto}
 <circle cx="100" cy="38" r="9" fill="none" stroke="#B5501E" stroke-width="5"/><line x1="100" y1="47" x2="100" y2="58" stroke="#B5501E" stroke-width="5" stroke-linecap="round"/>
 <path transform="translate(91 38) rotate(198) scale(1.05)" d="M0 0 C6 -9 19 -11 28 -6 C19 3 6 4 0 0 Z" fill="#E9A04F"/><path transform="translate(109 38) rotate(-18) scale(1.05)" d="M0 0 C6 -9 19 -11 28 -6 C19 3 6 4 0 0 Z" fill="#E9A04F"/><rect x="61.2" y="98.7" width="3.6" height="8.5" rx="1.8" fill="#B5501E"/><rect x="67.2" y="92.8" width="3.6" height="20.4" rx="1.8" fill="#B5501E"/><rect x="73.2" y="89.6" width="3.6" height="26.7" rx="1.8" fill="#B5501E"/><rect x="79.2" y="85.7" width="3.6" height="34.7" rx="1.8" fill="#B5501E"/><rect x="85.2" y="82.3" width="3.6" height="41.4" rx="1.8" fill="#B5501E"/><rect x="91.2" y="83.7" width="3.6" height="38.6" rx="1.8" fill="#B5501E"/><rect x="97.2" y="78.4" width="3.6" height="49.2" rx="1.8" fill="#B5501E"/><rect x="103.2" y="85.8" width="3.6" height="34.5" rx="1.8" fill="#B5501E"/><rect x="109.2" y="79.0" width="3.6" height="47.9" rx="1.8" fill="#B5501E"/><rect x="115.2" y="90.3" width="3.6" height="25.4" rx="1.8" fill="#B5501E"/><rect x="121.2" y="84.6" width="3.6" height="36.9" rx="1.8" fill="#B5501E"/><rect x="127.2" y="92.8" width="3.6" height="20.3" rx="1.8" fill="#B5501E"/><rect x="133.2" y="94.4" width="3.6" height="17.2" rx="1.8" fill="#B5501E"/></svg></span>The Keepsake Song Co.</a>
     <nav class="nav-links" aria-label="Sections">
-      <a href="#listen">Listen</a><a href="#reason">Occasions</a><a href="#how">How it works</a><a href="#story">About Edel</a><a href="#order">Prices</a><a href="#faq">Questions</a>
+      <a href="#listen">Listen</a><a href="#sound">Your song</a><a href="#how">How it works</a><a href="#story">About Edel</a><a href="#order">Prices</a><a href="#faq">Questions</a>
     </nav>
     <a class="btn btn-primary js-checkout" href="#order">Order a song</a>
   </div>
@@ -519,27 +522,69 @@ footer img{width:56px;height:auto}
   </div>
 </section>
 
-<section class="reason" id="reason" aria-labelledby="reason-h">
+<section class="sound" id="sound" aria-labelledby="sound-h">
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <span class="eyebrow">Step one</span>
-        <h2 id="reason-h">What's the <em>reason for the song?</em></h2>
-        <p class="lede">Flowers wilt and chocolates get eaten. A song gets played at every birthday after. Tap the one that fits.</p>
+        <span class="eyebrow">Picture your song</span>
+        <h2 id="sound-h">Build your song <em>in four taps.</em></h2>
+        <p class="lede">Pick the occasion, the style, the voice and the mood, and watch your song take shape below. You'll confirm your real choices on your story form after you order.</p>
       </div>
     </div>
-    <div class="tiles" role="group" aria-label="Choose the reason for the song" data-group="reason">
-      <button class="tile" type="button" aria-pressed="true" data-v="a birthday" style="--tint:#F6D2BC;--tone:#B5501E"><span class="ico-wrap"><svg class="ico"><use href="#i-cake"/></svg></span><strong>Birthday</strong><span class="sub">Milestones and every year between</span></button>
-      <button class="tile" type="button" aria-pressed="false" data-v="an anniversary" style="--tint:#F6D0CB;--tone:#9C2F3E"><span class="ico-wrap"><svg class="ico"><use href="#i-rings"/></svg></span><strong>Anniversary</strong><span class="sub">Years together, set to music</span></button>
-      <button class="tile" type="button" aria-pressed="false" data-v="a wedding" style="--tint:#F3E0C4;--tone:#A0601A"><span class="ico-wrap"><svg class="ico"><use href="#i-dance"/></svg></span><strong>Wedding</strong><span class="sub">Engagements and first dances</span></button>
-      <button class="tile" type="button" aria-pressed="false" data-v="Mum or Dad" style="--tint:#E1E8DC;--tone:#2F4D46"><span class="ico-wrap"><svg class="ico"><use href="#i-family"/></svg></span><strong>Mum, Dad &amp; family</strong><span class="sub">Mother's Day, Father's Day, grandparents</span></button>
-      <button class="tile" type="button" aria-pressed="false" data-v="a little one" style="--tint:#F8E3CE;--tone:#C56A12"><span class="ico-wrap"><svg class="ico"><use href="#i-baby"/></svg></span><strong>New baby &amp; children</strong><span class="sub">A lullaby that's theirs alone</span></button>
-      <button class="tile" type="button" aria-pressed="false" data-v="Christmas" style="--tint:#DDE7DF;--tone:#2F4D46"><span class="ico-wrap"><svg class="ico"><use href="#i-tree"/></svg></span><strong>Christmas</strong><span class="sub">Orders close 16 December</span></button>
-      <button class="tile" type="button" aria-pressed="false" data-v="a loved one's memory" style="--tint:#E6DDE8;--tone:#5A3F66"><span class="ico-wrap"><svg class="ico"><use href="#i-dove"/></svg></span><strong>In memory</strong><span class="sub">A tribute to someone you've lost</span></button>
-      <button class="tile" type="button" aria-pressed="false" data-v="no reason but love" style="--tint:#F8DFC7;--tone:#923E15"><span class="ico-wrap"><svg class="ico"><use href="#i-gift"/></svg></span><strong>Just because</strong><span class="sub">Simply to say I love you</span></button>
+    <div class="picker">
+      <div class="pick pick-wide">
+        <div class="pick-head"><svg class="ico"><use href="#i-gift"/></svg><h3>The occasion</h3></div>
+        <div class="chips" role="group" aria-label="Occasion" data-group="reason">
+          <button class="chip occ" type="button" aria-pressed="true" data-v="a birthday" style="--tone:#B5501E"><svg class="ico"><use href="#i-cake"/></svg>Birthday</button>
+          <button class="chip occ" type="button" aria-pressed="false" data-v="an anniversary" style="--tone:#9C2F3E"><svg class="ico"><use href="#i-rings"/></svg>Anniversary</button>
+          <button class="chip occ" type="button" aria-pressed="false" data-v="a wedding" style="--tone:#A0601A"><svg class="ico"><use href="#i-dance"/></svg>Wedding</button>
+          <button class="chip occ" type="button" aria-pressed="false" data-v="Mum or Dad" style="--tone:#2F4D46"><svg class="ico"><use href="#i-family"/></svg>Mum, Dad &amp; family</button>
+          <button class="chip occ" type="button" aria-pressed="false" data-v="a little one" style="--tone:#C56A12"><svg class="ico"><use href="#i-baby"/></svg>New baby &amp; children</button>
+          <button class="chip occ" type="button" aria-pressed="false" data-v="Christmas" style="--tone:#2F4D46"><svg class="ico"><use href="#i-tree"/></svg>Christmas</button>
+          <button class="chip occ" type="button" aria-pressed="false" data-v="a loved one's memory" style="--tone:#5A3F66"><svg class="ico"><use href="#i-dove"/></svg>In memory</button>
+          <button class="chip occ" type="button" aria-pressed="false" data-v="no reason but love" style="--tone:#923E15"><svg class="ico"><use href="#i-gift"/></svg>Just because</button>
+        </div>
+      </div>
+      <div class="pick">
+        <div class="pick-head"><svg class="ico"><use href="#i-guitar"/></svg><h3>The genre</h3></div>
+        <div class="chips" role="group" aria-label="Genre" data-group="genre">
+          <button class="chip" type="button" aria-pressed="true" data-v="pop">Pop</button>
+          <button class="chip" type="button" aria-pressed="false" data-v="acoustic">Acoustic</button>
+          <button class="chip" type="button" aria-pressed="false" data-v="country">Country</button>
+          <button class="chip" type="button" aria-pressed="false" data-v="folk">Folk</button>
+          <button class="chip" type="button" aria-pressed="false" data-v="rock">Rock</button>
+          <button class="chip" type="button" aria-pressed="false" data-v="soul">Soul</button>
+          <button class="chip" type="button" aria-pressed="false" data-v="ballad">Ballad</button>
+          <button class="chip" type="button" aria-pressed="false" data-v="lullaby">Lullaby</button>
+        </div>
+      </div>
+      <div class="pick">
+        <div class="pick-head"><svg class="ico"><use href="#i-mic"/></svg><h3>The singer</h3></div>
+        <div class="singers" role="group" aria-label="Singer" data-group="singer">
+          <button class="singer" type="button" aria-pressed="false" data-v="male"><img src="assets/img/singer-male.jpg" alt="" width="200" height="200" loading="lazy">Male voice</button>
+          <button class="singer" type="button" aria-pressed="true" data-v="female"><img src="assets/img/singer-female.jpg" alt="" width="200" height="200" loading="lazy">Female voice</button>
+        </div>
+      </div>
+      <div class="pick">
+        <div class="pick-head"><svg class="ico"><use href="#i-sparkle"/></svg><h3>The mood</h3></div>
+        <div class="moods" role="group" aria-label="Mood" data-group="mood">
+          <button class="mood" type="button" aria-pressed="true" data-v="joyful" style="--mt:#FBE3C2;--mc:#C56A12"><svg class="ico"><use href="#i-sun"/></svg><div><strong>Joyful</strong><span>Upbeat, for celebrations</span></div></button>
+          <button class="mood" type="button" aria-pressed="false" data-v="romantic" style="--mt:#F6D0CB;--mc:#9C2F3E"><svg class="ico"><use href="#i-heart"/></svg><div><strong>Romantic</strong><span>Warm, for partners</span></div></button>
+          <button class="mood" type="button" aria-pressed="false" data-v="gentle" style="--mt:#DDE7DF;--mc:#2F4D46"><svg class="ico"><use href="#i-leaf"/></svg><div><strong>Soft and gentle</strong><span>Tender, for tributes</span></div></button>
+        </div>
+      </div>
+    </div>
+    <div class="summary" aria-live="polite">
+      <div>
+        <small>Your song</small>
+        <p id="summaryText">A <b>joyful pop</b> song for <b>a birthday</b>, sung by a <b>female voice</b>.</p>
+        <p class="fine">Plus the names, memories and in-jokes from your voice note.</p>
+      </div>
+      <a class="btn btn-primary js-checkout" href="#order">Create this song</a>
     </div>
   </div>
 </section>
+
 
 <section class="how" id="how" aria-labelledby="how-h">
   <div class="wrap">
@@ -563,7 +608,7 @@ footer img{width:56px;height:auto}
 <section class="voice" id="voice" aria-labelledby="voice-h">
   <div class="wrap voice-grid">
     <div class="voice-copy">
-      <span class="eyebrow">Step two · The voice note</span>
+      <span class="eyebrow">The voice note</span>
       <h2 id="voice-h">Just talk about them <em>for two or three minutes.</em></h2>
       <p class="lede">The most important part of your order is a short voice note. The way you talk about someone, the stories you reach for and the little things that make you smile, is where their song comes from.</p>
       <div class="ways">
@@ -604,55 +649,6 @@ footer img{width:56px;height:auto}
   </div>
 </section>
 
-<section class="sound" id="sound" aria-labelledby="sound-h">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <span class="eyebrow">Step three</span>
-        <h2 id="sound-h">Choose how it <em>sounds.</em></h2>
-        <p class="lede">Have a play with the options below. It really is this easy, and you'll confirm your choices on your story form.</p>
-      </div>
-    </div>
-    <div class="picker">
-      <div class="pick">
-        <div class="pick-head"><svg class="ico"><use href="#i-guitar"/></svg><h3>The genre</h3></div>
-        <div class="chips" role="group" aria-label="Genre" data-group="genre">
-          <button class="chip" type="button" aria-pressed="true" data-v="pop">Pop</button>
-          <button class="chip" type="button" aria-pressed="false" data-v="acoustic">Acoustic</button>
-          <button class="chip" type="button" aria-pressed="false" data-v="country">Country</button>
-          <button class="chip" type="button" aria-pressed="false" data-v="folk">Folk</button>
-          <button class="chip" type="button" aria-pressed="false" data-v="rock">Rock</button>
-          <button class="chip" type="button" aria-pressed="false" data-v="soul">Soul</button>
-          <button class="chip" type="button" aria-pressed="false" data-v="ballad">Ballad</button>
-          <button class="chip" type="button" aria-pressed="false" data-v="lullaby">Lullaby</button>
-        </div>
-      </div>
-      <div class="pick">
-        <div class="pick-head"><svg class="ico"><use href="#i-mic"/></svg><h3>The singer</h3></div>
-        <div class="singers" role="group" aria-label="Singer" data-group="singer">
-          <button class="singer" type="button" aria-pressed="false" data-v="male"><img src="assets/img/singer-male.jpg" alt="" width="200" height="200" loading="lazy">Male voice</button>
-          <button class="singer" type="button" aria-pressed="true" data-v="female"><img src="assets/img/singer-female.jpg" alt="" width="200" height="200" loading="lazy">Female voice</button>
-        </div>
-      </div>
-      <div class="pick">
-        <div class="pick-head"><svg class="ico"><use href="#i-sparkle"/></svg><h3>The mood</h3></div>
-        <div class="moods" role="group" aria-label="Mood" data-group="mood">
-          <button class="mood" type="button" aria-pressed="true" data-v="joyful" style="--mt:#FBE3C2;--mc:#C56A12"><svg class="ico"><use href="#i-sun"/></svg><div><strong>Joyful</strong><span>Upbeat, for celebrations</span></div></button>
-          <button class="mood" type="button" aria-pressed="false" data-v="romantic" style="--mt:#F6D0CB;--mc:#9C2F3E"><svg class="ico"><use href="#i-heart"/></svg><div><strong>Romantic</strong><span>Warm, for partners</span></div></button>
-          <button class="mood" type="button" aria-pressed="false" data-v="gentle" style="--mt:#DDE7DF;--mc:#2F4D46"><svg class="ico"><use href="#i-leaf"/></svg><div><strong>Soft and gentle</strong><span>Tender, for tributes</span></div></button>
-        </div>
-      </div>
-    </div>
-    <div class="summary" aria-live="polite">
-      <div>
-        <small>Your song</small>
-        <p id="summaryText">A <b>joyful pop</b> song for <b>a birthday</b>, sung by a <b>female voice</b>.</p>
-        <p class="fine">Plus the names, memories and in-jokes from your voice note.</p>
-      </div>
-      <a class="btn btn-primary js-checkout" href="#order">Create this song</a>
-    </div>
-  </div>
-</section>
 
 <section class="story" id="story" aria-labelledby="story-h">
   <div class="wrap story-grid">
