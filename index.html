@@ -897,8 +897,9 @@ var PEAKS = {"dads-memorial-song":[63,49,59,61,67,62,64,66,72,78,74,90,88,83,100
 })();
 
 /* CHECKOUT
-   INTRO_OFFER = true: every Order button goes to INTRO_URL (the Bundle at £34.99, first 15 orders).
-   When the 15 have sold, set INTRO_OFFER = false. Order buttons then scroll to the prices, the
+   Order buttons around the page always scroll to the prices, so buyers see both options.
+   INTRO_OFFER = true: the Bundle button goes to INTRO_URL (the Bundle at £34.99, first 15 orders).
+   When the 15 have sold, set INTRO_OFFER = false. Then the
    launch wording is replaced, and the two package buttons go to SONG_URL (£34.99) and BUNDLE_URL (£44.99). */
 var INTRO_OFFER = true;
 var INTRO_URL = "https://buy.stripe.com/3cIfZh3jMdzD6qt3kkeZ200";
@@ -907,7 +908,6 @@ var BUNDLE_URL = "https://buy.stripe.com/28EcN5dYqanr8yBf32eZ204";
 (function(){
   var song=document.getElementById('pkg-song'),bundle=document.getElementById('pkg-bundle');
   if(INTRO_OFFER){
-    document.querySelectorAll('.js-checkout').forEach(function(a){a.href=INTRO_URL});
     bundle.href=INTRO_URL;
     bundle.textContent='Choose the Bundle · £34.99';
     return;
