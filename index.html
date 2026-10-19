@@ -214,10 +214,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .voice .eyebrow{color:var(--spruce)}
 .voice h2 em{color:var(--spruce)}
 .voice-copy{min-width:0}
-.ways{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
-@media(max-width:560px){.ways{grid-template-columns:1fr}}
-.ways div{background:rgba(252,248,243,.75);border-radius:16px;padding:20px}
-.ways .ico{color:var(--spruce);margin-bottom:10px}
+.ways{display:grid;grid-template-columns:1fr;gap:12px;margin-top:34px}
+.ways div{background:rgba(252,248,243,.75);border-radius:16px;padding:18px 20px;display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:start}
+.ways .ico{color:var(--spruce);grid-row:span 2;margin-top:4px}
 .ways h3{font-size:22px;margin-bottom:6px}
 .ways p{color:var(--muted);font-size:15px}
 .vn{min-width:0;display:flex;flex-direction:column;gap:14px;max-width:440px;justify-self:center;width:100%}
@@ -612,8 +611,9 @@ footer img{width:56px;height:auto}
       <h2 id="voice-h">Just talk about them <em>for two or three minutes.</em></h2>
       <p class="lede">The most important part of your order is a short voice note. The way you talk about someone, the stories you reach for and the little things that make you smile, is where their song comes from.</p>
       <div class="ways">
-        <div><svg class="ico"><use href="#i-chat"/></svg><h3>Easiest: send it on WhatsApp</h3><p>Open a chat with me, then press and hold the microphone button and talk. Let go to send. My number comes with your form.</p></div>
-        <div><svg class="ico"><use href="#i-doc"/></svg><h3>Or talk and it types for you</h3><p>No audio file needed. On your phone, tap the answer box in your form. When the keyboard pops up, tap its little microphone and talk. Your words appear as writing.</p></div>
+        <div><svg class="ico"><use href="#i-chat"/></svg><h3>Send it on WhatsApp</h3><p>A voice note or a written message, whichever is easier. For a voice note, hold the microphone button, talk, and let go to send. My number comes with your form.</p></div>
+        <div><svg class="ico"><use href="#i-mic"/></svg><h3>Upload a recording</h3><p>Record it on your phone's voice recorder app (Voice Memos on iPhone, Recorder on Android), save it, then upload it in your form.</p></div>
+        <div><svg class="ico"><use href="#i-doc"/></svg><h3>Paste a transcription</h3><p>On a computer, open a Google Doc, choose Tools, then Voice typing. Click the microphone and talk, then copy your words into the form.</p></div>
       </div>
     </div>
     <div class="vn" aria-hidden="true">
@@ -765,7 +765,7 @@ footer img{width:56px;height:auto}
       <p class="contact"><svg class="ico"><use href="#i-mail"/></svg>Anything else? Email me at <a href="mailto:TheKeepsakeSongCo@creativemamamedia.com">TheKeepsakeSongCo@creativemamamedia.com</a> or call <a href="tel:+447783459630">+44 7783 459630</a></p>
     </div>
     <div class="faq-list">
-      <details><summary>What do I need to send you?</summary><p>A short voice note. Straight after checkout you&#x27;ll get your story form with a few quick questions, and the key part is a two to three minute voice note about your person. The easiest way is a WhatsApp voice message: hold the microphone button, talk, and let go to send. Or, with no audio file at all: tap the answer box in your form on your phone, tap the little microphone on the keyboard that pops up, and talk. Your words appear as writing. If you get stuck, there&#x27;s a list of talking points on this page to help.</p></details>
+      <details><summary>What do I need to send you?</summary><p>A short voice note, about two to three minutes on your person. Straight after checkout you&#x27;ll get your story form. You can send your voice note (or a written message) on WhatsApp, upload a recording from your phone, or paste in a transcription, for example using voice typing in Google Docs. If you get stuck, there&#x27;s a list of talking points on this page to help.</p></details>
       <details><summary>How long does it take?</summary><p>Turnaround is 3–7 days from when I receive your details.</p></details>
       <details><summary>Can I hear it before it&#x27;s finished?</summary><p>Yes. You&#x27;ll get to preview your song first, so you know you love it before it&#x27;s finalised.</p></details>
       <details><summary>What if I don&#x27;t love it?</summary><p>If anything needs changing after your preview, one revision is included. If you&#x27;re not happy with your preview, you get a full refund. Once your finished song has been delivered, all digital sales are final and no refunds are given. Your happiness really matters to me, though, so if something still isn&#x27;t right after your revision, get in touch and I&#x27;ll do everything I can to put it right.</p></details>
