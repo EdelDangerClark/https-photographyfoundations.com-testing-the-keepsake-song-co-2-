@@ -192,7 +192,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .tile strong{font-family:var(--serif);font-size:21px;font-weight:500;line-height:1.15}
 .tile span.sub{font-size:13px;color:var(--muted);line-height:1.4;margin-top:-8px}
 .tile[aria-pressed="true"]{border-color:var(--rust);background:#FFF5EC;box-shadow:inset 0 0 0 1px var(--rust)}
-.reason-note{margin-top:28px;font-family:var(--serif);font-style:italic;font-size:clamp(21px,2vw,25px);color:var(--ink)}
 
 /* how */
 .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,3vw,32px);position:relative}
@@ -215,10 +214,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .voice .eyebrow{color:var(--spruce)}
 .voice h2 em{color:var(--spruce)}
 .voice-copy{min-width:0}
-.ways{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
-@media(max-width:560px){.ways{grid-template-columns:1fr}}
-.ways div{background:rgba(252,248,243,.75);border-radius:16px;padding:20px}
-.ways .ico{color:var(--spruce);margin-bottom:10px}
+.ways{display:grid;grid-template-columns:1fr;gap:12px;margin-top:34px}
+.ways div{background:rgba(252,248,243,.75);border-radius:16px;padding:18px 20px;display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:start}
+.ways .ico{color:var(--spruce);grid-row:span 2;margin-top:4px}
 .ways h3{font-size:22px;margin-bottom:6px}
 .ways p{color:var(--muted);font-size:15px}
 .vn{min-width:0;display:flex;flex-direction:column;gap:14px;max-width:440px;justify-self:center;width:100%}
@@ -253,6 +251,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .chip{border:1px solid var(--line);background:var(--oat);border-radius:999px;padding:9px 16px;font-size:14.5px;color:var(--ink);cursor:pointer;transition:background .2s,border-color .2s,color .2s}
 .chip:hover{border-color:var(--rust)}
 .chip[aria-pressed="true"]{background:var(--rust);border-color:var(--rust);color:#FFF8F1}
+.pick-wide{grid-column:1/-1}
+.chip.occ{display:inline-flex;align-items:center;gap:8px}
+.chip.occ .ico{width:18px;height:18px;color:var(--tone)}
+.chip.occ[aria-pressed="true"] .ico{color:#FFF8F1}
 .singers{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .singer{display:flex;flex-direction:column;align-items:center;gap:10px;padding:16px 10px;border-radius:16px;border:1px solid var(--line);background:var(--oat);cursor:pointer;color:var(--ink);font-size:15px;font-weight:500;transition:border-color .2s,background .2s}
 .singer img{width:78px;height:78px;border-radius:50%;object-fit:cover;border:3px solid var(--paper);box-shadow:0 8px 18px -10px rgba(43,29,22,.6)}
@@ -426,7 +428,7 @@ footer img{width:56px;height:auto}
 <circle cx="100" cy="38" r="9" fill="none" stroke="#B5501E" stroke-width="5"/><line x1="100" y1="47" x2="100" y2="58" stroke="#B5501E" stroke-width="5" stroke-linecap="round"/>
 <path transform="translate(91 38) rotate(198) scale(1.05)" d="M0 0 C6 -9 19 -11 28 -6 C19 3 6 4 0 0 Z" fill="#E9A04F"/><path transform="translate(109 38) rotate(-18) scale(1.05)" d="M0 0 C6 -9 19 -11 28 -6 C19 3 6 4 0 0 Z" fill="#E9A04F"/><rect x="61.2" y="98.7" width="3.6" height="8.5" rx="1.8" fill="#B5501E"/><rect x="67.2" y="92.8" width="3.6" height="20.4" rx="1.8" fill="#B5501E"/><rect x="73.2" y="89.6" width="3.6" height="26.7" rx="1.8" fill="#B5501E"/><rect x="79.2" y="85.7" width="3.6" height="34.7" rx="1.8" fill="#B5501E"/><rect x="85.2" y="82.3" width="3.6" height="41.4" rx="1.8" fill="#B5501E"/><rect x="91.2" y="83.7" width="3.6" height="38.6" rx="1.8" fill="#B5501E"/><rect x="97.2" y="78.4" width="3.6" height="49.2" rx="1.8" fill="#B5501E"/><rect x="103.2" y="85.8" width="3.6" height="34.5" rx="1.8" fill="#B5501E"/><rect x="109.2" y="79.0" width="3.6" height="47.9" rx="1.8" fill="#B5501E"/><rect x="115.2" y="90.3" width="3.6" height="25.4" rx="1.8" fill="#B5501E"/><rect x="121.2" y="84.6" width="3.6" height="36.9" rx="1.8" fill="#B5501E"/><rect x="127.2" y="92.8" width="3.6" height="20.3" rx="1.8" fill="#B5501E"/><rect x="133.2" y="94.4" width="3.6" height="17.2" rx="1.8" fill="#B5501E"/></svg></span>The Keepsake Song Co.</a>
     <nav class="nav-links" aria-label="Sections">
-      <a href="#listen">Listen</a><a href="#reason">Occasions</a><a href="#how">How it works</a><a href="#story">About Edel</a><a href="#order">Prices</a><a href="#faq">Questions</a>
+      <a href="#listen">Listen</a><a href="#sound">Your song</a><a href="#how">How it works</a><a href="#story">About Edel</a><a href="#order">Prices</a><a href="#faq">Questions</a>
     </nav>
     <a class="btn btn-primary js-checkout" href="#order">Order a song</a>
   </div>
@@ -519,101 +521,29 @@ footer img{width:56px;height:auto}
   </div>
 </section>
 
-<section class="reason" id="reason" aria-labelledby="reason-h">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <span class="eyebrow">Step one</span>
-        <h2 id="reason-h">What's the <em>reason for the song?</em></h2>
-        <p class="lede">Flowers wilt and chocolates get eaten. A song gets played at every birthday after. Tap the one that fits.</p>
-      </div>
-    </div>
-    <div class="tiles" role="group" aria-label="Choose the reason for the song" data-group="reason">
-      <button class="tile" type="button" aria-pressed="true" data-v="a birthday" style="--tint:#F6D2BC;--tone:#B5501E"><span class="ico-wrap"><svg class="ico"><use href="#i-cake"/></svg></span><strong>Birthday</strong><span class="sub">Milestones and every year between</span></button>
-      <button class="tile" type="button" aria-pressed="false" data-v="an anniversary" style="--tint:#F6D0CB;--tone:#9C2F3E"><span class="ico-wrap"><svg class="ico"><use href="#i-rings"/></svg></span><strong>Anniversary</strong><span class="sub">Years together, set to music</span></button>
-      <button class="tile" type="button" aria-pressed="false" data-v="a wedding" style="--tint:#F3E0C4;--tone:#A0601A"><span class="ico-wrap"><svg class="ico"><use href="#i-dance"/></svg></span><strong>Wedding</strong><span class="sub">Engagements and first dances</span></button>
-      <button class="tile" type="button" aria-pressed="false" data-v="Mum or Dad" style="--tint:#E1E8DC;--tone:#2F4D46"><span class="ico-wrap"><svg class="ico"><use href="#i-family"/></svg></span><strong>Mum, Dad &amp; family</strong><span class="sub">Mother's Day, Father's Day, grandparents</span></button>
-      <button class="tile" type="button" aria-pressed="false" data-v="a little one" style="--tint:#F8E3CE;--tone:#C56A12"><span class="ico-wrap"><svg class="ico"><use href="#i-baby"/></svg></span><strong>New baby &amp; children</strong><span class="sub">A lullaby that's theirs alone</span></button>
-      <button class="tile" type="button" aria-pressed="false" data-v="Christmas" style="--tint:#DDE7DF;--tone:#2F4D46"><span class="ico-wrap"><svg class="ico"><use href="#i-tree"/></svg></span><strong>Christmas</strong><span class="sub">Orders close 16 December</span></button>
-      <button class="tile" type="button" aria-pressed="false" data-v="a loved one's memory" style="--tint:#E6DDE8;--tone:#5A3F66"><span class="ico-wrap"><svg class="ico"><use href="#i-dove"/></svg></span><strong>In memory</strong><span class="sub">A tribute to someone you've lost</span></button>
-      <button class="tile" type="button" aria-pressed="false" data-v="no reason but love" style="--tint:#F8DFC7;--tone:#923E15"><span class="ico-wrap"><svg class="ico"><use href="#i-gift"/></svg></span><strong>Just because</strong><span class="sub">Simply to say I love you</span></button>
-    </div>
-  </div>
-</section>
-
-<section class="how" id="how" aria-labelledby="how-h">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <span class="eyebrow">How it works</span>
-        <h2 id="how-h">Simple, <em>start to finish.</em></h2>
-        <p class="lede">No long forms full of boxes. You simply talk to me about the person you love, and I do the rest.</p>
-      </div>
-      <a class="btn btn-primary js-checkout" href="#order">Start your song</a>
-    </div>
-    <ol class="steps">
-      <li style="--tint:#F8DFC7;--tone:#B5501E"><span class="step-n">01</span><div class="step-ico"><svg class="ico"><use href="#i-bag"/></svg></div><h3>Order your song</h3><p>Choose the Song or the Bundle at secure checkout. Your story form arrives straight away.</p></li>
-      <li class="key" style="--tint:rgba(255,255,255,.12);--tone:#F3C08A"><span class="step-n">02</span><div class="step-ico"><svg class="ico"><use href="#i-mic"/></svg></div><h3>Send me a voice note</h3><p>The heart of it. Talk about them for two or three minutes, just as you would to a friend.</p></li>
-      <li style="--tint:#F2C4AE;--tone:#6E2F3A"><span class="step-n">03</span><div class="step-ico"><svg class="ico"><use href="#i-pen"/></svg></div><h3>I write your song</h3><p>AI helps me capture the details and makes the music. I shape every word until it sounds like them.</p></li>
-      <li style="--tint:#E1E8DC;--tone:#2F4D46"><span class="step-n">04</span><div class="step-ico"><svg class="ico"><use href="#i-headphones"/></svg></div><h3>Hear it, then keep it</h3><p>Hear a preview first, with one revision included. Then your MP3 and lyrics arrive to keep forever.</p></li>
-    </ol>
-  </div>
-</section>
-
-<section class="voice" id="voice" aria-labelledby="voice-h">
-  <div class="wrap voice-grid">
-    <div class="voice-copy">
-      <span class="eyebrow">Step two · The voice note</span>
-      <h2 id="voice-h">Just talk about them <em>for two or three minutes.</em></h2>
-      <p class="lede">The most important part of your order is a short voice note. The way you talk about someone, the stories you reach for and the little things that make you smile, is where their song comes from.</p>
-      <div class="ways">
-        <div><svg class="ico"><use href="#i-chat"/></svg><h3>Send it on WhatsApp</h3><p>Record a voice message, just as you would to a friend, and send it straight to me. My number comes with your form.</p></div>
-        <div><svg class="ico"><use href="#i-doc"/></svg><h3>Or type it out</h3><p>Prefer not to send audio? Record yourself, let your phone or an AI app transcribe it, and paste the text into your form.</p></div>
-      </div>
-    </div>
-    <div class="vn" aria-hidden="true">
-      <div class="vn-bubble">
-        <span class="vn-play"><svg viewBox="0 0 16 16"><path d="M4 2.2v11.6L14 8z" fill="currentColor"/></svg></span>
-        <span class="vn-wave"><i style="height:39%"></i><i style="height:48%"></i><i style="height:38%"></i><i style="height:41%"></i><i style="height:63%"></i><i style="height:37%"></i><i style="height:70%"></i><i style="height:45%"></i><i style="height:67%"></i><i style="height:38%"></i><i style="height:44%"></i><i style="height:36%"></i><i style="height:89%"></i><i style="height:60%"></i><i style="height:48%"></i><i style="height:47%"></i><i style="height:90%"></i><i style="height:92%"></i><i style="height:62%"></i><i style="height:46%"></i><i style="height:40%"></i><i style="height:31%"></i><i style="height:48%"></i><i style="height:53%"></i><i style="height:41%"></i><i style="height:44%"></i><i style="height:53%"></i><i style="height:91%"></i><i style="height:50%"></i><i style="height:73%"></i><i style="height:52%"></i><i style="height:56%"></i><i style="height:42%"></i><i style="height:33%"></i><i style="height:52%"></i><i style="height:38%"></i><i style="height:46%"></i><i style="height:64%"></i><i style="height:48%"></i><i style="height:73%"></i></span>
-        <span class="vn-time">2:47</span>
-      </div>
-      <p class="vn-quote">“Right, where do I start with my brother? He's the one who always turns up…”</p>
-      <p class="vn-note">An example of how a voice note might begin</p>
-    </div>
-  </div>
-  <div class="wrap">
-    <div class="prompts">
-      <div class="prompts-head">
-        <svg class="ico"><use href="#i-bulb"/></svg>
-        <h3>Stuck for what to say?</h3>
-        <p>Don't worry. Pick a few of these talking points and you'll have plenty. Keep this list handy when you press record.</p>
-      </div>
-      <ul>
-        <li>Who they are to you, and how they came into your life</li>
-        <li>Three words that sum them up</li>
-        <li>The saying, habit or laugh everyone knows them for</li>
-        <li>A favourite memory, big or small</li>
-        <li>The names to include: partners, children, grandchildren, pets</li>
-        <li>Places that matter: home, holidays, the spot they love most</li>
-        <li>What they love: music, hobbies, food, their team</li>
-        <li>A hard time they got through, or helped you through</li>
-        <li>What you'd love them to know, or have never quite said</li>
-        <li>The occasion, and how you want the song to feel</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
 <section class="sound" id="sound" aria-labelledby="sound-h">
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <span class="eyebrow">Step three</span>
-        <h2 id="sound-h">Choose how it <em>sounds.</em></h2>
-        <p class="lede">Have a play with the options below. It really is this easy, and you'll confirm your choices on your story form.</p>
+        <span class="eyebrow">Picture your song</span>
+        <h2 id="sound-h">Build your song <em>in four taps.</em></h2>
+        <p class="lede">Pick the occasion, the style, the voice and the mood, and watch your song take shape below. You'll confirm your real choices on your story form after you order.</p>
       </div>
     </div>
     <div class="picker">
+      <div class="pick pick-wide">
+        <div class="pick-head"><svg class="ico"><use href="#i-gift"/></svg><h3>The occasion</h3></div>
+        <div class="chips" role="group" aria-label="Occasion" data-group="reason">
+          <button class="chip occ" type="button" aria-pressed="true" data-v="a birthday" style="--tone:#B5501E"><svg class="ico"><use href="#i-cake"/></svg>Birthday</button>
+          <button class="chip occ" type="button" aria-pressed="false" data-v="an anniversary" style="--tone:#9C2F3E"><svg class="ico"><use href="#i-rings"/></svg>Anniversary</button>
+          <button class="chip occ" type="button" aria-pressed="false" data-v="a wedding" style="--tone:#A0601A"><svg class="ico"><use href="#i-dance"/></svg>Wedding</button>
+          <button class="chip occ" type="button" aria-pressed="false" data-v="Mum or Dad" style="--tone:#2F4D46"><svg class="ico"><use href="#i-family"/></svg>Mum, Dad &amp; family</button>
+          <button class="chip occ" type="button" aria-pressed="false" data-v="a little one" style="--tone:#C56A12"><svg class="ico"><use href="#i-baby"/></svg>New baby &amp; children</button>
+          <button class="chip occ" type="button" aria-pressed="false" data-v="Christmas" style="--tone:#2F4D46"><svg class="ico"><use href="#i-tree"/></svg>Christmas</button>
+          <button class="chip occ" type="button" aria-pressed="false" data-v="a loved one's memory" style="--tone:#5A3F66"><svg class="ico"><use href="#i-dove"/></svg>In memory</button>
+          <button class="chip occ" type="button" aria-pressed="false" data-v="no reason but love" style="--tone:#923E15"><svg class="ico"><use href="#i-gift"/></svg>Just because</button>
+        </div>
+      </div>
       <div class="pick">
         <div class="pick-head"><svg class="ico"><use href="#i-guitar"/></svg><h3>The genre</h3></div>
         <div class="chips" role="group" aria-label="Genre" data-group="genre">
@@ -653,6 +583,72 @@ footer img{width:56px;height:auto}
     </div>
   </div>
 </section>
+
+
+<section class="how" id="how" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">How it works</span>
+        <h2 id="how-h">Simple, <em>start to finish.</em></h2>
+        <p class="lede">No long forms full of boxes. You simply talk to me about the person you love, and I do the rest.</p>
+      </div>
+      <a class="btn btn-primary js-checkout" href="#order">Start your song</a>
+    </div>
+    <ol class="steps">
+      <li style="--tint:#F8DFC7;--tone:#B5501E"><span class="step-n">01</span><div class="step-ico"><svg class="ico"><use href="#i-bag"/></svg></div><h3>Order your song</h3><p>Choose the Song or the Bundle at secure checkout. Your story form arrives straight away.</p></li>
+      <li class="key" style="--tint:rgba(255,255,255,.12);--tone:#F3C08A"><span class="step-n">02</span><div class="step-ico"><svg class="ico"><use href="#i-mic"/></svg></div><h3>Send me a voice note</h3><p>The heart of it. Talk about them for two or three minutes, just as you would to a friend.</p></li>
+      <li style="--tint:#F2C4AE;--tone:#6E2F3A"><span class="step-n">03</span><div class="step-ico"><svg class="ico"><use href="#i-pen"/></svg></div><h3>I write your song</h3><p>AI helps me capture the details and makes the music. I shape every word until it sounds like them.</p></li>
+      <li style="--tint:#E1E8DC;--tone:#2F4D46"><span class="step-n">04</span><div class="step-ico"><svg class="ico"><use href="#i-headphones"/></svg></div><h3>Hear it, then keep it</h3><p>Hear a preview first, with one revision included. Then your MP3 and lyrics arrive to keep forever.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="voice" id="voice" aria-labelledby="voice-h">
+  <div class="wrap voice-grid">
+    <div class="voice-copy">
+      <span class="eyebrow">The voice note</span>
+      <h2 id="voice-h">Just talk about them <em>for two or three minutes.</em></h2>
+      <p class="lede">The most important part of your order is a short voice note. The way you talk about someone, the stories you reach for and the little things that make you smile, is where their song comes from.</p>
+      <div class="ways">
+        <div><svg class="ico"><use href="#i-chat"/></svg><h3>Send it on WhatsApp</h3><p>A voice note or a written message, whichever is easier. For a voice note, hold the microphone button, talk, and let go to send. My number comes with your form.</p></div>
+        <div><svg class="ico"><use href="#i-mic"/></svg><h3>Upload a recording</h3><p>Record it on your phone's voice recorder app (Voice Memos on iPhone, Recorder on Android), save it, then upload it in your form.</p></div>
+        <div><svg class="ico"><use href="#i-doc"/></svg><h3>Paste a transcription</h3><p>Talk into an AI app like ChatGPT on your phone and ask it to write out what you said. Or on a computer, use Voice typing in a Google Doc (Tools, then Voice typing). Then copy your words into the form.</p></div>
+      </div>
+    </div>
+    <div class="vn" aria-hidden="true">
+      <div class="vn-bubble">
+        <span class="vn-play"><svg viewBox="0 0 16 16"><path d="M4 2.2v11.6L14 8z" fill="currentColor"/></svg></span>
+        <span class="vn-wave"><i style="height:39%"></i><i style="height:48%"></i><i style="height:38%"></i><i style="height:41%"></i><i style="height:63%"></i><i style="height:37%"></i><i style="height:70%"></i><i style="height:45%"></i><i style="height:67%"></i><i style="height:38%"></i><i style="height:44%"></i><i style="height:36%"></i><i style="height:89%"></i><i style="height:60%"></i><i style="height:48%"></i><i style="height:47%"></i><i style="height:90%"></i><i style="height:92%"></i><i style="height:62%"></i><i style="height:46%"></i><i style="height:40%"></i><i style="height:31%"></i><i style="height:48%"></i><i style="height:53%"></i><i style="height:41%"></i><i style="height:44%"></i><i style="height:53%"></i><i style="height:91%"></i><i style="height:50%"></i><i style="height:73%"></i><i style="height:52%"></i><i style="height:56%"></i><i style="height:42%"></i><i style="height:33%"></i><i style="height:52%"></i><i style="height:38%"></i><i style="height:46%"></i><i style="height:64%"></i><i style="height:48%"></i><i style="height:73%"></i></span>
+        <span class="vn-time">2:47</span>
+      </div>
+      <p class="vn-quote">“Right, where do I start with my brother? He's the one who always turns up…”</p>
+      <p class="vn-note">An example of how a voice note might begin</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="prompts">
+      <div class="prompts-head">
+        <svg class="ico"><use href="#i-bulb"/></svg>
+        <h3>Stuck for what to say?</h3>
+        <p>Don't worry. Pick a few of these talking points and you'll have plenty. Keep this list handy when you press record.</p>
+      </div>
+      <ul>
+        <li>Who they are to you, and how they came into your life</li>
+        <li>Three words that sum them up</li>
+        <li>The saying, habit or laugh everyone knows them for</li>
+        <li>A favourite memory, big or small</li>
+        <li>The names to include: partners, children, grandchildren, pets</li>
+        <li>Places that matter: home, holidays, the spot they love most</li>
+        <li>What they love: music, hobbies, food, their team</li>
+        <li>A hard time they got through, or helped you through</li>
+        <li>What you'd love them to know, or have never quite said</li>
+        <li>The occasion, and how you want the song to feel</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 
 <section class="story" id="story" aria-labelledby="story-h">
   <div class="wrap story-grid">
@@ -769,7 +765,7 @@ footer img{width:56px;height:auto}
       <p class="contact"><svg class="ico"><use href="#i-mail"/></svg>Anything else? Email me at <a href="mailto:TheKeepsakeSongCo@creativemamamedia.com">TheKeepsakeSongCo@creativemamamedia.com</a> or call <a href="tel:+447783459630">+44 7783 459630</a></p>
     </div>
     <div class="faq-list">
-      <details><summary>What do I need to send you?</summary><p>A short voice note. Straight after checkout you&#x27;ll get your story form with a few quick questions, and the key part is a two to three minute voice note about your person. Send it to me on WhatsApp, or record yourself and paste in a transcription. If you get stuck, there&#x27;s a list of talking points on this page to help.</p></details>
+      <details><summary>What do I need to send you?</summary><p>A short voice note, about two to three minutes on your person. Straight after checkout you&#x27;ll get your story form. You can send your voice note (or a written message) on WhatsApp, upload a recording from your phone, or paste in a transcription, for example by talking into ChatGPT or using voice typing in Google Docs. If you get stuck, there&#x27;s a list of talking points on this page to help.</p></details>
       <details><summary>How long does it take?</summary><p>Turnaround is 3–7 days from when I receive your details.</p></details>
       <details><summary>Can I hear it before it&#x27;s finished?</summary><p>Yes. You&#x27;ll get to preview your song first, so you know you love it before it&#x27;s finalised.</p></details>
       <details><summary>What if I don&#x27;t love it?</summary><p>If anything needs changing after your preview, one revision is included. If you&#x27;re not happy with your preview, you get a full refund. Once your finished song has been delivered, all digital sales are final and no refunds are given. Your happiness really matters to me, though, so if something still isn&#x27;t right after your revision, get in touch and I&#x27;ll do everything I can to put it right.</p></details>
@@ -901,8 +897,9 @@ var PEAKS = {"dads-memorial-song":[63,49,59,61,67,62,64,66,72,78,74,90,88,83,100
 })();
 
 /* CHECKOUT
-   INTRO_OFFER = true: every Order button goes to INTRO_URL (the Bundle at £34.99, first 15 orders).
-   When the 15 have sold, set INTRO_OFFER = false. Order buttons then scroll to the prices, the
+   Order buttons around the page always scroll to the prices, so buyers see both options.
+   INTRO_OFFER = true: the Bundle button goes to INTRO_URL (the Bundle at £34.99, first 15 orders).
+   When the 15 have sold, set INTRO_OFFER = false. Then the
    launch wording is replaced, and the two package buttons go to SONG_URL (£34.99) and BUNDLE_URL (£44.99). */
 var INTRO_OFFER = true;
 var INTRO_URL = "https://buy.stripe.com/3cIfZh3jMdzD6qt3kkeZ200";
@@ -911,7 +908,6 @@ var BUNDLE_URL = "https://buy.stripe.com/28EcN5dYqanr8yBf32eZ204";
 (function(){
   var song=document.getElementById('pkg-song'),bundle=document.getElementById('pkg-bundle');
   if(INTRO_OFFER){
-    document.querySelectorAll('.js-checkout').forEach(function(a){a.href=INTRO_URL});
     bundle.href=INTRO_URL;
     bundle.textContent='Choose the Bundle · £34.99';
     return;
