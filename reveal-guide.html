@@ -50,23 +50,59 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 .step h3{margin-top:2px}
 .tip{color:var(--muted);font-size:15px}
 .code{display:inline-block;font-family:var(--label);font-weight:300;letter-spacing:.14em;background:var(--night);color:var(--cream);padding:6px 14px;border-radius:999px;font-size:14px}
+
+/* ---- Image library (Nov 2026) ---- */
+.banner{position:relative;min-height:clamp(380px,52vw,560px);display:flex;align-items:flex-end;background:linear-gradient(180deg,rgba(34,21,15,.15) 0%,rgba(34,21,15,.35) 45%,rgba(34,21,15,.9) 100%),url(assets/img/lib/reveal-tears.jpg) center 30%/cover no-repeat;color:#FFF6EC}
+.banner .hero{padding:0 0 44px}
+.banner .eyebrow{color:#F3C08A}
+.banner h1 em{color:#F3C08A}
+.banner p{color:#F6EADC;font-size:18px;max-width:620px}
+.from-edel{display:grid;grid-template-columns:96px 1fr;gap:20px;align-items:center;margin:-34px 0 10px;position:relative;z-index:2;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:18px 22px;box-shadow:0 30px 60px -40px rgba(43,29,22,.5)}
+.from-edel img{width:96px;height:96px;border-radius:50%;object-fit:cover;object-position:50% 25%;border:3px solid var(--apricot)}
+.from-edel p{margin:0;font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.45;color:var(--ink)}
+.from-edel small{display:block;font-family:var(--label);font-style:normal;font-weight:300;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--rust);margin-top:6px}
+.ideas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:30px}
+.ideas .card{margin:0;padding:0;overflow:hidden;display:flex;flex-direction:column}
+.ideas .card:first-child{grid-column:span 2}
+.ideas figure{margin:0;aspect-ratio:16/10;overflow:hidden}
+.ideas .card:first-child figure{aspect-ratio:21/9}
+.ideas figure img{width:100%;height:100%;object-fit:cover;display:block}
+.ideas .step{padding:18px 22px 22px}
+@media(max-width:640px){.ideas{grid-template-columns:1fr}.ideas .card:first-child{grid-column:auto}.ideas .card:first-child figure{aspect-ratio:16/10}.from-edel{grid-template-columns:72px 1fr}.from-edel img{width:72px;height:72px}}
+.tips{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center}
+.tips figure{margin:0;border-radius:20px;overflow:hidden;aspect-ratio:4/5}
+.tips figure img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+@media(max-width:640px){.tips{grid-template-columns:1fr}.tips figure{aspect-ratio:3/2}}
+.glowband{border-top:0;margin:40px -20px 0;padding:34px 30px;border-radius:24px;color:#FFF6EC;background:linear-gradient(135deg,rgba(181,80,30,.9),rgba(110,47,58,.9)),url(assets/img/lib/bg-rust.jpg) center/cover no-repeat}
+.glowband h2{color:#fff;margin-top:0}
+.glowband p{color:#FBE6D2}
+.glowband a{color:#FFD7A8}
+.glowband .tip{color:#F3C9A8}
+.duo{display:grid;grid-template-columns:200px 1fr;gap:22px;align-items:center}
+.duo img{width:200px;height:200px;object-fit:cover;border-radius:18px}
+@media(max-width:560px){.duo{grid-template-columns:1fr}.duo img{width:100%;height:auto;aspect-ratio:16/10}}
+footer{background:linear-gradient(90deg,rgba(34,21,15,.96) 40%,rgba(34,21,15,.8)),url(assets/img/lib/bg-spruce.jpg) right center/cover no-repeat}
 </style>
 </head>
 <body>
 <header><div class="wrap"><a class="brand" href="index.html">The Keepsake Song Co.</a><nav><a href="index.html">Back to the songs</a></nav></div></header>
-<main class="wrap">
-  <div class="hero">
+<div class="banner"><div class="wrap"><div class="hero">
     <span class="eyebrow">A free gift with every song</span>
     <h1>The Christmas <em>Reveal Guide</em></h1>
     <p>You've got the song. Now for the moment. Here are five ways to play it so it lands the way you hope, whether it's for Mum, your partner, or in memory of someone you love.</p>
+  </div></div></div>
+<main class="wrap">
+  <div class="from-edel"><img src="assets/img/edel.jpg" alt="Edel, who wrote your song" width="560" height="701"><p>I put my heart into every line of your song. Now it's your turn to give it. These are my favourite ways to make the moment special.<small>Edel, The Keepsake Song Co.</small></p></div>
+  <div class="ideas">
+  <div class="card"><figure><img src="assets/img/lib/christmas-gift.jpg" alt="A wrapped Christmas gift with golden music notes rising from it" width="1100" height="733" loading="lazy"></figure><div class="step"><div class="num">1</div><div><h3>After the presents</h3><p>Wait until the wrapping paper is everywhere and everyone has slowed down. Then say "There's one more present, and you can't unwrap it." Press play. The quiet after the rush makes the words land.</p></div></div></div>
+  <div class="card"><figure><img src="assets/img/lib/grandparents.jpg" alt="An older couple cuddled together on the sofa, listening" width="1100" height="733" loading="lazy"></figure><div class="step"><div class="num">2</div><div><h3>At the dinner table</h3><p>Play it between the main course and pudding, when everyone is together and sitting still. Turn the music off first, so the song is the only sound in the room.</p></div></div></div>
+  <div class="card"><figure><img src="assets/img/lib/sisters.jpg" alt="Sisters laughing and wiping happy tears around a phone" width="1100" height="733" loading="lazy"></figure><div class="step"><div class="num">3</div><div><h3>On a video call for family far away</h3><p>Share your screen and your sound, then play it while you watch their face. Tip: send the MP3 afterwards so they can play it again on their own.</p></div></div></div>
+  <div class="card"><figure><img src="assets/img/lib/lyric-print.jpg" alt="A framed lyric print beside a wrapped gift" width="1100" height="733" loading="lazy"></figure><div class="step"><div class="num">4</div><div><h3>Hidden in a card</h3><p>Write "Press play before you read the rest" inside a card, with a QR code or the link to the song. Lovely for someone who'd rather have their moment privately.</p></div></div></div>
+  <div class="card"><figure><img src="assets/img/lib/reveal-car.jpg" alt="A couple on a winter drive at sunset, pressing play on the car stereo" width="1100" height="733" loading="lazy"></figure><div class="step"><div class="num">5</div><div><h3>On the car journey home</h3><p>For a quieter moment, play it on the drive back from a family visit. No audience, no pressure, just the two of you and their story.</p></div></div></div>
   </div>
-  <div class="card step"><div class="num">1</div><div><h3>After the presents</h3><p>Wait until the wrapping paper is everywhere and everyone has slowed down. Then say "There's one more present, and you can't unwrap it." Press play. The quiet after the rush makes the words land.</p></div></div>
-  <div class="card step"><div class="num">2</div><div><h3>At the dinner table</h3><p>Play it between the main course and pudding, when everyone is together and sitting still. Turn the music off first, so the song is the only sound in the room.</p></div></div>
-  <div class="card step"><div class="num">3</div><div><h3>On a video call for family far away</h3><p>Share your screen and your sound, then play it while you watch their face. Tip: send the MP3 afterwards so they can play it again on their own.</p></div></div>
-  <div class="card step"><div class="num">4</div><div><h3>Hidden in a card</h3><p>Write "Press play before you read the rest" inside a card, with a QR code or the link to the song. Lovely for someone who'd rather have their moment privately.</p></div></div>
-  <div class="card step"><div class="num">5</div><div><h3>On the car journey home</h3><p>For a quieter moment, play it on the drive back from a family visit. No audience, no pressure, just the two of you and their story.</p></div></div>
 
   <section>
+    <div class="tips"><div>
     <h2>A few small tips</h2>
     <ul>
       <li>Test the volume first. Phone speakers are fine, but a small speaker makes it feel like an event.</li>
@@ -74,9 +110,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       <li>Film their reaction if they'd be happy with that. Lots of people love watching it back.</li>
       <li>For a memorial song, choose a quiet moment and let the person listen in their own way. There's no right way to hear it.</li>
     </ul>
+    </div><figure><img src="assets/img/lib/by-the-sea.jpg" alt="An older woman on a seaside bench, listening on headphones" width="1100" height="1363" loading="lazy"></figure></div>
   </section>
 
-  <section>
+  <section class="glowband">
     <h2>Film it, and get a free extra song</h2>
     <p>If they're happy to be filmed, record the moment they hear their song and send me the video (or a few words about how it went). As a thank you, I'll send you a <strong>free extra style version</strong> of your song, worth £9.99. Just reply to your song email or WhatsApp it to <a href="https://wa.me/447783459630">+44 7783 459630</a>.</p>
     <p class="tip">I'll only share your video if you say I can.</p>
@@ -84,7 +121,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 
   <section>
     <h2>Your 30-second Share Clip</h2>
-    <p>With your final song, I'll also send a short clip of the chorus. It's just the right length for a WhatsApp message, a family group chat or a ringtone, so everyone else can hear it too.</p>
+    <div class="duo"><img src="assets/img/lib/voice-note.jpg" alt="A phone playing a song, with a mug of tea" width="1100" height="1363" loading="lazy"><p>With your final song, I'll also send a short clip of the chorus. It's just the right length for a WhatsApp message, a family group chat or a ringtone, so everyone else can hear it too.</p></div>
   </section>
 
   <section>
