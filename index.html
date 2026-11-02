@@ -315,8 +315,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 /* prices */
 .prices .sec-head{justify-content:center;text-align:center}
 .prices .sec-head .lede{margin-inline:auto}
-.pkgs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:940px;margin:0 auto}
-@media(max-width:820px){.pkgs{grid-template-columns:1fr;max-width:520px}}
+.pkgs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;max-width:1180px;margin:0 auto}
+@media(max-width:1020px){.pkgs{grid-template-columns:1fr;max-width:520px}}
 .pkg{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:clamp(28px,4vw,40px);display:flex;flex-direction:column;gap:22px;position:relative;min-width:0}
 .pkg-ico{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:var(--apricot);color:var(--rust)}
 .pkg-best{background:linear-gradient(160deg,#3A2017 0%,var(--night) 60%);color:var(--cream);border-color:var(--night);box-shadow:0 40px 70px -40px rgba(34,21,15,.8)}
@@ -743,10 +743,22 @@ footer img{width:56px;height:auto}
         </ul>
         <a class="btn btn-primary" id="pkg-bundle" href="#order">Choose the Bundle</a>
       </div>
+      <div class="pkg">
+        <div class="pkg-ico"><svg class="ico"><use href="#i-tree"/></svg></div>
+        <h3>Christmas Morning</h3>
+        <div class="price"><span class="amt">£54.99</span><small>one-off</small></div>
+        <ul class="incl">
+          <li>Everything in the Keepsake Bundle</li>
+          <li class="plus">Rush delivery: your song within 48 hours</li>
+          <li class="plus">First place in the queue</li>
+        </ul>
+        <a class="btn btn-ghost" id="pkg-christmas" href="https://buy.stripe.com/eVq00j5rU0MRdSVdYYeZ205">Choose Christmas Morning</a>
+        <p class="pkg-note">For last-minute gifts, or when you just can't wait.</p>
+      </div>
     </div>
     <div class="promise">
       <svg class="ico"><use href="#i-shield"/></svg>
-      <div><h3>The love-it promise</h3><p>You'll hear your song before it's final. If you don't love your preview, you get a full refund.</p></div>
+      <div><h3>The love-it promise</h3><p>You'll hear your song before it's final. If you don't love your preview, you get a full refund.</p><p><strong>The Christmas Promise:</strong> order by Wednesday 16 December and send your voice note within 24 hours, and your song arrives by Wednesday 23 December, or you get a full refund.</p></div>
     </div>
     <div class="addons">
       <a class="addon" href="https://buy.stripe.com/9B600j2fI9jnaGJ5sseZ202"><svg class="ico"><use href="#i-bolt"/></svg><div><strong>Rush delivery</strong><span>Your song within 48 hours</span></div><em>£9.99</em></a>
@@ -778,7 +790,7 @@ footer img{width:56px;height:auto}
       <details><summary>Can I get more than one version?</summary><p>Yes. The Keepsake Bundle includes a second version in a different style, so you can pick a favourite. With the song on its own, you can buy an extra style version for £9.99 from the add-ons under the prices.</p></details>
       <details><summary>Can I get my song faster?</summary><p>Yes. Rush delivery within 48 hours is a £9.99 add-on. You&#x27;ll find it under the prices; buy it straight after your order.</p></details>
       <details><summary>Can I order a song for Christmas?</summary><p>Yes. Christmas orders need to be in by 16 December, so your song is ready in time.</p></details>
-      <details><summary>What does it cost?</summary><p>The Keepsake Song is £34.99. The Keepsake Bundle is £44.99 and adds a lyric artwork with your own photo and a second style version. <span class="js-swap" data-std="">Right now, the first 15 orders get the full bundle for £34.99. </span>When I had my daughter&#x27;s song made, it cost over £250. I wanted every family to be able to have one.</p></details>
+      <details><summary>What does it cost?</summary><p>The Keepsake Song is £34.99. The Keepsake Bundle is £44.99 and adds a lyric artwork with your own photo and a second style version. Christmas Morning is £54.99: the Bundle with 48-hour rush delivery and first place in the queue. <span class="js-swap" data-std="">Right now, the first 15 orders get the full bundle for £34.99. </span>When I had my daughter&#x27;s song made, it cost over £250. I wanted every family to be able to have one.</p></details>
     </div>
   </div>
 </section>
@@ -900,7 +912,8 @@ var PEAKS = {"dads-memorial-song":[63,49,59,61,67,62,64,66,72,78,74,90,88,83,100
    Order buttons around the page always scroll to the prices, so buyers see both options.
    INTRO_OFFER = true: the Bundle button goes to INTRO_URL (the Bundle at £34.99, first 15 orders).
    When the 15 have sold, set INTRO_OFFER = false. Then the
-   launch wording is replaced, and the two package buttons go to SONG_URL (£34.99) and BUNDLE_URL (£44.99). */
+   launch wording is replaced, and the two package buttons go to SONG_URL (£34.99) and BUNDLE_URL (£44.99).
+   The Christmas Morning button (£54.99) links straight to its own Stripe link in the HTML and never changes. */
 var INTRO_OFFER = true;
 var INTRO_URL = "https://buy.stripe.com/3cIfZh3jMdzD6qt3kkeZ200";
 var SONG_URL = "https://buy.stripe.com/bJecN507A8fjdSV1cceZ203";

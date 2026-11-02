@@ -17,6 +17,7 @@ const SONG_LINKS = new Set([
   "plink_1UQqimDKougkOytzPklep0RD", // Intro Bundle £34.99
   "plink_1UQrGDDKougkOytz6wFhSxco", // Song £34.99
   "plink_1UQrGDDKougkOytzA0nA26ax", // Bundle £44.99
+  "plink_1UXMi6DKougkOytz3tQTvAEw", // Christmas Morning Bundle £54.99
 ]);
 
 const TOLERANCE_SECONDS = 300;
