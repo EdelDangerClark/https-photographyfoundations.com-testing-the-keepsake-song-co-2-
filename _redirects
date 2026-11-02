@@ -5,3 +5,5 @@
 /frontrow   /earlybirds   301
 /terms      /terms.html           200
 /privacy    /terms.html#privacy   301
+/reveal-guide   /reveal-guide.html   200
+/reveal   /reveal-guide.html   301
